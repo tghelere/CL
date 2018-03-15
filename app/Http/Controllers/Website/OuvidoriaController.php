@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 
 class OuvidoriaController extends Controller
 {
-    public function getOuvidoria(){
+    public function index(){
     	$title = "Ouvidoria";
     	return view('website.ouvidoria', compact('title'));
     }
-    public function postOuvidoria(){}
+    public function post(){}
 }

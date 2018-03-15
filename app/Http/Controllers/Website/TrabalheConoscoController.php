@@ -7,11 +7,11 @@ use App\Http\Controllers\Controller;
 
 class TrabalheConoscoController extends Controller
 {
-    public function getTrabalheConosco(){
+    public function index(){
     	$title = "Trabalhe conosco";
     	return view('website.trabalhe-conosco', compact('title'));
     }
-    public function postTrabalheConosco(){
+    public function post(){
 
     }
 }

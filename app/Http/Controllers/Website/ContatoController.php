@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 
 class ContatoController extends Controller
 {
-    public function getContato(){
+    public function index(){
     	$title = "Contato";
     	return view('website.contato', compact('title'));
     }
-    public function postContato(){}
+    public function post(){}
 }
