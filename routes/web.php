@@ -30,3 +30,9 @@ Route::namespace('Website')->group(function () {
 	Route::get('ouvidoria', 'OuvidoriaController@index')->name('ouvidoria');
 	Route::post('ouvidoria', 'OuvidoriaController@post')->name('ouvidoria');
 });
+
+Auth::routes();
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
+	Route::get('/', 'AdminController@index')->name('indexAdmin');	
+});
