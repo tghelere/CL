@@ -34,5 +34,33 @@ Route::namespace('Website')->group(function () {
 Auth::routes();
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
-	Route::get('/', 'AdminController@index')->name('indexAdmin');	
+	Route::get('/', 'AdminController@index')->name('index-Admin');
+	Route::get('home', 'HomeController@index')->name('home-Admin');
+	Route::get('quem-somos', 'QuemSomosController@index')->name('quem-somos-Admin');
+	Route::get('blog', 'BlogController@index')->name('blog-Admin');
+	Route::group(['prefix' => 'servicos'], function(){
+		Route::redirect('/', 'servicos/limpeza');
+		Route::get('limpeza', 'ServicosController@limpeza')->name('servicos-limpeza-Admin');
+		Route::get('servicos-gerais', 'ServicosController@servicosGerais')->name('servicos-servicos-gerais-Admin');
+		Route::get('portaria', 'ServicosController@portaria')->name('servicos-portaria-Admin');
+		Route::get('jardinagem', 'ServicosController@jardinagem')->name('servicos-jardinagem-Admin');
+		Route::get('recepcao', 'ServicosController@recepcao')->name('servicos-recepcao-Admin');
+		Route::get('controladoria-de-acesso', 'ServicosController@controladoriaDeAcesso')->name('servicos-controladoria-de-acesso-Admin');
+	});
+	Route::group(['prefix' => 'solucoes'], function(){
+		Route::redirect('/', 'solucoes/industrias');
+		Route::get('industrias', 'SolucoesController@industrias')->name('solucoes-industrias-Admin');
+		Route::get('comercio', 'SolucoesController@comercio')->name('solucoes-comercio-Admin');
+		Route::get('orgaos-publicos', 'SolucoesController@orgaosPublicos')->name('solucoes-orgaos-publicos-Admin');
+		Route::get('condominios', 'SolucoesController@condominios')->name('solucoes-condominios-Admin');
+		Route::get('clinicas-e-hospitais', 'SolucoesController@clinicasHospitais')->name('solucoes-clinicas-e-hospitais-Admin');
+		Route::get('escolas-e-universidades', 'SolucoesController@escolasUniversidades')->name('solucoes-escolas-e-universidades-Admin');
+		Route::get('escritorios-e-ambientes-corporativos', 'SolucoesController@escritoriosAmbientesCorporativos')->name('solucoes-escritorios-e-ambientes-corporativos-Admin');	
+	});
+	Route::get('trabalhe-conosco/pagina', 'TrabalheConoscoController@index')->name('trabalhe-conosco-Admin');
+	Route::get('trabalhe-conosco/recrutamento', 'TrabalheConoscoController@read')->name('trabalhe-conosco-read-Admin');
+	Route::get('contato/pagina', 'ContatoController@index')->name('contato-Admin');
+	Route::get('contato/mensagens', 'ContatoController@read')->name('contato-read-Admin');
+	Route::get('ouvidoria/pagina', 'OuvidoriaController@index')->name('ouvidoria-Admin');
+	Route::get('ouvidoria/mensagens', 'OuvidoriaController@read')->name('ouvidoria-read-Admin');
 });

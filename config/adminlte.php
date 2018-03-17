@@ -121,18 +121,60 @@ return [
         ],
         [
             'text' => 'Trabalhe Conosco',
-            'url'  => 'admin/trabalhe-conosco',
+            // 'url'  => 'admin/trabalhe-conosco',
             'icon' => 'users',
+            'submenu' => [
+                [
+                    'text'  =>  'Página',
+                    'url'   =>  'admin/trabalhe-conosco/pagina',
+                    'icon'  =>  'edit',
+                ],
+                [
+                    'text'  =>  'Recrutamento',
+                    'url'   =>  'admin/trabalhe-conosco/recrutamento',
+                    'icon' => 'envelope-open',
+                    'label' => 6,
+                    'label_color' => 'primary',
+                ],
+            ],
         ],
         [
             'text' => 'Contato',
-            'url'  => 'admin/contato',
+            // 'url'  => 'admin/contato',
             'icon' => 'envelope',
+            'submenu' => [
+                [
+                    'text'  =>  'Página',
+                    'url'   =>  'admin/contato/pagina',
+                    'icon'  =>  'edit',
+                ],
+                [
+                    'text'  =>  'Mensagens',
+                    'url'   =>  'admin/contato/mensagens',
+                    'icon' => 'envelope-open',
+                    'label' => 2,
+                    'label_color' => 'primary',
+                ],
+            ],
         ],
         [
             'text' => 'Ouvidoria',
-            'url'  => 'admin/ouvidoria',
+            // 'url'  => 'admin/ouvidoria',
             'icon' => 'comment',
+            'submenu' => [
+                [
+                    'text'  =>  'Página',
+                    'url'   =>  'admin/ouvidoria/pagina',
+                    'icon'  =>  'edit',
+                ],
+                [
+                    'text'  =>  'Mensagens',
+                    'url'   =>  'admin/ouvidoria/mensagens',
+                    'icon' => 'envelope-open',
+                    'label' => 12,
+                    'label_color' => 'primary',
+                ],
+            ],
         ],
         [
             'text' => 'Serviços',
@@ -206,54 +248,20 @@ return [
             'url'  => 'admin/blog',
             'icon' => 'pencil'
         ],
-        // [
-        //     'text' => 'E-books',
-        //     'url'  => 'admin/ebook',
-        //     'icon' => 'book'
-        // ],
-        // [
-        //     'text'        => 'Pages',
-        //     'url'         => 'admin/pages',
-        //     'icon'        => 'file',
-        //     'label'       => 4,
-        //     'label_color' => 'success',
-        // ],
-        'Notificações',
+        [
+            'text' => 'Newsletter',
+            'url'  => 'admin/newsletter/read',
+            'icon' => 'at',
+            'label' => 1, 
+            'label_color' => 'warning',
+        ],
         [
             'text' => 'Orçamento',
             'url'  => 'admin/orcamento/read',
             'icon' => 'briefcase',
             'label' => 4, 
             'label_color' => 'danger',
-        ],
-        [
-            'text' => 'Contato',
-            'url'  => 'admin/contato/read',
-            'icon' => 'envelope',
-            'label' => 1, 
-            'label_color' => 'success',
-        ],
-        [
-            'text' => 'Ouvidoria',
-            'url'  => 'admin/ouvidoria/read',
-            'icon' => 'comment',
-            'label' => 3, 
-            'label_color' => 'info',
         ],        
-        [
-            'text' => 'Trabalhe Conosco',
-            'url'  => 'admin/trabalhe-conosco/read',
-            'icon' => 'users',
-            'label' => 6, 
-            'label_color' => 'primary',
-        ],
-        [
-            'text' => 'Newsletter',
-            'url'  => 'admin/newsletter/read',
-            'icon' => 'envelope-open',
-            'label' => 1, 
-            'label_color' => 'warning',
-        ],
         'Informações',
         [
             'text'       => 'Telefones',
