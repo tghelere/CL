@@ -63,4 +63,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::get('contato/mensagens', 'ContatoController@read')->name('contato-read-Admin');
 	Route::get('ouvidoria/pagina', 'OuvidoriaController@index')->name('ouvidoria-Admin');
 	Route::get('ouvidoria/mensagens', 'OuvidoriaController@read')->name('ouvidoria-read-Admin');
+	Route::get('newsletter', 'NewsletterController@index')->name('newsletter-Admin');
+	Route::get('orcamento', 'OrcamentoController@index')->name('orcamento-Admin');
 });

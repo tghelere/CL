@@ -184,26 +184,32 @@ return [
                 [
                     'text' => 'Limpeza',
                     'url'  => 'admin/servicos/limpeza',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Serviços Gerais',
                     'url'  => 'admin/servicos/servicos-gerais',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Portaria',
                     'url'  => 'admin/servicos/portaria',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Jardinagem',
                     'url'  => 'admin/servicos/jardinagem',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Recepção',
                     'url'  => 'admin/servicos/recepcao',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Controladoria de Acesso',
                     'url'  => 'admin/servicos/controladoria-de-acesso',
+                    'icon'  =>  'hand-o-right',
                 ],
             ],
         ],
@@ -215,30 +221,37 @@ return [
                 [
                     'text' => 'Indústrias',
                     'url'  => 'admin/solucoes/industrias',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Comércio',
                     'url'  => 'admin/solucoes/comercio',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Orgãos Públicos',
                     'url'  => 'admin/solucoes/orgaos-publicos',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Condomínios',
                     'url'  => 'admin/solucoes/condominios',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Clínicas e Hospitais',
                     'url'  => 'admin/solucoes/clinicas-e-hospitais',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Escolas e Universidades',
                     'url'  => 'admin/solucoes/escolas-e-universidades',
+                    'icon'  =>  'hand-o-right',
                 ],
                 [
                     'text' => 'Escritórios e Ambientes Corp.',
                     'url'  => 'admin/solucoes/escritorios-e-ambientes-corporativos',
+                    'icon'  =>  'hand-o-right',
                 ],
             ],
             
@@ -250,18 +263,23 @@ return [
         ],
         [
             'text' => 'Newsletter',
-            'url'  => 'admin/newsletter/read',
+            'url'  => 'admin/newsletter',
             'icon' => 'at',
             'label' => 1, 
             'label_color' => 'warning',
         ],
         [
             'text' => 'Orçamento',
-            'url'  => 'admin/orcamento/read',
+            'url'  => 'admin/orcamento',
             'icon' => 'briefcase',
-            'label' => 4, 
+            'label' => 4,
             'label_color' => 'danger',
-        ],        
+        ],
+        [
+            'text' => 'Rodapé',
+            'url'  => 'admin/rodape',
+            'icon' => 'level-down',
+        ],
         'Informações',
         [
             'text'       => 'Telefones',
