@@ -1,5 +1,5 @@
-@extends('website.templates.webpages')
+@extends('layouts.website')
 
 @section('content')
-    {{$title}}
+    {{$data['title']}}
 @endsection
