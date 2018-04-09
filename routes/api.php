@@ -33,4 +33,8 @@ Route::namespace('Api')->group(function () {
     Route::put('testimony', 'TestimonyController@store');
     Route::delete('testimony/{id}', 'TestimonyController@destroy');
 
+// Newsletters
+    Route::get('newsletters', 'NewsletterController@index');
+    Route::post('newsletter', 'NewsletterController@store');
+
 });
