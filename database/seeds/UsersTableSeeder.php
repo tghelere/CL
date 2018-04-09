@@ -11,8 +11,7 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
     public function run()
-    {
-        
+    {        
         User::truncate();
 
         User::create([
@@ -21,7 +20,6 @@ class UsersTableSeeder extends Seeder
         	'password' => bcrypt('123dev'),
         ]);
 
-        // factory(User::class)->times(10)->create();
-        
+        // factory(User::class)->times(10)->create();        
     }
 }

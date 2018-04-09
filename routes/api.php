@@ -26,4 +26,11 @@ Route::namespace('Api')->group(function () {
     Route::put('solution', 'SolutionController@store');
     Route::delete('solution/{id}', 'SolutionController@destroy');
 
+// Testimonies
+    Route::get('testimonies', 'TestimonyController@index');
+    Route::get('testimony/{id}', 'TestimonyController@show');
+    Route::post('testimony', 'TestimonyController@store');
+    Route::put('testimony', 'TestimonyController@store');
+    Route::delete('testimony/{id}', 'TestimonyController@destroy');
+
 });
