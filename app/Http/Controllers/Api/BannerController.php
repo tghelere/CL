@@ -15,7 +15,8 @@ class BannerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){
+    public function index()
+    {
         
         $banners = Banner::all();
 
@@ -29,7 +30,8 @@ class BannerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request){        
+    public function store(Request $request)
+    {        
         
         $banner = $request->isMethod('put') ? Banner::findOrFail($request->banner_id) : new Banner;
         
@@ -54,7 +56,8 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id){
+    public function show($id)
+    {
         
         $banner = Banner::findOrFail($id);
         
@@ -68,7 +71,8 @@ class BannerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id){
+    public function destroy($id)
+    {
 
         $banner = Banner::findOrFail($id);
 
