@@ -19,18 +19,11 @@ Route::namespace('Api')->group(function () {
     Route::put('service', 'ServiceController@store');
     Route::delete('service/{id}', 'ServiceController@destroy');
 
-
 // Solutions
-    // Route::get('solutions', 'SolutionsController@index');    
-    // Route::get('solution/{id}', 'SolutionsController@show');
-    // Route::post('solution', 'SolutionsController@store');
-    // Route::put('solution', 'SolutionsController@store');
-    // Route::delete('solution/{id}', 'SolutionsController@destroy');
-
-
-// slug
-// title
-// description
-// thumb
+    Route::get('solutions', 'SolutionController@index');
+    Route::get('solution/{id}', 'SolutionController@show');
+    Route::post('solution', 'SolutionController@store');
+    Route::put('solution', 'SolutionController@store');
+    Route::delete('solution/{id}', 'SolutionController@destroy');
 
 });
