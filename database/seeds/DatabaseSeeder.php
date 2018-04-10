@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SolutionsTableSeeder::class);
         $this->call(TestimoniesTableSeeder::class);
         $this->call(NewslettersTableSeeder::class);
+        // $this->call(StatesTableSeeder::class); //comentar após semear
+        // $this->call(CitiesTableSeeder::class); //comentar após semear
     }
 }
