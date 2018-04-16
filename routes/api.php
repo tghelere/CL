@@ -37,6 +37,13 @@ Route::namespace('Api')->group(function () {
     Route::get('newsletters', 'NewsletterController@index');
     Route::post('newsletter', 'NewsletterController@store');
 
+// Candidates
+    Route::get('candidates', 'CandidateController@index');
+    Route::get('candidate/{id}', 'CandidateController@show');
+    Route::post('candidate', 'CandidateController@store');
+    Route::put('candidate', 'CandidateController@store');
+    Route::delete('candidate/{id}', 'CandidateController@destroy');
+
 // States
     Route::get('states', 'StateController@index');
     Route::get('state/{id}', 'StateController@show');
