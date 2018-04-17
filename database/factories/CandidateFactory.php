@@ -17,6 +17,6 @@ $factory->define(Candidate::class, function (Faker $faker) {
         'city_id' => $faker->randomElement($cities),
         'interest' => $faker->randomElement($services),
         'presentation' => $faker->text($maxNbChars = 400),
-        'file_name' => $faker->file($sourceDir = './test', $targetDir = './public/teste', false),
+        'file_name' => $faker->file($sourceDir = './tmp', $targetDir = './public/tmp', false),
     ];
 });
