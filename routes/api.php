@@ -52,4 +52,11 @@ Route::namespace('Api')->group(function () {
     Route::get('cities', 'CityController@index');
     Route::get('cities/state/{id}', 'CityController@state');
     Route::get('city/{id}', 'CityController@show');
+
+// Contacts
+    Route::get('contacts', 'ContactController@index');
+    Route::get('contact/{id}', 'ContactController@show');
+    Route::post('contact', 'ContactController@store');
+    // Route::put('contact', 'ContactController@store');
+    Route::delete('contact/{id}', 'ContactController@destroy');
 });

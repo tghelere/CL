@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         // $this->call(StatesTableSeeder::class); //comentar após semear
         // $this->call(CitiesTableSeeder::class); //comentar após semear
         $this->call(CandidatesTableSeeder::class);
+        $this->call(ContactsTableSeeder::class);
     }
 }
