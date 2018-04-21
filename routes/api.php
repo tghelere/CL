@@ -57,6 +57,12 @@ Route::namespace('Api')->group(function () {
     Route::get('contacts', 'ContactController@index');
     Route::get('contact/{id}', 'ContactController@show');
     Route::post('contact', 'ContactController@store');
-    // Route::put('contact', 'ContactController@store');
     Route::delete('contact/{id}', 'ContactController@destroy');
+
+// Ombuds
+    Route::get('ombuds', 'OmbudController@index');
+    Route::get('ombud/{id}', 'OmbudController@show');
+    Route::post('ombud', 'OmbudController@store');
+    Route::delete('ombud/{id}', 'OmbudController@destroy');
+
 });
