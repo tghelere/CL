@@ -12,7 +12,9 @@ class CitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        // City::truncate();
+        Schema::disableForeignKeyConstraints();
+        City::truncate();
+        Schema::enableForeignKeyConstraints();
 
         City::insert([
             [

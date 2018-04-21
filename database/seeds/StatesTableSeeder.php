@@ -12,7 +12,9 @@ class StatesTableSeeder extends Seeder
      */
     public function run()
     {
-        // State::truncate();
+        Schema::disableForeignKeyConstraints();
+        State::truncate();
+        Schema::enableForeignKeyConstraints();
 
         State::insert([
             [

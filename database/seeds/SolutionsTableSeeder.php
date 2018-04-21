@@ -17,7 +17,9 @@ class SolutionsTableSeeder extends Seeder
      */
     public function run()
     {
+        Schema::disableForeignKeyConstraints();
         Solution::truncate();
+        Schema::enableForeignKeyConstraints();
 
         for ($i=0; $i <= 6; $i++) { 
             Solution::create([
