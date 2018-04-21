@@ -65,4 +65,10 @@ Route::namespace('Api')->group(function () {
     Route::post('ombud', 'OmbudController@store');
     Route::delete('ombud/{id}', 'OmbudController@destroy');
 
+// Budgets
+    Route::get('budgets', 'BudgetController@index');
+    Route::get('budget/{id}', 'BudgetController@show');
+    Route::post('budget', 'BudgetController@store');
+    Route::delete('budget/{id}', 'BudgetController@destroy');
+
 });
