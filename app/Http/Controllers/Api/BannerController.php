@@ -66,6 +66,21 @@ class BannerController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function page($page)
+    {
+        
+        $banners = Banner::where('page', $page)->get();
+        
+        return new BannerResource($banners);
+
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

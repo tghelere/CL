@@ -6,7 +6,7 @@ Route::namespace('Api')->group(function () {
 
 // Banners
     Route::get('banners', 'BannerController@index');
-    // Route::get('banners/{page}', 'BannerController@page');
+    Route::get('banners/{page}', 'BannerController@page');
     Route::get('banner/{id}', 'BannerController@show');
     Route::post('banner', 'BannerController@store');
     Route::put('banner', 'BannerController@store');
