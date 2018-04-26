@@ -1,12 +1,4 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/blog.css": "/css/blog.css",
-    "/css/contato.css": "/css/contato.css",
-    "/css/home.css": "/css/home.css",
-    "/css/ouvidoria.css": "/css/ouvidoria.css",
-    "/css/post.css": "/css/post.css",
-    "/css/quemsomos.css": "/css/quemsomos.css",
-    "/css/servicos.css": "/css/servicos.css",
-    "/css/solucoes.css": "/css/solucoes.css",
-    "/css/trabalheconosco.css": "/css/trabalheconosco.css"
+    "/css/home.css": "/css/home.css"
 }

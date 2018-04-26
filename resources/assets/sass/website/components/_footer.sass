@@ -1,2 +1,57 @@
 footer
     background-color: #272A2E
+    color: #fff
+    padding: 50px 0 30px
+    h4
+        font-size: 13px
+        margin: 20px 0
+        font-weight: bold
+    ul
+        padding: 0
+        list-style: none
+        &.list
+            li
+                font-size: 13px
+                &:before
+                    content: "-"
+                    padding-right: 4px  
+        &.social
+            li
+                float: left
+                width: 50px
+                height: 50px
+                margin-right: 15px
+                display: block
+                a
+                    width: 50px
+                    height: 50px
+                    display: block
+                    &.facebook
+                        background: url(/img/icons/social/ico_bar_facebook.png) no-repeat top
+                        background-position-y: -100px
+                    &.gplus
+                        background: url(/img/icons/social/ico_bar_googlemais.png) no-repeat top
+                        background-position-y: -100px
+                    &.linkedIn
+                        background: url(/img/icons/social/ico_bar_linkedin.png) no-repeat top
+                        background-position-y: -100px
+                    &.youtube
+                        background: url(/img/icons/social/ico_bar_youtube.png) no-repeat top
+                        background-position-y: -100px
+                    &.whatsapp
+                        background: url(/img/icons/social/ico_bar_whatsapp.png) no-repeat top
+                        background-position-y: -100px                    
+                    &:hover
+                        background-position-y: 0
+                    &:active
+                        background-position-y: -50px
+                span
+                    display: none
+
+    a
+        color: #fff
+    
+    .copyright
+        margin-top: 45px
+        padding-top: 10px
+        border-top: 2px solid #3D7997
