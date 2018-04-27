@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class OuvidoriaController extends Controller
-{
+{    
     public function index(){
-    	$title = "Ouvidoria";
-    	return view('website.ouvidoria', compact('title'));
+        
+        $data = [
+            'page' => 'ouvidoria',
+            'title' => 'Ouvidoria',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        
+        return view('website.ouvidoria', compact('data'));
     }
-    public function post(){}
 }

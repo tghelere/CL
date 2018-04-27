@@ -7,9 +7,19 @@ use App\Http\Controllers\Controller;
 
 class ContatoController extends Controller
 {
-    public function index(){
-    	$title = "Contato";
-    	return view('website.contato', compact('title'));
-    }
+   
     public function post(){}
+
+
+    public function index(){
+        
+        $data = [
+            'page' => 'contato',
+            'title' => 'Contato',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        
+        return view('website.contato', compact('data'));
+    }
 }

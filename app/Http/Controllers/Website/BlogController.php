@@ -8,7 +8,14 @@ use App\Http\Controllers\Controller;
 class BlogController extends Controller
 {
     public function index(){
-    	$title = 'Blog';
-    	return view('website.blog', compact('title'));
-    }
+        
+        $data = [
+            'page' => 'blog',
+            'title' => 'Blog',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        
+        return view('website.blog', compact('data'));
+    }    
 }

@@ -7,8 +7,16 @@ use App\Http\Controllers\Controller;
 
 class QuemSomosController extends Controller
 {
+    
     public function index(){
-    	$title = "Quem somos";
-    	return view('website.quem-somos', compact('title'));
+          
+        $data = [
+            'page' => 'quemsomos',
+            'title' => 'Quem somos',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        
+    	return view('website.quem-somos', compact('data'));
     }
 }

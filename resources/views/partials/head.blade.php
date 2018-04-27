@@ -10,6 +10,7 @@
 <meta name="robots" content="all" />
 <meta name="author" content="Thyago Ghelere">
 
-<link href="{{ mix('css/'.$data['page'].'.css') }}" rel="stylesheet">
+<link href="{{ mix('css/style.css') }}" rel="stylesheet">
+{{--  <!-- <link href="{{ mix('css/'.$data['page'].'.css') }}" rel="stylesheet"> --> --}}
 <!-- <link rel="shortcut icon" href="favicon.ico"> -->
 <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->

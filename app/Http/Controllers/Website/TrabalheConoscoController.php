@@ -8,8 +8,15 @@ use App\Http\Controllers\Controller;
 class TrabalheConoscoController extends Controller
 {
     public function index(){
-    	$title = "Trabalhe conosco";
-    	return view('website.trabalhe-conosco', compact('title'));
+          
+        $data = [
+            'page' => 'trabalheconosco',
+            'title' => 'Trabalhe conosco',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        
+    	return view('website.trabalhe-conosco', compact('data'));
     }
     public function post(){
 

@@ -2,11 +2,11 @@
   <div class="footer-above">
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
-          <h2>{{ config('app.name') }}</h2>
+        <div class="col-md-3 border">
+          <img src="/img/logomono.png" width="250" alt="{{ config('app.name') }}">
         </div>
-        <div class="col-md-5 font-italic">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo assumenda adipisci ratione.</p>
+        <div class="col-md-5 font-italic border">
+          <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo assumenda adipisci ratione.</p>
         </div>
       </div>
       <div class="row">
