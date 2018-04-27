@@ -52,6 +52,7 @@ ul
                 margin: 0 2px 10px
             span
                 width: 150px
+                display: block
         
         
 

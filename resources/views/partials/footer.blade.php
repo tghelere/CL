@@ -2,10 +2,10 @@
   <div class="footer-above">
     <div class="container">
       <div class="row">
-        <div class="col-md-3 border">
+        <div class="col-md-3">
           <img src="/img/logomono.png" width="250" alt="{{ config('app.name') }}">
         </div>
-        <div class="col-md-5 font-italic border">
+        <div class="col-md-5 font-italic">
           <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo assumenda adipisci ratione.</p>
         </div>
       </div>
@@ -48,20 +48,21 @@
       <div class="row">
         <div class="col-md-8">
           <h4 class="text-uppercase">Contato</h4>
-          <ul>
-            <li><a title="" href="">Fone1</a></li>
-            <li><a title="" href="">Fone2</a></li>
+          <ul class="phone">
+            <li><a title="Fone: (43) 3321-0367" href="tel:+554333210367">043 3321-0367</a></li>
+            <li><u><a class="whats" title="Fone: (43) 99918-97965" target="_blank" href="https://api.whatsapp.com/send?phone=55439991897965">043 99918-97965</a></u></li>
+            <!-- <li><u><a class="whats" title="Fone: (43) 99918-97965" href="tel:+55439991897965">043 99918-97965</a></u></li> -->
           </ul>
-          <p>Endereço... <a title="" href="">Mapa</a></p>
+          <p class="address">Rua Augusto Severo, 203, Aeroporto - Cep: 86039-650 - Londrina-PR <u><a target="_black" class="mapa text-uppercase" title="Mapa" href="https://goo.gl/maps/HhdbvX2dABG2">Ver no Mapa</a></u></p>
         </div>
         <div class="col-md-4">
           <h4 class="text-uppercase">Social</h4>
           <ul class="social">
-            <li><a class="facebook" title="Facebook" href=""><span>Facebook</span></a></li>
-            <li><a class="gplus" title="GPlus" href=""><span>GPlus</span></a></li>
-            <li><a class="linkedIn" title="LinkedIn" href=""><span>LinkedIn</span></a></li>
-            <li><a class="youtube" title="Youtube" href=""><span>Youtube</span></a></li>
-            <li><a class="whatsapp" title="Whatsapp" href=""><span>Whatsapp</span></a></li>
+            <li><a class="facebook" title="Facebook" href="" target="_blank"><span>Facebook</span></a></li>
+            <li><a class="gplus" title="GPlus" href="" target="_blank"><span>GPlus</span></a></li>
+            <li><a class="linkedIn" title="LinkedIn" href="" target="_blank"><span>LinkedIn</span></a></li>
+            <li><a class="youtube" title="Youtube" href="" target="_blank"><span>Youtube</span></a></li>
+            <li><a class="whatsapp" title="Whatsapp" href="" target="_blank"><span>Whatsapp</span></a></li>
           </ul>
         </div>
       </div>
