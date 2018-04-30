@@ -49,9 +49,8 @@
         <div class="col-md-8">
           <h4 class="text-uppercase">Contato</h4>
           <ul class="phone">
-            <li><a title="Fone: (43) 3321-0367" href="tel:+554333210367">043 3321-0367</a></li>
-            <li><u><a class="whats" title="Fone: (43) 99918-97965" target="_blank" href="https://api.whatsapp.com/send?phone=55439991897965">043 99918-97965</a></u></li>
-            <!-- <li><u><a class="whats" title="Fone: (43) 99918-97965" href="tel:+55439991897965">043 99918-97965</a></u></li> -->
+            <li><a title="Fone: {{ config('app.phone_f') }}" href="tel:{{ config('app.phone') }}">{{ config('app.phone_f') }}</a></li>
+            <li><u><a class="whats" title="Whatsapp: {{ config('app.celphone_f') }}" target="_blank" href="https://api.whatsapp.com/send?phone={{ config('app.celphone') }}">{{ config('app.celphone_f') }}</a></u></li>
           </ul>
           <p class="address">Rua Augusto Severo, 203, Aeroporto - Cep: 86039-650 - Londrina-PR <u><a target="_black" class="mapa text-uppercase" title="Mapa" href="https://goo.gl/maps/HhdbvX2dABG2">Ver no Mapa</a></u></p>
         </div>
