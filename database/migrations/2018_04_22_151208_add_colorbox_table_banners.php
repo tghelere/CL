@@ -14,7 +14,7 @@ class AddColorboxTableBanners extends Migration
     public function up()
     {
         Schema::table('banners', function (Blueprint $table) {
-            $table->string('colorbox', 10)->default('#000')->after('link');
+            $table->string('colorbox', 10)->nullable()->after('link');
         });
     }
 
