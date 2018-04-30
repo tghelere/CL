@@ -23,5 +23,6 @@ class DatabaseSeeder extends Seeder
         $this->call(OmbudsTableSeeder::class);
         $this->call(BudgetsTableSeeder::class);
         $this->call(BannersTableSeeder::class);
+        $this->call(ContentsTableSeeder::class);
     }
 }

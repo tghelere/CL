@@ -71,4 +71,11 @@ Route::namespace('Api')->group(function () {
     Route::post('budget', 'BudgetController@store');
     Route::delete('budget/{id}', 'BudgetController@destroy');
 
+// Contents
+    Route::get('contents', 'ContentController@index');
+    Route::get('content/{id}', 'ContentController@show');
+    Route::post('content', 'ContentController@store');
+    Route::put('content', 'ContentController@store');
+    Route::delete('content/{id}', 'ContentController@destroy');
+
 });
