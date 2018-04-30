@@ -1,5 +1,5 @@
 <template>
-    <div v-if="solutions.length > 0">
+    <div v-show="solutions.length > 0">
         <ul class="list-unstyled">
             <li v-for="(solution, index) in solutions" :key='index' class="border" :class="solution.slug">
                 <a href="" :title="solution.title">

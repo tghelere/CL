@@ -1,5 +1,5 @@
 <template>
-    <div class="col-md-10" v-if="services.length > 0">        
+    <div class="col-md-10" v-show="services.length > 0">        
         <h3 class="text-uppercase text-center">Serviços</h3>
         <ul>
             <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center">

@@ -1,6 +1,6 @@
 <template>
-    <div v-if="banners.length > 0">    
-        <swiper v-if="banners" :options="swiperOption">
+    <div v-show="banners.length > 0">    
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(banner, index) in banners" :key='index'>
                 <img :src="'/img/banners/home/' + banner.image" :alt="banner.title">
                 <div class="text container">
