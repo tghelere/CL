@@ -73,6 +73,7 @@ Route::namespace('Api')->group(function () {
 
 // Contents
     Route::get('contents', 'ContentController@index');
+    Route::get('contents/{page}', 'ContentController@page');
     Route::get('content/{id}', 'ContentController@show');
     Route::post('content', 'ContentController@store');
     Route::put('content', 'ContentController@store');

@@ -53,7 +53,22 @@ class ContentController extends Controller
         $content = Content::findOrFail($id);
         
         return new ContentResource($content);
-    }    
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function page($page)
+    {
+        
+        $content = Content::where('page', $page)->get();
+        
+        return new ContentResource($content);
+
+    }
 
     /**
      * Remove the specified resource from storage.
