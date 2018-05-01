@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-4">
                 <home-two-posts></home-two-posts>
-                <div class="newsletter">
+                <div class="recruitment">
                     <p class="text-uppercase text-center">Trabalhe conosco</p>
                     <a class="text-uppercase" title="Cadastre seu curriculo" href="{{ route('trabalhe-conosco') }}">Cadastre seu curriculo</a>
                 </div>
