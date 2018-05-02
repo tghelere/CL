@@ -6,7 +6,7 @@
           <img src="/img/logomono.png" width="250" alt="{{ config('app.name') }}">
         </div>
         <div class="col-md-5 font-italic">
-          <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo assumenda adipisci ratione.</p>
+          <text-content :page="'footer'" :classe="'footer-text'"></text-content>
         </div>
       </div>
       <div class="row">

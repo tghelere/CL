@@ -17,7 +17,7 @@ class ContentsTableSeeder extends Seeder
     {
         Content::truncate();
 
-        $pages = ['home', 'quem-somos', 'contato', 'blog', 'ouvidoria', 'trabalhe-conosco'];
+        $pages = ['home', 'quem-somos', 'contato', 'blog', 'ouvidoria', 'trabalhe-conosco', 'footer', 'home-testimonies'];
         $services_pages = Service::all()->pluck('slug')->toArray();
         $solutions_pages = Solution::all()->pluck('slug')->toArray();
 

@@ -12,7 +12,7 @@ Vue.component('home-solutions', require('./components/home/SolutionsComponent.vu
 Vue.component('home-two-posts', require('./components/home/TwoPostsComponent.vue'));
 Vue.component('home-services', require('./components/home/ServicesComponent.vue'));
 Vue.component('home-testimonies', require('./components/home/TestimoniesComponent.vue'));
-Vue.component('home-text', require('./components/home/TextComponent.vue'));
+Vue.component('text-content', require('./components/TextComponent.vue'));
 
 const app = new Vue({
     el: '#app'

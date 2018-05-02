@@ -11,7 +11,7 @@
         
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <home-text></home-text>
+                <text-content :page="'home'" :classe="'home-text'"></text-content>
             </div>
         </div>
 

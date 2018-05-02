@@ -2,7 +2,9 @@
     <div class="row">
         <div class="col-md-6 text">
             <h3 class="text-uppercase text-center">Opiniões de Clientes</h3>
-            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa hic, animi nesciunt provident illo nemo inventore repellat laboriosam quisquam nobis eum, aut aspernatur unde nihil aliquid quia. Eligendi, voluptates consectetur?</p>
+            <p>
+                <text-content :page="'home-testimonies'"></text-content>
+            </p>
         </div>
         <div class="col-md-6">
             <swiper :options="swiperOption" style="height: auto">
@@ -66,8 +68,10 @@
 </script>
 
 <style lang="sass" scoped>
-.text, .testimonies
-    padding: 50px
+.text
+    padding: 10px 10px
+.testimonies
+    padding: 10px 50px 50px
 
 .testimonies
     hr, p
