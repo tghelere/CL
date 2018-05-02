@@ -16,10 +16,10 @@
         </div>
 
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <home-solutions></home-solutions>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <home-two-posts></home-two-posts>
                 <div class="recruitment">
                     <p class="text-uppercase text-center">Trabalhe conosco</p>
