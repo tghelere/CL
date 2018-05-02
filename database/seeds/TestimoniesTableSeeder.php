@@ -14,6 +14,6 @@ class TestimoniesTableSeeder extends Seeder
     {
         Testimony::truncate();
 
-        factory(Testimony::class)->times(10)->create();
+        factory(Testimony::class)->times(5)->create();
     }
 }

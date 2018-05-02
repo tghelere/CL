@@ -31,6 +31,7 @@
         <div class="row justify-content-center">
             <home-services></home-services>
         </div>
+
+        <home-testimonies></home-testimonies>
     </div>
-    <home-testimonies></home-testimonies>
 @endsection

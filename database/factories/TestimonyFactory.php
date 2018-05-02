@@ -8,6 +8,6 @@ $factory->define(Testimony::class, function (Faker $faker) {
         'name' => $faker->name,
         'institute' => $faker->company,
         'sequence' => $faker->randomDigit,
-        'testimony' => $faker->text($maxNbChars = 100),
+        'testimony' => $faker->text($maxNbChars = 400),
     ];
 });
