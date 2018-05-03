@@ -36,6 +36,7 @@ class ServiceController extends Controller
         $service->id = $request->input('service_id');
         $service->slug = $request->input('slug');
         $service->title = $request->input('title');
+        $service->url = $request->input('url');
         $service->description = $request->input('description');
         $service->icon = $request->input('icon');
 

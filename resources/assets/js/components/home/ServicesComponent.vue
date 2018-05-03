@@ -3,7 +3,7 @@
         <h3 class="text-uppercase text-center">Serviços</h3>
         <ul>
             <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center">
-                <a href="" :title="service.title">
+                <a :href="service.url" :title="service.title">
                     <img :src="'/img/icons/services/' + service.icon" :alt="service.title" height="80" width="80">
                     <span>{{ service.title }}</span>
                 </a>
