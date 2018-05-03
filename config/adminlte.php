@@ -32,7 +32,7 @@ return [
 
     'logo' => '<b>Admin</b>Centrallimp',
 
-    'logo_mini' => '<b>Admin</b>CL',
+    'logo_mini' => '<b>Adm</b>',
 
     /*
     |--------------------------------------------------------------------------
@@ -280,22 +280,22 @@ return [
             'url'  => 'admin/rodape',
             'icon' => 'level-down',
         ],
-        'Informações',
-        [
-            'text'       => 'Telefones',
-            'icon_color' => 'red',
-            'icon' => 'phone',
-        ],
-        [
-            'text'       => 'Localização',
-            'icon_color' => 'green',
-            'icon' => 'map',
-        ],
-        [
-            'text'       => 'Redes Sociais',
-            'icon_color' => 'aqua',
-            'icon' => 'link'
-        ],
+        // 'Informações',
+        // [
+        //     'text'       => 'Telefones',
+        //     'icon_color' => 'red',
+        //     'icon' => 'phone',
+        // ],
+        // [
+        //     'text'       => 'Localização',
+        //     'icon_color' => 'green',
+        //     'icon' => 'map',
+        // ],
+        // [
+        //     'text'       => 'Redes Sociais',
+        //     'icon_color' => 'aqua',
+        //     'icon' => 'link'
+        // ],
         'Configurações da conta',
         [
             'text' => 'Perfil',
