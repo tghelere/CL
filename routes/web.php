@@ -78,4 +78,5 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::get('ouvidoria/mensagens', 'OuvidoriaController@read')->name('ouvidoria-read-Admin');
 	Route::get('newsletter', 'NewsletterController@index')->name('newsletter-Admin');
 	Route::get('orcamento', 'OrcamentoController@index')->name('orcamento-Admin');
+	Route::get('rodape', 'RodapeController@index')->name('rodape-Admin');
 });

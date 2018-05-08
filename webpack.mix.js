@@ -13,7 +13,8 @@ let mix = require('laravel-mix');
 const path_sass = 'resources/assets/sass/'
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .sass(path_sass + 'style.sass', 'public/css');
+    .sass(path_sass + 'style.sass', 'public/css')
+    .sass(path_sass + 'admin.sass', 'public/css');
     
     // .sass(path_sass + 'home.sass', 'public/css')
     // .sass(path_sass + 'blog.sass', 'public/css')

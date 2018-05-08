@@ -46,7 +46,7 @@
         },
         methods: {
             getBanners(){
-                const action = 'api/banners/home'
+                const action = '/api/banners/home'
                 axios.get(action).then(response => {
                     this.banners = response.data.data
                 }).catch(error => {

@@ -1,9 +1,11 @@
 @extends('adminlte::page')
 
+@section('title', ' - Rodapé')
+
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Rodapé</h1>
 @stop
 
 @section('content')
-    <p>You are logged in!</p>
+    
 @stop

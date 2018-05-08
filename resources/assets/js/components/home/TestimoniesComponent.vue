@@ -56,7 +56,7 @@
         },
         methods: {
             getTestimonies(){
-                const action = 'api/testimonies'
+                const action = '/api/testimonies'
                 axios.get(action).then(response => {
                     this.testimonies = response.data.data
                 }).catch(error => {

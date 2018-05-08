@@ -31,7 +31,7 @@
         },
         methods: {
             getTitles(){
-                const action = 'api/solutions'
+                const action = '/api/solutions'
                 axios.get(action).then(response => {
                     this.solutions = response.data.data
                 }).catch(error => {

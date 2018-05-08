@@ -24,7 +24,7 @@
         },
         methods: {
             getServices () {
-                const action = 'api/services'
+                const action = '/api/services'
                 axios.get(action).then(response => {
                     this.services = response.data.data
                 }).catch(error => {

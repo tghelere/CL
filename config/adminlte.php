@@ -269,7 +269,7 @@ return [
             'label_color' => 'warning',
         ],
         [
-            'text' => 'Orçamento',
+            'text' => 'Orçamentos',
             'url'  => 'admin/orcamento',
             'icon' => 'briefcase',
             'label' => 4,
@@ -296,17 +296,17 @@ return [
         //     'icon_color' => 'aqua',
         //     'icon' => 'link'
         // ],
-        'Configurações da conta',
-        [
-            'text' => 'Perfil',
-            'url'  => 'admin/settings',
-            'icon' => 'user',
-        ],
-        [
-            'text' => 'Alterar Password',
-            'url'  => 'admin/settings',
-            'icon' => 'lock',
-        ],        
+        // 'Configurações da conta',
+        // [
+        //     'text' => 'Perfil',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'user',
+        // ],
+        // [
+        //     'text' => 'Alterar Password',
+        //     'url'  => 'admin/settings',
+        //     'icon' => 'lock',
+        // ],        
     ],
 
     /*

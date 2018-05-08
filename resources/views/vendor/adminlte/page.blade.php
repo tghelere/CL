@@ -102,7 +102,7 @@
         @endif
 
         <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
+        <div class="content-wrapper @if(preg_match("/^solucoes-[a-zA-Z\-]+$/", Route::currentRouteName())) {{'solucoes-Admin'}} @elseif(preg_match("/^servicos-[a-zA-Z\-]+$/", Route::currentRouteName())) {{'servicos-Admin'}} @else {{Route::currentRouteName()}} @endif" id="app">
             @if(config('adminlte.layout') == 'top-nav')
             <div class="container">
             @endif
