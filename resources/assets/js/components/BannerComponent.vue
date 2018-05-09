@@ -21,8 +21,7 @@
         },
         data () {
             return {
-                banners : [],
-                page: this.page,                
+                banners : [],                
             }
         },
         created () {

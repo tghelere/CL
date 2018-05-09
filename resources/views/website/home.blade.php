@@ -28,8 +28,9 @@
             </div>
         </div>
 
+            <h3 class="text-uppercase text-center">Serviços</h3>
         <div class="row justify-content-center">
-            <home-services></home-services>
+            <home-services class="col-md-10" ></home-services>
         </div>
 
         <home-testimonies></home-testimonies>

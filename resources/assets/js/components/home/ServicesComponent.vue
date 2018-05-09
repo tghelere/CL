@@ -1,8 +1,7 @@
 <template>
-    <div class="col-md-10" v-show="services.length > 0">        
-        <h3 class="text-uppercase text-center">Serviços</h3>
-        <ul>
-            <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center">
+    <div v-show="services.length > 0">        
+        <ul class="row">
+            <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center col-md-2">
                 <a :href="service.url" :title="service.title">
                     <img :src="'/img/icons/services/' + service.icon" :alt="service.title" height="80" width="80">
                     <span>{{ service.title }}</span>
@@ -37,10 +36,11 @@
 
 <style lang="sass" scoped>
 ul
-    width: 100%
-    display: flex
-    justify-content: space-between
-    margin: 40px 0
+    // width: 100%
+    // display: flex
+    // justify-content: space-between
+    // margin: 40px 0
+    padding: 0 !important
     li
         list-style: none
         width: 150px
@@ -51,7 +51,7 @@ ul
             img
                 margin: 0 2px 10px
             span
-                width: 150px
+                // width: 150px
                 display: block
         
         
