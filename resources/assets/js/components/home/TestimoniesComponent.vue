@@ -10,8 +10,8 @@
             <swiper :options="swiperOption" style="height: auto">
                 <swiper-slide v-for="(testimony, index) in testimonies" :key='index'>                    
                     <div class="testimonies">
-                        <p>{{ testimony.testimony }}</p> 
-                        <!-- <iframe src="https://www.youtube-nocookie.com/embed/FW6TUm1OUYk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                        {{ testimony.testimony }}
+                        
                         <hr>
                         <p class="text-center font-weight-bold">{{ testimony.name }}</p>                        
                         <p class="text-center font-italic">{{ testimony.institute }}</p>                        

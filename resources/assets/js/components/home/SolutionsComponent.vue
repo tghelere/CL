@@ -11,7 +11,7 @@
         </ul>
         <div class="post">
             <h3>Industrias</h3>
-            <h5>Este é o subtitulo desta solução para a página inicial do site Centrallimp</h5>
+            <h5>Soluções Centrallimp para Industrias</h5>
             <hr>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quos consectetur obcaecati odio molestias repellat. Aut odit corporis voluptas, quia nisi totam quam accusamus illum, perspiciatis inventore consequatur qui nesciunt.</p>
             <a title="Leia mais" class="text-uppercase" href="">Leia mais</a>
@@ -61,49 +61,49 @@ ul
         text-align: center        
                 
         &.solucoes-industrias
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/industry.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(67, 64, 65, 0.6)
                 &:hover
                     background-color: rgba(67, 64, 65, 0.3)
         &.solucoes-comercio
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/comercio.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(242, 158, 33, 0.6)
                 &:hover
                     background-color: rgba(242, 158, 33, 0.3)
         &.solucoes-orgaos-publicos
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/porteiro.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(69, 163, 104, 0.6)
                 &:hover
                     background-color: rgba(69, 163, 104, 0.3)
         &.solucoes-condominios
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/condominios.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(0, 161, 162, 0.6)
                 &:hover
                     background-color: rgba(0, 161, 162, 0.3)
         &.solucoes-clinicas-e-hospitais
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/hospital.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(152, 191, 19, 0.6)
                 &:hover
                     background-color: rgba(152, 191, 19, 0.3)
         &.solucoes-escolas-e-universidades
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/escola.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(61, 121, 151, 0.6)
                 &:hover
                     background-color: rgba(61, 121, 151, 0.3)
         &.solucoes-escritorios-e-ambientes-corporativos
-            background: url(/img/thumbs/solutions/moto.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/escritorio.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(0, 137, 192, 0.6)

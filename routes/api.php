@@ -14,6 +14,7 @@ Route::namespace('Api')->group(function () {
 
 // Services
     Route::get('services', 'ServiceController@index');    
+    Route::get('services-titles', 'ServiceController@titles');    
     Route::get('service/{id}', 'ServiceController@show');
     Route::post('service', 'ServiceController@store');
     Route::put('service', 'ServiceController@store');
@@ -21,6 +22,7 @@ Route::namespace('Api')->group(function () {
 
 // Solutions
     Route::get('solutions', 'SolutionController@index');
+    Route::get('solutions-titles', 'SolutionController@titles');
     Route::get('solution/{id}', 'SolutionController@show');
     Route::post('solution', 'SolutionController@store');
     Route::put('solution', 'SolutionController@store');
