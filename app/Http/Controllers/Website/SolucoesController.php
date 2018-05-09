@@ -7,44 +7,74 @@ use App\Http\Controllers\Controller;
 
 class SolucoesController extends Controller
 {
-    // public function industrias(){
-    // 	$title = 'Soluçoes > industrias';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-    // public function comercio(){
-    // 	$title = 'Soluçoes > comercio';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-    // public function orgaosPublicos(){
-    // 	$title = 'Soluçoes > orgaosPublicos';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-    // public function condominios(){
-    // 	$title = 'Soluçoes > condominios';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-    // public function clinicasHospitais(){
-    // 	$title = 'Soluçoes > clinicasHospitais';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-    // public function escolasUniversidades(){
-    // 	$title = 'Soluçoes > escolasUniversidades';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-    // public function escritoriosAmbientesCorporativos(){
-    // 	$title = 'Soluçoes > escritoriosAmbientesCorporativos';
-    // 	return view('website.solucoes', compact('title'));
-    // }
-
-    public function index(){
-          
-        $data = [
+    public function industrias(){
+    	$data = [
             'page' => 'solucoes',
-            'title' => 'Soluções',
+            'title-category' => 'Soluções',
+            'title' => 'Indústrias',
             'keywords' => '',
             'description' => '',            
         ];
-        
-    	return view('website.solucoes', compact('data'));
+        return view('website.solucoes', compact('data'));
+    }
+    public function comercio(){
+    	$data = [
+            'page' => 'solucoes',
+            'title-category' => 'Soluções',
+            'title' => 'Comércio',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        return view('website.solucoes', compact('data'));
+    }
+    public function orgaosPublicos(){
+    	$data = [
+            'page' => 'solucoes',
+            'title-category' => 'Soluções',
+            'title' => 'Orgãos Públicos',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        return view('website.solucoes', compact('data'));
+    }
+    public function condominios(){
+    	$data = [
+            'page' => 'solucoes',
+            'title-category' => 'Soluções',
+            'title' => 'Condomínios',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        return view('website.solucoes', compact('data'));
+    }
+    public function clinicasHospitais(){
+    	$data = [
+            'page' => 'solucoes',
+            'title-category' => 'Soluções',
+            'title' => 'Clínicas e Hospitais',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        return view('website.solucoes', compact('data'));
+    }
+    public function escolasUniversidades(){
+    	$data = [
+            'page' => 'solucoes',
+            'title-category' => 'Soluções',
+            'title' => 'Escolas e Universidades',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        return view('website.solucoes', compact('data'));
+    }
+    public function escritoriosAmbientesCorporativos(){
+    	$data = [
+            'page' => 'solucoes',
+            'title-category' => 'Soluções',
+            'title' => 'Escritórios e Ambientes Corporativos',
+            'keywords' => '',
+            'description' => '',            
+        ];
+        return view('website.solucoes', compact('data'));
     }
 }

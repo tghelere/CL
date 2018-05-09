@@ -72,17 +72,5 @@ class ServicosController extends Controller
         ];
         
         return view('website.servicos', compact('data'));
-    }
-
-    public function index(){
-        
-        $data = [
-            'page' => 'servicos',
-            'title' => 'Serviços',
-            'keywords' => '',
-            'description' => '',            
-        ];
-        
-        return view('website.servicos', compact('data'));
-    }
+    }    
 }
