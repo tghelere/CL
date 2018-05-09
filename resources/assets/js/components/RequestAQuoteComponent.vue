@@ -158,7 +158,7 @@
     position: fixed
     bottom: 100px
     right: 10px
-    z-index: 5
+    z-index: 10
     &:hover
         background-position-y: -110px
     &:focus

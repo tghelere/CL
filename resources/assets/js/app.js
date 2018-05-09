@@ -14,6 +14,8 @@ Vue.component('home-services', require('./components/home/ServicesComponent.vue'
 Vue.component('home-testimonies', require('./components/home/TestimoniesComponent.vue'));
 Vue.component('text-content', require('./components/TextComponent.vue'));
 Vue.component('request-a-quote', require('./components/RequestAQuoteComponent.vue'));
+Vue.component('request-a-quote', require('./components/RequestAQuoteComponent.vue'));
+Vue.component('banner', require('./components/BannerComponent.vue'));
 
 const app = new Vue({
     el: '#app'

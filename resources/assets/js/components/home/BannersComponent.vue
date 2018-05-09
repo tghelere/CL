@@ -1,5 +1,6 @@
 <template>
-    <div v-show="banners.length > 0">    
+    <div v-show="banners.length > 0">
+        teste
         <swiper :options="swiperOption">
             <swiper-slide v-for="(banner, index) in banners" :key='index'>
                 <img :src="'/img/banners/home/' + banner.image" :alt="banner.title">
@@ -53,7 +54,7 @@
                     console.error(error)
                 })
             }
-        },        
+        },
     }
 </script>
 
