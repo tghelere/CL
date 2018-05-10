@@ -3,7 +3,19 @@
 Route::namespace('Website')->group(function () {
 	Route::get('/', 'HomeController@index')->name('home');
 	Route::get('quem-somos', 'QuemSomosController@index')->name('quem-somos');
-	Route::get('blog', 'BlogController@index')->name('blog');
+    Route::get('blog', 'BlogController@index')->name('blog');
+    
+    // Route::group(['prefix' => 'blog'], function(){
+		// Route::get('/', 'BlogController@index')->name('blog');
+		// Route::get('limpeza', 'BlogController@limpeza')->name('blog-limpeza');
+		// Route::get('servicos-gerais', 'BlogController@servicosGerais')->name('blog-servicos-gerais');
+		// Route::get('portaria', 'BlogController@portaria')->name('blog-portaria');
+		// Route::get('jardinagem', 'BlogController@jardinagem')->name('blog-jardinagem');
+		// Route::get('recepcao', 'BlogController@recepcao')->name('blog-recepcao');
+		// Route::get('controladoria-de-acesso', 'BlogController@controladoriaDeAcesso')->name('blog-controladoria-de-acesso');
+		// Route::get('limpeza', 'BlogController@limpeza')->name('blog-limpeza');
+
+
 	Route::group(['prefix' => 'servicos'], function(){
 		Route::redirect('/', 'servicos/limpeza');
 		Route::get('limpeza', 'ServicosController@limpeza')->name('servicos-limpeza');
