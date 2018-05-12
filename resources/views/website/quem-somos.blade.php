@@ -3,16 +3,15 @@
 @section('content')
 
     <div class="container-fluid">
-        <banner :page="'quem-somos'" ></banner>        
+        <banner :page="'{{ Route::currentRouteName() }}'" ></banner>        
     </div>
     <div class="container corpo">
         <div class="bradcrump">
-            <p class="text-uppercase">home / quem somos</p>    
-        
+            <p class="text-uppercase">home / {{$data['title']}}</p>            
         </div>
         <div class="content">
             <h1 class="text-center text-uppercase" >Conheça a Centrallimp</h1>
-            <text-content class="text-center" :page="'quem-somos'"></text-content>
+            <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
         </div>
         <div class="treepoints">
             <ul class="row list-unstyled">

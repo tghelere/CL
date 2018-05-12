@@ -1,0 +1,39 @@
+form
+    margin: 50px 0
+    input, select, checkbox, textarea
+        &.form-control, 
+            border: 1px solid #000
+            border-radius: 0
+    
+    label
+        &.custom-control-label
+            &:before
+                border: 1px solid #000
+                border-radius: 0 !important
+
+    .custom-checkbox
+        width: 50%
+        margin-right: 0
+    
+    .border
+        padding: 20px
+        fieldset.form-group
+            margin-bottom: 0
+        
+    button.btn-primary
+        background-color: #184A63
+        padding: 8px 20%
+        font-weight: bold
+        text-transform: uppercase
+        border-radius: 0
+    
+    .custom-file-label
+        border: 1px solid #000
+        border-radius: 0
+        &:after
+            content: "Escolher arquivo"
+            font-weight: bold
+            text-transform: uppercase
+            color: #ffffff
+            background-color: #184A63
+            border-radius: 0

@@ -61,7 +61,7 @@
                     </b-col>
                 </b-row>
                 
-                <b-button class="float-right" type="submit" variant="primary">Enviar</b-button>                
+                <b-button class="float-right" type="submit" variant="primary">Enviar</b-button>
             </b-form>
         </b-modal>
     </div>
