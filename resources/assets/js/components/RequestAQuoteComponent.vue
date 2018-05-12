@@ -6,15 +6,17 @@
         <b-modal id="modal1" hide-footer >
             <h4>Solicitação de orçamento</h4>
             <p>Agradecemos pelo seu interesse em nossos serviços. Preencha os campos abaixo para que possamos conhecer suas necessidades.</p>
-            <b-form @submit="onSubmit" v-if="show">
+            <b-form @submit="onSubmit">
                 <b-form-group>
-                    <b-form-select id="segmento" :options="solutions" required v-model="form.segmento">
-                        <option :value="null" disabled>Segmento de atuação*</option>
+                    <b-form-select id="segment" :options="solutions" required v-model="form.segment">
+                        <template slot="first">
+                            <option :value="null" disabled>Segmento de atuação *</option>
+                        </template>
                     </b-form-select>
                 </b-form-group>
 
                 <b-form-group label="Número de colaboradores">
-                    <b-form-radio-group v-model="form.colaboradores">
+                    <b-form-radio-group id="contributors" v-model="form.contributors" required>
                         <b-form-radio value="1 a 10">1 a 10</b-form-radio>
                         <b-form-radio value="10 a 20">10 a 20</b-form-radio>
                         <b-form-radio value="20 a 30">20 a 30</b-form-radio>
@@ -23,44 +25,46 @@
                 </b-form-group>
 
                 <b-form-group label="Modalidade de serviço (selecione uma ou mais)">
-                    <b-form-checkbox-group v-model="form.modalidade" :options="services">
+                    <b-form-checkbox-group id="modality" v-model="form.modality" :options="services">
                         
                     </b-form-checkbox-group>
                 </b-form-group>
 
                 <b-form-group>
-                    <b-form-input id="nome" type="text" v-model="form.nome" required placeholder="Pessoa para contato*">
+                    <b-form-input id="name" type="text" v-model="form.name" required placeholder="Pessoa para contato *">
                     </b-form-input>
                 </b-form-group>
                 <b-form-group>
-                    <b-form-input id="email" type="email" v-model="form.email" required placeholder="Email*">
+                    <b-form-input id="email" type="email" v-model="form.email" required placeholder="Email *">
                     </b-form-input>
                 </b-form-group>
                                 
                 <b-row>
                     <b-col md="6">
                         <b-form-group>
-                            <b-form-input id="telefone" type="tel" v-model="form.telefone" required placeholder="Telefone para contato*">
+                            <b-form-input id="phone" type="tel" v-model="form.phone" required placeholder="Telefone para contato *">
                             </b-form-input>
                         </b-form-group>
                     </b-col>
                     <b-col md="2">
                         <b-form-group>
-                            <b-form-select @change="getCities(form.estado)" id="estados" required v-model="form.estado" :options="estados">
-                                <option :value="null" disabled>UF*</option>
+                            <b-form-select @input="getCities(form.state)" id="states" required v-model="form.state" :options="states">
+                                <template slot="first">
+                                    <option :value="null" disabled>UF *</option>
+                                </template>
                             </b-form-select>
                         </b-form-group>
-                        <div>Selected: <strong>{{ form.estado }}</strong></div>
                     </b-col>
                     <b-col md="4">
                         <b-form-group>
-                            <b-form-select id="cidades" :disabled="form.estado == null" required v-model="form.cidade" :options="cidades">
-                                <option :value="null" disabled>Cidade*</option>
+                            <b-form-select id="cities" :disabled="form.state == null" required v-model="form.city" :options="cities">
+                                <template slot="first">
+                                    <option :value="null" disabled>Cidade *</option>
+                                </template>
                             </b-form-select>
                         </b-form-group>
                     </b-col>
-                </b-row>
-                
+                </b-row>                
                 <b-button class="float-right" type="submit" variant="primary">Enviar</b-button>
             </b-form>
         </b-modal>
@@ -78,19 +82,18 @@
             return {
                 solutions: [],
                 services: [],
-                estados: [],
-                cidades: [],
+                states: [],
+                cities: [],
                 form: {
+                    segment: null,
+                    contributors: '',
+                    modality: [],
+                    name: '',
                     email: '',
-                    nome: '',
-                    telefone: '',
-                    segmento: null,
-                    estado: null,
-                    cidade: null,
-                    colaboradores: '',
-                    modalidade: [],
-                },                
-                show: true
+                    phone: '',
+                    state: null,
+                    city: null,
+                },
             }
         },
         created () {
@@ -98,15 +101,10 @@
             this.getServices(),
             this.getStates()
         },
-        // watch: {
-        //     estado: () {
-
-        //     },
-        // },
         methods: {
             onSubmit (evt) {
                 evt.preventDefault();
-                alert(JSON.stringify(this.form));
+                console.log(this.form);
             },            
             getSolutions(){
                 const action = '/api/solutions-titles'
@@ -127,20 +125,15 @@
             getStates(){
                 const action = '/api/states'
                 axios.get(action).then(response => {
-                    this.estados = response.data.data.map(estado => ({ value: estado.id, text: estado.abbr }))
+                    this.states = response.data.data.map(state => ({ value: state.id, text: state.abbr }))
                 }).catch(error => {
                     console.error(error)
                 })
             },
             getCities(id){
-                const action = '/api/cities/state/' + id
-                console.log(action);
-
-                console.log(this.form.estado);
-                
+                const action = '/api/cities/state/' + id                
                 axios.get(action).then(response => {
-                    this.cidades = response.data.data.map(cidade => ({ value: cidade.id, text: cidade.name }))
-                    console.log(this.cidades);                    
+                    this.cities = [...response.data.data.map(city => ({ value: city.id, text: city.name }))]
                 }).catch(error => {
                     console.error(error)
                 })
