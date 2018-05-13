@@ -7,7 +7,7 @@
     <div id="app" class="{{ Route::currentRouteName() }}">
         @include('partials.nav')
         
-        <request-a-quote></request-a-quote>
+        <form-request-a-quote></form-request-a-quote>
 
         @yield('content')
         

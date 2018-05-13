@@ -13,6 +13,7 @@ class QuemSomosController extends Controller
         $data = [
             'page' => 'quemsomos',
             'title' => 'Quem somos',
+            'h1' => 'Conheça a Centrallimp',
             'keywords' => '',
             'description' => '',            
         ];

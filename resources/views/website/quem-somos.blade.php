@@ -10,7 +10,7 @@
             <p class="text-uppercase">home / {{$data['title']}}</p>            
         </div>
         <div class="content">
-            <h1 class="text-center text-uppercase" >Conheça a Centrallimp</h1>
+            <h1 class="text-center text-uppercase" >{{$data['h1']}}</h1>
             <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
         </div>
         <div class="treepoints">

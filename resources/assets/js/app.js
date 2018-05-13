@@ -13,9 +13,12 @@ Vue.component('home-two-posts', require('./components/home/TwoPostsComponent.vue
 Vue.component('home-services', require('./components/home/ServicesComponent.vue'));
 Vue.component('home-testimonies', require('./components/home/TestimoniesComponent.vue'));
 Vue.component('text-content', require('./components/TextComponent.vue'));
-Vue.component('request-a-quote', require('./components/RequestAQuoteComponent.vue'));
-Vue.component('form-candidates', require('./components/FormCandidatesComponent.vue'));
+
 Vue.component('banner', require('./components/BannerComponent.vue'));
+
+Vue.component('form-request-a-quote', require('./components/forms/FormRequestAQuoteComponent.vue'));
+Vue.component('form-candidates', require('./components/forms/FormCandidatesComponent.vue'));
+Vue.component('form-ombuds', require('./components/forms/FormOmbudsComponent.vue'));
 
 const app = new Vue({
     el: '#app'

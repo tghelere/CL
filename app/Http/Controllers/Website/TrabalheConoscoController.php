@@ -12,6 +12,7 @@ class TrabalheConoscoController extends Controller
         $data = [
             'page' => 'trabalheconosco',
             'title' => 'Trabalhe conosco',
+            'h1' => 'Recrutamento e Seleção',
             'keywords' => '',
             'description' => '',            
         ];

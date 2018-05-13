@@ -25,25 +25,21 @@
                 </b-form-group>
 
                 <b-form-group label="Modalidade de serviço (selecione uma ou mais)">
-                    <b-form-checkbox-group id="modality" v-model="form.modality" :options="services">
-                        
-                    </b-form-checkbox-group>
+                    <b-form-checkbox-group id="modality" v-model="form.modality" :options="services"></b-form-checkbox-group>
                 </b-form-group>
 
                 <b-form-group>
-                    <b-form-input id="name" type="text" v-model="form.name" required placeholder="Pessoa para contato *">
-                    </b-form-input>
+                    <b-form-input id="name" type="text" v-model="form.name" required placeholder="Pessoa para contato *"></b-form-input>
                 </b-form-group>
+                
                 <b-form-group>
-                    <b-form-input id="email" type="email" v-model="form.email" required placeholder="Email *">
-                    </b-form-input>
+                    <b-form-input id="email" type="email" v-model="form.email" required placeholder="Email *"></b-form-input>
                 </b-form-group>
                                 
                 <b-row>
                     <b-col md="6">
                         <b-form-group>
-                            <b-form-input id="phone" type="tel" v-model="form.phone" required placeholder="Telefone para contato *">
-                            </b-form-input>
+                            <b-form-input id="phone" type="tel" v-model="form.phone" required placeholder="Telefone para contato *"></b-form-input>
                         </b-form-group>
                     </b-col>
                     <b-col md="2">
@@ -65,7 +61,11 @@
                         </b-form-group>
                     </b-col>
                 </b-row>                
-                <b-button class="float-right" type="submit" variant="primary">Enviar</b-button>
+                <b-row>
+                    <b-col md="12">
+                        <b-button class="float-right mt-5" type="submit" variant="primary">Enviar</b-button>
+                    </b-col>
+                </b-row>
             </b-form>
         </b-modal>
     </div>
