@@ -16,6 +16,7 @@ class ContatoController extends Controller
         $data = [
             'page' => 'contato',
             'title' => 'Contato',
+            'h1' => 'Fale Conosco',
             'keywords' => '',
             'description' => '',            
         ];

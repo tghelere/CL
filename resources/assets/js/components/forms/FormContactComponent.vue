@@ -2,13 +2,6 @@
     <div>
         <b-form @submit="onSubmit" class="m50">
             <b-form-group>
-                <b-form-select id="complaint" :options="complaints" required v-model="form.complaint">
-                    <template slot="first">
-                        <option :value="null" disabled>O que deseja registrar? *</option>
-                    </template>
-                </b-form-select>
-            </b-form-group>
-            <b-form-group>
                 <b-form-input id="name" type="text" v-model="form.name" required placeholder="Nome *"></b-form-input>
             </b-form-group>
             <b-form-group>
@@ -57,11 +50,9 @@
     export default {
         data () {
             return {
-                complaints: ['Denúncia', 'Elogio', 'Reclamação', 'Sugestão'],
                 states: [],
                 cities: [],
                 form: {
-                    complaint: null,
                     name: '',
                     email: '',
                     phone: '',

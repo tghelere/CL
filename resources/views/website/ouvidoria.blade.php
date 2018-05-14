@@ -13,7 +13,7 @@
         <div class="content">
             <h1 class="text-center text-uppercase" >{{$data['title']}}</h1>
             <div class="row">
-                <div class="col-md-6 ouvidoria-text">
+                <div class="col-md-6 mt-50">
                     <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
                 </div>
                 <div class="col-md-6">

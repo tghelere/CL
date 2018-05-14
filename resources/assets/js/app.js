@@ -19,6 +19,7 @@ Vue.component('banner', require('./components/BannerComponent.vue'));
 Vue.component('form-request-a-quote', require('./components/forms/FormRequestAQuoteComponent.vue'));
 Vue.component('form-candidates', require('./components/forms/FormCandidatesComponent.vue'));
 Vue.component('form-ombuds', require('./components/forms/FormOmbudsComponent.vue'));
+Vue.component('form-contact', require('./components/forms/FormContactComponent.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -4,7 +4,11 @@
 
         <!-- Modal Component -->
         <b-modal id="modal1" hide-footer >
-            <h4>Solicitação de orçamento</h4>
+            <b-row>
+                <b-col md="6"><b-img class="mx-auto d-block" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
+                <b-col md="6"><h4 class="text-uppercase">Solicitação de orçamento</h4></b-col>
+            </b-row>
+            
             <p>Agradecemos pelo seu interesse em nossos serviços. Preencha os campos abaixo para que possamos conhecer suas necessidades.</p>
             <b-form @submit="onSubmit">
                 <b-form-group>
@@ -63,7 +67,7 @@
                 </b-row>                
                 <b-row>
                     <b-col md="12">
-                        <b-button class="float-right mt-5" type="submit" variant="primary">Enviar</b-button>
+                        <b-button class="float-right" type="submit" variant="primary">Enviar</b-button>
                     </b-col>
                 </b-row>
             </b-form>
@@ -158,4 +162,8 @@
         outline: 0
     span
         display: none
+#modal1
+    h4
+        line-height: 65px
+        font-size: 20px
 </style>
