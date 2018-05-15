@@ -16,7 +16,8 @@ nav.navbar
         li
             &.active
                 border-bottom: 2px solid #0089C0
-            a.whats
+            a
+                &.whats
                     display: block
                     background: url(/img/icons/ico_mn-whatsapp-b2.png) no-repeat top
                     background-size: 18px //contain
@@ -24,3 +25,35 @@ nav.navbar
                     background-position-y: 6px
                     padding-left: 20px !important
                     margin-left: 5px
+    ul
+        .dropdown-item
+            &.active, &:active
+                background-color: #007bff !important
+            &:hover
+                background-color: #0089C0 !important
+        &.solutions
+            &.dropdown-menu
+                width: 350px
+                li 
+                    height: 40px
+                    a
+                        &.dropdown-item
+                            padding: 20px 0 5px 40px
+                        &.solucoes
+                            background-size: 30px !important
+                            background-position-x: 2px !important
+                        &.solucoes-industrias
+                            background: url(/img/icons/solucoes-industrias.png) no-repeat center
+                        &.solucoes-comercio
+                            background: url(/img/icons/solucoes-comercio.png) no-repeat center
+                        &.solucoes-orgaos-publicos
+                            background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat center
+                        &.solucoes-condominios
+                            background: url(/img/icons/solucoes-condominios.png) no-repeat center
+                        &.solucoes-clinicas-e-hospitais
+                            background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat center
+                        &.solucoes-escolas-e-universidades
+                            background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat center
+                        &.solucoes-escritorios-e-ambientes-corporativos
+                            background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat center
+                            

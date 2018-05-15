@@ -10,8 +10,7 @@
             <swiper :options="swiperOption" style="height: auto">
                 <swiper-slide v-for="(testimony, index) in testimonies" :key='index'>                    
                     <div class="testimonies">
-                        {{ testimony.testimony }}
-                        
+                        <div v-html="testimony.testimony"></div>
                         <hr>
                         <p class="text-center font-weight-bold">{{ testimony.name }}</p>                        
                         <p class="text-center font-italic">{{ testimony.institute }}</p>                        
@@ -76,8 +75,4 @@
 .testimonies
     hr, p
         margin-bottom: 0
-    iframe
-        width: 100%
-        height: 270px
-        padding: 8px
 </style>
