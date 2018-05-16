@@ -3,10 +3,11 @@
         <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
 
         <!-- Modal Component -->
-        <b-modal v-model="modalShow" hide-footer >
+        <b-modal ref="reqAQuote" v-model="modalShow" hide-footer hide-header id="modal">
+            <b-link class="seta" @click="hideModal"></b-link>
             <b-row>
-                <b-col md="6"><b-img class="mx-auto d-block" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
-                <b-col md="6"><h4 class="text-uppercase">Solicitação de orçamento</h4></b-col>
+                <b-col md="5"><b-img class="" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
+                <b-col md="7"><h4 class="text-uppercase">Solicitação de orçamento</h4></b-col>
             </b-row>
             
             <p>Agradecemos pelo seu interesse em nossos serviços. Preencha os campos abaixo para que possamos conhecer suas necessidades.</p>
@@ -41,12 +42,12 @@
                 </b-form-group>
                                 
                 <b-row>
-                    <b-col md="6">
+                    <b-col md="4">
                         <b-form-group>
                             <b-form-input id="phone" type="tel" v-model="form.phone" required placeholder="Telefone para contato *"></b-form-input>
                         </b-form-group>
                     </b-col>
-                    <b-col md="2">
+                    <b-col md="3">
                         <b-form-group>
                             <b-form-select @input="getCities(form.state)" id="states" required v-model="form.state" :options="states">
                                 <template slot="first">
@@ -55,7 +56,7 @@
                             </b-form-select>
                         </b-form-group>
                     </b-col>
-                    <b-col md="4">
+                    <b-col md="5">
                         <b-form-group>
                             <b-form-select id="cities" :disabled="form.state == null" required v-model="form.city" :options="cities">
                                 <template slot="first">
@@ -64,7 +65,7 @@
                             </b-form-select>
                         </b-form-group>
                     </b-col>
-                </b-row>                
+                </b-row>
                 <b-row>
                     <b-col md="12">
                         <b-button class="float-right" type="submit" variant="primary">Enviar</b-button>
@@ -110,7 +111,10 @@
             onSubmit (evt) {
                 evt.preventDefault();
                 console.log(this.form);
-            },            
+            },
+            hideModal () {
+                this.$refs.reqAQuote.hide()
+            },
             getSolutions(){
                 const action = '/api/solutions-titles'
                 axios.get(action).then(response => {
@@ -164,8 +168,18 @@
         outline: 0
     span
         display: none
-#modal1
+#modal
     h4
         line-height: 65px
-        font-size: 20px
+        font-size: 16px
+    .seta
+        height: 24px
+        width: 8px
+        background: url(/img/icons/seta.png) no-repeat top center
+        display: block
+        position: absolute
+        top: 45%
+        left: 10px
+        &:hover
+            background-position-y: -24px
 </style>
