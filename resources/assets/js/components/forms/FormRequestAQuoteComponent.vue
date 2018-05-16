@@ -1,9 +1,9 @@
 <template>
     <div>
-        <a v-b-modal.modal1 class="link-quote" href="#" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
+        <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
 
         <!-- Modal Component -->
-        <b-modal id="modal1" hide-footer >
+        <b-modal v-model="modalShow" hide-footer >
             <b-row>
                 <b-col md="6"><b-img class="mx-auto d-block" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
                 <b-col md="6"><h4 class="text-uppercase">Solicitação de orçamento</h4></b-col>
@@ -84,6 +84,7 @@
     export default {
         data () {
             return {
+                modalShow: false,
                 solutions: [],
                 services: [],
                 states: [],
@@ -156,6 +157,7 @@
     bottom: 100px
     right: 10px
     z-index: 10
+    cursor: pointer
     &:hover
         background-position-y: -110px
     &:focus
