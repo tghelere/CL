@@ -42,12 +42,12 @@
                 </b-form-group>
                                 
                 <b-row>
-                    <b-col md="4">
+                    <b-col md="5" class="no-pad-right">
                         <b-form-group>
                             <b-form-input id="phone" type="tel" v-model="form.phone" required placeholder="Telefone para contato *"></b-form-input>
                         </b-form-group>
                     </b-col>
-                    <b-col md="3">
+                    <b-col md="2" class="no-pad-left no-pad-right">
                         <b-form-group>
                             <b-form-select @input="getCities(form.state)" id="states" required v-model="form.state" :options="states">
                                 <template slot="first">
@@ -56,7 +56,7 @@
                             </b-form-select>
                         </b-form-group>
                     </b-col>
-                    <b-col md="5">
+                    <b-col md="5" class="no-pad-left">
                         <b-form-group>
                             <b-form-select id="cities" :disabled="form.state == null" required v-model="form.city" :options="cities">
                                 <template slot="first">
@@ -172,6 +172,8 @@
     h4
         line-height: 65px
         font-size: 16px
+    p, input, select, label, checkbox, radio
+        font-size: 0.8rem
     .seta
         height: 24px
         width: 8px
@@ -182,4 +184,8 @@
         left: 10px
         &:hover
             background-position-y: -24px
+    .no-pad-left
+        padding-left: 5px
+    .no-pad-right
+        padding-right: 5px
 </style>
