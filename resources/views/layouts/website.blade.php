@@ -4,7 +4,7 @@
     @include('partials.head')         
 </head>
 <body>
-    <div id="app" class="{{ Route::currentRouteName() }}">
+    <div id="app" class="{{ (preg_match("/^servicos-[a-z\-]+$/", Route::currentRouteName()) ? 'servicos' : '') }} {{ (preg_match("/^solucoes-[a-z\-]+$/", Route::currentRouteName()) ? 'solucoes' : '') }} {{ Route::currentRouteName() }}">
         @include('partials.nav')
         
         <form-request-a-quote></form-request-a-quote>

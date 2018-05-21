@@ -1,5 +1,5 @@
 <template>
-    <div v-show="solutions.length > 0">
+    <div class="componente" v-show="solutions.length > 0">
         <ul class="list-unstyled">
             <li v-for="(solution, index) in solutions" :key='index' class="border" :class="solution.slug">
                 <a href="" :title="solution.title">
@@ -11,10 +11,11 @@
         </ul>
         <div class="post">
             <h3>Industrias</h3>
-            <h5>Soluções Centrallimp para Industrias</h5>
+            <!-- <h5>Soluções Centrallimp para Industrias</h5> -->
+            <text-content :page="'home-solutions'"></text-content>
             <hr>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quos consectetur obcaecati odio molestias repellat. Aut odit corporis voluptas, quia nisi totam quam accusamus illum, perspiciatis inventore consequatur qui nesciunt.</p>
-            <a title="Leia mais" class="text-uppercase" href="">Leia mais</a>
+            <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quos consectetur obcaecati odio molestias repellat. Aut odit corporis voluptas, quia nisi totam quam accusamus illum, perspiciatis inventore consequatur qui nesciunt.</p>
+            <a title="Leia mais" class="text-uppercase" href="">Leia mais</a> -->
         </div>
     </div>
 </template>
@@ -42,7 +43,6 @@
     }
 </script>
 <style lang="sass" scoped>
-
 ul
     display: flex
     flex-direction: column
@@ -50,6 +50,7 @@ ul
     flex-wrap: wrap
     max-height: 560px
     width: 420px
+    margin-bottom: 0
     // width: 560px
     float: left
     li
@@ -123,14 +124,14 @@ ul
                 font-size: 13px
 
 .post
-    width: 400px
-    float: left
-    margin-top: 230px
-    h3
-        font-weight: bold
-    a
-        color: #000
-        font-weight: bold
+        width: 400px
+        float: left
+        margin-top: 230px
+        h3
+            font-weight: bold
+        a
+            color: #000
+            font-weight: bold
 
 
 

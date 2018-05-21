@@ -1,6 +1,7 @@
 <template>
-    <div v-show="services.length > 0">        
-        <ul class="row">
+    <div class="componente" v-show="services.length > 0">
+        <h3 v-if="page == 'home'" class="text-uppercase text-center">Serviços</h3>
+        <ul class="row justify-content-center">
             <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center col-md-2">
                 <a :href="service.url" :title="service.title">
                     <img :src="'/img/icons/services/' + service.icon" :alt="service.title" height="80" width="80">
@@ -13,6 +14,12 @@
 
 <script>
     export default {
+        props: {
+            page: {
+                type: String,
+                required: true
+            },
+        },
         data () {
             return {
                 services: [],
@@ -35,25 +42,22 @@
 </script>
 
 <style lang="sass" scoped>
-ul
-    // width: 100%
-    // display: flex
-    // justify-content: space-between
-    // margin: 40px 0
-    padding: 0 !important
-    li
-        list-style: none
-        width: 150px
-        display: block
-        a
+.componente
+    margin-bottom: 100px
+    h3
+        margin: 80px auto 50px
+    ul
+        padding: 0 !important
+        margin-bottom: 0
+        li
+            list-style: none
+            width: 150px
             display: block
-            color: #000
-            img
-                margin: 0 2px 10px
-            span
-                // width: 150px
+            a
                 display: block
-        
-        
-
+                color: #000
+                img
+                    margin: 0 2px 10px
+                span
+                    display: block
 </style>

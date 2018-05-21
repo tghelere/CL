@@ -1,23 +1,21 @@
 <template>
-    <div class="row">
+    <div class="row componente">
         <div class="col-md-6 text">
-            <h3 class="text-uppercase text-center">Opiniões de Clientes</h3>
-            <p>
+            <div>
+                <h3 class="text-uppercase text-center">Opiniões de Clientes</h3>
                 <text-content :page="'home-testimonies'"></text-content>
-            </p>
+            </div>
         </div>
         <div class="col-md-6">
-            <swiper :options="swiperOption" style="height: auto">
+            <swiper class="testimonies-custom" :options="swiperOption" style="height: auto">
                 <swiper-slide v-for="(testimony, index) in testimonies" :key='index'>                    
                     <div class="testimonies">
                         <div v-html="testimony.testimony"></div>
                         <hr>
-                        <p class="text-center font-weight-bold">{{ testimony.name }}</p>                        
-                        <p class="text-center font-italic">{{ testimony.institute }}</p>                        
+                        <p class="text-center nome">{{ testimony.name }}</p>                        
+                        <p class="text-center font-italic instituto">{{ testimony.institute }}</p>
                     </div>
                 </swiper-slide>
-                <!-- <div class="swiper-pagination" slot="pagination"></div> -->
-                <div class="swiper-pagination swiper-pagination-black" slot="pagination"></div>
                 <div class="swiper-button-prev swiper-button-black" slot="button-prev"></div>
                 <div class="swiper-button-next swiper-button-black" slot="button-next"></div>
             </swiper>
@@ -33,16 +31,7 @@
                 swiperOption: {
                     loop: true,
                     autoHeight: true,
-                    // effect: 'fade',
                     centeredSlides: true,
-                    // autoplay: {
-                    //     delay: 6000,
-                    //     disableOnInteraction: true
-                    // },
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true,
-                    },
                     navigation: {
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev'
@@ -67,12 +56,20 @@
 </script>
 
 <style lang="sass" scoped>
-.text
-    padding: 10px 10px
-.testimonies
-    padding: 10px 50px 50px
+.componente
+    margin-bottom: 80px
+    .text
+        padding: 10px 10px
+    .testimonies
+        padding: 10px 50px
 
-.testimonies
-    hr, p
-        margin-bottom: 0
+    .testimonies
+        hr, p
+            margin-bottom: 0
+        p.nome
+            font-size: 12px
+            color: #707070
+        p.instituto
+            font-size: 10px
+            color: #707070
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div v-if="typeof(text) != 'undefined'" class="text">
-        <p :class="classe">{{ text.content }}</p>
+        <div :class="classe" v-html="text.content"></div>
     </div>
 </template>
 
@@ -45,5 +45,6 @@
     margin: 30px 0
 // .home-testimonies
 .footer-text
-    margin-top: 1rem
+    margin-top: 2.8rem
+    font-size: 10px
 </style>

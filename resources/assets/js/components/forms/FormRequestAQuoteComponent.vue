@@ -136,14 +136,7 @@
                     console.error(error.message)
                 })
 
-                //     this.form.segment = null
-                //     this.form.contributors = ''
-                //     this.form.modality = []
-                //     this.form.name = ''
-                //     this.form.email = ''
-                //     this.form.phone = ''
-                //     this.form.city = null
-                //     this.form.state = null
+            //    resetForm()
 
                 // this.isLoading = false
 
@@ -185,7 +178,19 @@
                     console.error(error)
                     this.isLoading = false
                 })
-            },            
+            },
+            resetForm () {
+                this.form = {
+                    segment: null,
+                    contributors: '',
+                    modality: [],
+                    name: '',
+                    email: '',
+                    phone: '',
+                    city: null,
+                    state:  null
+                }
+            },
         },
         components: {
             Loading

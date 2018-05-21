@@ -22,7 +22,6 @@
           <h4 class="text-uppercase">Serviços</h4>
           <ul class="list">
             <li><a title="Limpeza" href="{{ route('servicos-limpeza') }}">Limpeza</a></li>
-            <li><a title="Serviços Gerais" href="{{ route('servicos-servicos-gerais') }}">Serviços Gerais</a></li>
             <li><a title="Portaria" href="{{ route('servicos-portaria') }}">Portaria</a></li>
             <li><a title="Jardinagem" href="{{ route('servicos-jardinagem') }}">Jardinagem</a></li>
             <li><a title="Recepção" href="{{ route('servicos-recepcao') }}">Recepção</a></li>
@@ -42,7 +41,7 @@
           </ul>
         </div>
         <div class="col-md-4">
-          <a class="align-middle" href="">Ebook</a>
+          {{-- <a class="align-middle" href="">Ebook</a> --}}
         </div>
       </div>
       <div class="row">

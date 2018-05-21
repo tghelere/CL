@@ -16,7 +16,6 @@
                 <li class="nav-item dropdown {{ (preg_match("/^servicos-[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li><a title="Limpeza" class="dropdown-item {{ (Route::is('servicos-limpeza') ? 'active' : '') }}" href="{{ route('servicos-limpeza') }}">Limpeza</a></li>
-                        <li><a title="Serviços Gerais" class="dropdown-item {{ (Route::is('servicos-servicos-gerais') ? 'active' : '') }}" href="{{ route('servicos-servicos-gerais') }}">Serviços Gerais</a></li>
                         <li><a title="Portaria" class="dropdown-item {{ (Route::is('servicos-portaria') ? 'active' : '') }}" href="{{ route('servicos-portaria') }}">Portaria</a></li>
                         <li><a title="Jardinagem" class="dropdown-item {{ (Route::is('servicos-jardinagem') ? 'active' : '') }}" href="{{ route('servicos-jardinagem') }}">Jardinagem</a></li>
                         <li><a title="Recepção" class="dropdown-item {{ (Route::is('servicos-recepcao') ? 'active' : '') }}" href="{{ route('servicos-recepcao') }}">Recepção</a></li>
