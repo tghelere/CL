@@ -100,17 +100,15 @@ class ContentsTableSeeder extends Seeder
                 <li>Vidros e fachadas;</li>
                 <li>Limpeza das &aacute;reas administrativas;</li>
                 <li>Profissionais treinados para atuar em portaria e recep&ccedil;&atilde;o.</li>
-            </ul>
-            <p><strong>VAREJO</strong></p>
-            <p>Profissionais capacitados nos cuidados extras exigidos na limpeza de empresas de varejo&nbsp;</p>
+            </ul>',
+            // solucoes-comercio > varejo
+            '<p>Profissionais capacitados nos cuidados extras exigidos na limpeza de empresas de varejo&nbsp;</p>
             <ul>
                 <li>Limpeza de g&ocirc;ndolas e prateleiras;</li>
                 <li>&Aacute;reas administrativas;</li>
                 <li>Vidros e fachadas;</li>
                 <li>&Aacute;reas externas e jardins.</li>
             </ul>',
-            // solucoes-comercio
-            'solucoes-comercio',
             // solucoes-orgaos-publicos
             '<p>Transpar&ecirc;ncia e capacidade t&eacute;cnica para atuar em diversos &oacute;rg&atilde;os municipais, estaduais e federais.</p>
             <ul>

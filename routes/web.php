@@ -18,8 +18,7 @@ Route::namespace('Website')->group(function () {
 
 	Route::group(['prefix' => 'servicos'], function(){
 		Route::redirect('/', 'servicos/limpeza');
-		Route::get('limpeza', 'ServicosController@limpeza')->name('servicos-limpeza');
-		Route::get('servicos-gerais', 'ServicosController@servicosGerais')->name('servicos-servicos-gerais');
+		Route::get('limpeza', 'ServicosController@limpeza')->name('servicos-limpeza');		
 		Route::get('portaria', 'ServicosController@portaria')->name('servicos-portaria');
 		Route::get('jardinagem', 'ServicosController@jardinagem')->name('servicos-jardinagem');
 		Route::get('recepcao', 'ServicosController@recepcao')->name('servicos-recepcao');
@@ -28,7 +27,7 @@ Route::namespace('Website')->group(function () {
 	Route::group(['prefix' => 'solucoes'], function(){
 		Route::redirect('/', 'solucoes/industrias');        
 		Route::get('industrias', 'SolucoesController@industrias')->name('solucoes-industrias');
-		Route::get('comercio', 'SolucoesController@comercio')->name('solucoes-comercio');
+		Route::get('varejo', 'SolucoesController@varejo')->name('solucoes-varejo');
 		Route::get('orgaos-publicos', 'SolucoesController@orgaosPublicos')->name('solucoes-orgaos-publicos');
 		Route::get('condominios', 'SolucoesController@condominios')->name('solucoes-condominios');
 		Route::get('clinicas-e-hospitais', 'SolucoesController@clinicasHospitais')->name('solucoes-clinicas-e-hospitais');
@@ -54,7 +53,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::group(['prefix' => 'servicos'], function(){
 		Route::redirect('/', 'servicos/limpeza');
 		Route::get('limpeza', 'ServicosController@limpeza')->name('servicos-limpeza-Admin');
-		Route::get('servicos-gerais', 'ServicosController@servicosGerais')->name('servicos-servicos-gerais-Admin');
 		Route::get('portaria', 'ServicosController@portaria')->name('servicos-portaria-Admin');
 		Route::get('jardinagem', 'ServicosController@jardinagem')->name('servicos-jardinagem-Admin');
 		Route::get('recepcao', 'ServicosController@recepcao')->name('servicos-recepcao-Admin');
@@ -63,7 +61,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::group(['prefix' => 'solucoes'], function(){
 		Route::redirect('/', 'solucoes/industrias');
 		Route::get('industrias', 'SolucoesController@industrias')->name('solucoes-industrias-Admin');
-		Route::get('comercio', 'SolucoesController@comercio')->name('solucoes-comercio-Admin');
+		Route::get('varejo', 'SolucoesController@varejo')->name('solucoes-varejo-Admin');
 		Route::get('orgaos-publicos', 'SolucoesController@orgaosPublicos')->name('solucoes-orgaos-publicos-Admin');
 		Route::get('condominios', 'SolucoesController@condominios')->name('solucoes-condominios-Admin');
 		Route::get('clinicas-e-hospitais', 'SolucoesController@clinicasHospitais')->name('solucoes-clinicas-e-hospitais-Admin');

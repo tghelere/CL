@@ -17,18 +17,7 @@ class ServicosController extends Controller
         ];
         
         return view('website.servicos', compact('data'));
-    }
-    public function servicosGerais(){
-    	$data = [
-            'page' => 'servicos',
-            'title-category' => 'Serviços',
-            'title' => 'Serviços Gerais',
-            'keywords' => '',
-            'description' => '',            
-        ];
-        
-        return view('website.servicos', compact('data'));
-    }
+    }   
     public function portaria(){
     	$data = [
             'page' => 'servicos',

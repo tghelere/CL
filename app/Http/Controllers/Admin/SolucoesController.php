@@ -11,8 +11,8 @@ class SolucoesController extends Controller
     	$title = 'Soluçoes > industrias';
     	return view('admin.solucoes', compact('title'));
     }
-    public function comercio(){
-    	$title = 'Soluçoes > comercio';
+    public function varejo(){
+    	$title = 'Soluçoes > varejo';
     	return view('admin.solucoes', compact('title'));
     }
     public function orgaosPublicos(){

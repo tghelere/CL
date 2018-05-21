@@ -17,11 +17,11 @@ class SolucoesController extends Controller
         ];
         return view('website.solucoes', compact('data'));
     }
-    public function comercio(){
+    public function varejo(){
     	$data = [
             'page' => 'solucoes',
             'title-category' => 'Soluções',
-            'title' => 'Comércio',
+            'title' => 'Varejo',
             'keywords' => '',
             'description' => '',            
         ];

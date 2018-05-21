@@ -32,7 +32,7 @@
           <h4 class="text-uppercase">Soluções</h4>
           <ul class="list">
             <li><a title="Indústrias" href="{{ route('solucoes-industrias') }}">Indústrias</a></li>
-            <li><a title="Comércio" href="{{ route('solucoes-comercio') }}">Comércio</a></li>
+            <li><a title="Varejo" href="{{ route('solucoes-varejo') }}">Varejo</a></li>
             <li><a title="Orgãos públicos" href="{{ route('solucoes-orgaos-publicos') }}">Orgãos públicos</a></li>
             <li><a title="Condomínios" href="{{ route('solucoes-condominios') }}">Condomínios</a></li>
             <li><a title="Clínicas e Hospitais" href="{{ route('solucoes-clinicas-e-hospitais') }}">Clínicas e Hospitais</a></li>

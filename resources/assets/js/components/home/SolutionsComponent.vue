@@ -68,8 +68,8 @@ ul
                 background-color: rgba(67, 64, 65, 0.6)
                 &:hover
                     background-color: rgba(67, 64, 65, 0.3)
-        &.solucoes-comercio
-            background: url(/img/thumbs/solutions/comercio.jpg) no-repeat top center
+        &.solucoes-varejo
+            background: url(/img/thumbs/solutions/varejo.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(242, 158, 33, 0.6)

@@ -11,10 +11,6 @@ class ServicosController extends Controller
     	$title = 'Servicos > Limpeza';
     	return view('admin.servicos', compact('title'));
     }
-    public function servicosGerais(){
-    	$title = 'Servicos > Serviços Gerais';
-    	return view('admin.servicos', compact('title'));
-    }
     public function portaria(){
     	$title = 'Servicos > Portaria';
     	return view('admin.servicos', compact('title'));

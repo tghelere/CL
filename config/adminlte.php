@@ -187,11 +187,6 @@ return [
                     'icon'  =>  'hand-o-right',
                 ],
                 [
-                    'text' => 'Serviços Gerais',
-                    'url'  => 'admin/servicos/servicos-gerais',
-                    'icon'  =>  'hand-o-right',
-                ],
-                [
                     'text' => 'Portaria',
                     'url'  => 'admin/servicos/portaria',
                     'icon'  =>  'hand-o-right',
@@ -224,8 +219,8 @@ return [
                     'icon'  =>  'hand-o-right',
                 ],
                 [
-                    'text' => 'Comércio',
-                    'url'  => 'admin/solucoes/comercio',
+                    'text' => 'Varejo',
+                    'url'  => 'admin/solucoes/varejo',
                     'icon'  =>  'hand-o-right',
                 ],
                 [
