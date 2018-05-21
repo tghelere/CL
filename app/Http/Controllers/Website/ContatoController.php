@@ -5,12 +5,11 @@ namespace App\Http\Controllers\Website;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\Orcamento;
+
 class ContatoController extends Controller
 {
-   
-    public function post(){}
-
-
     public function index(){
         
         $data = [

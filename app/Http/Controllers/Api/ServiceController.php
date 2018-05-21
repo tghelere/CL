@@ -22,18 +22,6 @@ class ServiceController extends Controller
 
         return ServiceResource::collection($services);
     }
-   
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function titles()
-    {
-        $services = Service::all()->pluck('title')->toArray();
-
-        return $services;
-    }
 
     /**
      * Store a newly created resource in storage.

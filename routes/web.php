@@ -36,11 +36,12 @@ Route::namespace('Website')->group(function () {
 		Route::get('escritorios-e-ambientes-corporativos', 'SolucoesController@escritoriosAmbientesCorporativos')->name('solucoes-escritorios-e-ambientes-corporativos');	
 	});
 	Route::get('trabalhe-conosco', 'TrabalheConoscoController@index')->name('trabalhe-conosco');
-	Route::post('trabalhe-conosco', 'TrabalheConoscoController@post')->name('trabalhe-conosco');
+	Route::post('trabalhe-conosco', 'TrabalheConoscoController@post')->name('trabalhe-conosco-post');
 	Route::get('contato', 'ContatoController@index')->name('contato');
-	Route::post('contato', 'ContatoController@post')->name('contato');
+	Route::post('contato', 'ContatoController@post')->name('contato-post');
 	Route::get('ouvidoria', 'OuvidoriaController@index')->name('ouvidoria');
-	Route::post('ouvidoria', 'OuvidoriaController@post')->name('ouvidoria');
+    Route::post('ouvidoria', 'OuvidoriaController@post')->name('ouvidoria-post');
+    Route::post('orcamento', 'OrcamentoController@post')->name('orcamento-post');
 });
 
 Auth::routes();

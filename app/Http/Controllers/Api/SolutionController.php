@@ -24,18 +24,6 @@ class SolutionController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function titles()
-    {
-        $solutions = Solution::all()->pluck('title')->toArray();
-
-        return $solutions;
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

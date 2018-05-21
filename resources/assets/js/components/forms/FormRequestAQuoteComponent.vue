@@ -4,6 +4,7 @@
 
         <!-- Modal Component -->
         <b-modal ref="reqAQuote" v-model="modalShow" hide-footer hide-header id="modal">
+            <loading :active.sync="isLoading" :can-cancel="false"></loading>
             <b-link class="seta" @click="hideModal"></b-link>
             <b-row>
                 <b-col md="5"><b-img class="" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
@@ -49,7 +50,7 @@
                     </b-col>
                     <b-col md="2" class="no-pad-left no-pad-right">
                         <b-form-group>
-                            <b-form-select @input="getCities(form.state)" id="states" required v-model="form.state" :options="states">
+                            <b-form-select @input="getCities(form.state.id)" id="states" required v-model="form.state" :options="states">
                                 <template slot="first">
                                     <option :value="null" disabled>UF *</option>
                                 </template>
@@ -80,11 +81,16 @@
 
     import BootstrapVue from 'bootstrap-vue'        
     import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+    import Loading from 'vue-loading-overlay';
+    import 'vue-loading-overlay/dist/vue-loading.min.css';
+
     Vue.use(BootstrapVue)
 
     export default {
         data () {
             return {
+                isLoading: false,
                 modalShow: false,
                 solutions: [],
                 services: [],
@@ -109,24 +115,54 @@
         },
         methods: {
             onSubmit (evt) {
-                evt.preventDefault();
-                console.log(this.form);
+                evt.preventDefault()
+                // this.isLoading = true
+
+                const action1 = '/orcamento/' //envia o email
+                const action2 = '/api/budget/' //salva o dado no banco pela api
+
+                const token = document.head.querySelector('meta[name="csrf-token"]');
+                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+
+                axios.post(action1, this.form).then(response => {
+                    console.log(response)
+                }).catch(error => {
+                    console.error(error.message)
+                })
+
+                axios.post(action2, this.form).then(response => {
+                    console.log(response)
+                }).catch(error => {
+                    console.error(error.message)
+                })
+
+                //     this.form.segment = null
+                //     this.form.contributors = ''
+                //     this.form.modality = []
+                //     this.form.name = ''
+                //     this.form.email = ''
+                //     this.form.phone = ''
+                //     this.form.city = null
+                //     this.form.state = null
+
+                // this.isLoading = false
+
             },
             hideModal () {
                 this.$refs.reqAQuote.hide()
             },
             getSolutions(){
-                const action = '/api/solutions-titles'
+                const action = '/api/solutions'
                 axios.get(action).then(response => {
-                    this.solutions = response.data
+                    this.solutions = [...response.data.data.map(solution => ({ value: {id: solution.id, name: solution.title}, text: solution.title }))]
                 }).catch(error => {
                     console.error(error)
                 })
             },
             getServices(){
-                const action = '/api/services-titles'
+                const action = '/api/services'
                 axios.get(action).then(response => {
-                    this.services = response.data
+                    this.services = [...response.data.data.map(service => (service.title))]
                 }).catch(error => {
                     console.error(error)
                 })
@@ -134,19 +170,25 @@
             getStates(){
                 const action = '/api/states'
                 axios.get(action).then(response => {
-                    this.states = response.data.data.map(state => ({ value: state.id, text: state.abbr }))
+                    this.states = response.data.data.map(state => ({ value: {id: state.id, name: state.name}, text: state.abbr}))
                 }).catch(error => {
                     console.error(error)
                 })
             },
             getCities(id){
+                this.isLoading = true
                 const action = '/api/cities/state/' + id                
                 axios.get(action).then(response => {
-                    this.cities = [...response.data.data.map(city => ({ value: city.id, text: city.name }))]
+                    this.cities = [...response.data.data.map(city => ({ value: {id: city.id, name: city.name}, text: city.name }))]
+                    this.isLoading = false
                 }).catch(error => {
                     console.error(error)
+                    this.isLoading = false
                 })
-            },
+            },            
+        },
+        components: {
+            Loading
         },
     }
 </script>
