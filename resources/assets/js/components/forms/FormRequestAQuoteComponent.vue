@@ -205,8 +205,8 @@
     width: 150px
     display: block
     position: fixed
-    bottom: 100px
-    right: 10px
+    bottom: 45vh
+    right: 5px
     z-index: 10
     cursor: pointer
     &:hover

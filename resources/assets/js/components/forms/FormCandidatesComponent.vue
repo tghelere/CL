@@ -1,6 +1,6 @@
 <template>
     <div>
-        <b-form @submit="onSubmit" class="m50"> 
+        <b-form @submit="onSubmit" class="m50 candidate"> 
             <b-row class="justify-content-center">
                 <b-col md="10">
                     <b-row>
@@ -35,7 +35,7 @@
                                     </b-form-group>
                                 </b-col>
                             </b-row>
-                            <div class="border border-dark">
+                            <div class="borda">
                                 <b-form-group label="Interesse (selecione uma ou mais alternativas) *" >
                                     <b-form-checkbox-group id="interest" v-model="form.interest" :options="services"></b-form-checkbox-group>
                                 </b-form-group>
@@ -45,7 +45,7 @@
                             <b-form-group>
                                 <b-form-textarea id="description" required v-model="form.description" placeholder="Breve Apresentação *" :rows="5" :max-rows="6"></b-form-textarea>                            
                             </b-form-group>
-                            <div class="border border-dark">
+                            <div class="borda">
                                 <b-form-group label="Anexar curriculo * (Formatos: *.pdf / *.doc / *.docx)">
                                     <b-form-file id="curriculum" required v-model="form.curriculum" class="mt-3" ></b-form-file>
                                 </b-form-group>
@@ -96,9 +96,9 @@
                 console.log(this.form);
             },            
             getServices(){
-                const action = '/api/services-titles'
+                const action = '/api/services'
                 axios.get(action).then(response => {
-                    this.services = response.data
+                    this.services = [...response.data.data.map(service => (service.title))]
                 }).catch(error => {
                     console.error(error)
                 })
