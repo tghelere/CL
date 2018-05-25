@@ -2,14 +2,13 @@
     <div v-show="banners.length > 0">        
         <swiper :options="swiperOption">
             <swiper-slide v-for="(banner, index) in banners" :key='index'>
-                <img :src="'/img/banners/home/' + banner.image" :alt="banner.title">
-                <div class="text container">
-                    <h4>{{ banner.title }}</h4>
-                    <p>{{ banner.description }}</p>
-                    <a :href="banner.link" class="leia text-uppercase" title="Leia Mais">Leia Mais</a>
+                <img :src="'/img/banners/' + banner.image" :alt="banner.title">
+                <div v-if="banner.title != null" class="text container">
+                    <h4 v-show="banner.title != null">{{ banner.title }}</h4>
+                    <p v-show="banner.description != null">{{ banner.description }}</p>
+                    <a v-show="banner.link != null" :href="banner.link" class="leia text-uppercase" title="Leia Mais">Leia Mais</a>
                 </div>
             </swiper-slide>
-            <!-- <div class="swiper-pagination" slot="pagination"></div> -->
             <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -24,8 +23,6 @@
                 banners : [],
                 swiperOption: {
                     loop: true,
-                    // effect: 'fade',
-                    centeredSlides: true,
                     autoplay: {
                         delay: 6000,
                         disableOnInteraction: true
@@ -61,7 +58,7 @@
 .swiper-slide
     background-position: center
     background-size: cover    
-    max-height: 550px    
+    max-height: 550px
     .text
         z-index: 5
         position: absolute

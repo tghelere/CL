@@ -2,7 +2,7 @@
     <div v-show="banners.length > 0" class="banner">    
         <swiper>
             <swiper-slide v-for="(banner, index) in banners" :key='index'>
-                <img :src="'/img/banners/'+ page +'/' + banner.image" :alt="banner.title" height="225">                
+                <img :src="'/img/banners/' + banner.image" :alt="banner.title" height="400">
             </swiper-slide>
         </swiper>
     </div>
@@ -42,5 +42,5 @@
 
 <style lang="sass" scoped>
 .banner
-    height: 225px
+    height: 400px
 </style>
