@@ -24,16 +24,22 @@
                     </li>
                 <li class="nav-item dropdown {{ (preg_match("/^solucoes-[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Soluções</a>
                     <ul class="dropdown-menu solutions" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a title="Indústrias" class="dropdown-item  {{ (Route::is('solucoes-industrias') ? 'active' : '') }} solucoes-industrias solucoes" href="{{ route('solucoes-industrias') }}">Indústrias</a></li>
-                        <li><a title="Varejo" class="dropdown-item  {{ (Route::is('solucoes-varejo') ? 'active' : '') }} solucoes-varejo solucoes" href="{{ route('solucoes-varejo') }}">Varejo</a></li>
-                        <li><a title="Orgãos públicos" class="dropdown-item  {{ (Route::is('solucoes-orgaos-publicos') ? 'active' : '') }} solucoes-orgaos-publicos solucoes" href="{{ route('solucoes-orgaos-publicos') }}">Orgãos públicos</a></li>
-                        <li><a title="Condomínios" class="dropdown-item  {{ (Route::is('solucoes-condominios') ? 'active' : '') }} solucoes-condominios solucoes" href="{{ route('solucoes-condominios') }}">Condomínios</a></li>
-                        <li><a title="Clínicas e Hospitais" class="dropdown-item  {{ (Route::is('solucoes-clinicas-e-hospitais') ? 'active' : '') }} solucoes-clinicas-e-hospitais solucoes" href="{{ route('solucoes-clinicas-e-hospitais') }}">Clínicas e Hospitais</a></li>
-                        <li><a title="Escolas e Universidades" class="dropdown-item  {{ (Route::is('solucoes-escolas-e-universidades') ? 'active' : '') }} solucoes-escolas-e-universidades solucoes" href="{{ route('solucoes-escolas-e-universidades') }}">Escolas e Universidades</a></li>
-                        <li><a title="Escritórios e Ambientes Corporativos" class="dropdown-item  {{ (Route::is('solucoes-escritorios-e-ambientes-corporativos') ? 'active' : '') }} solucoes-escritorios-e-ambientes-corporativos solucoes" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}">Escritórios e Ambientes Corporativos</a></li>
+                        <div class="linha">
+                            <div class="col-menor">
+                                <li class="pqno"><a title="Indústrias" class="dropdown-item  {{ (Route::is('solucoes-industrias') ? 'active' : '') }} solucoes-industrias solucoes" href="{{ route('solucoes-industrias') }}">Indústrias</a></li>
+                                <li class="pqno"><a title="Varejo" class="dropdown-item  {{ (Route::is('solucoes-varejo') ? 'active' : '') }} solucoes-varejo solucoes" href="{{ route('solucoes-varejo') }}">Varejo</a></li>
+                                <li class="pqno"><a title="Orgãos públicos" class="dropdown-item  {{ (Route::is('solucoes-orgaos-publicos') ? 'active' : '') }} solucoes-orgaos-publicos solucoes" href="{{ route('solucoes-orgaos-publicos') }}">Orgãos públicos</a></li>
+                                <li class="pqno"><a title="Condomínios" class="dropdown-item  {{ (Route::is('solucoes-condominios') ? 'active' : '') }} solucoes-condominios solucoes" href="{{ route('solucoes-condominios') }}">Condomínios</a></li>
+                            </div>
+                            <div class="col-maior">
+                                <li class="gde"><a title="Clínicas e Hospitais" class="dropdown-item  {{ (Route::is('solucoes-clinicas-e-hospitais') ? 'active' : '') }} solucoes-clinicas-e-hospitais solucoes" href="{{ route('solucoes-clinicas-e-hospitais') }}">Clínicas e Hospitais</a></li>
+                                <li class="gde"><a title="Escolas e Universidades" class="dropdown-item  {{ (Route::is('solucoes-escolas-e-universidades') ? 'active' : '') }} solucoes-escolas-e-universidades solucoes" href="{{ route('solucoes-escolas-e-universidades') }}">Escolas e Universidades</a></li>
+                                <li class="gde"><a title="Escritórios e Ambientes Corporativos" class="dropdown-item  {{ (Route::is('solucoes-escritorios-e-ambientes-corporativos') ? 'active' : '') }} solucoes-escritorios-e-ambientes-corporativos solucoes" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}">Escritórios e Ambientes Corporativos</a></li>
+                            </div>
+                        </div>
                     </ul>
                 </li>
-                <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
+                {{-- <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li> --}}
                 <li class="nav-item {{ (Route::is('trabalhe-conosco') ? 'active' : '') }}"><a class="nav-link" href="{{ route('trabalhe-conosco') }}">Trabalhe Conosco</a></li>
                 <li class="nav-item {{ (Route::is('ouvidoria') ? 'active' : '') }}"><a class="nav-link" href="{{ route('ouvidoria') }}">Ouvidoria</a></li>
                 <li class="nav-item {{ (Route::is('contato') ? 'active' : '') }}"><a class="nav-link" href="{{ route('contato') }}">Contato</a></li>

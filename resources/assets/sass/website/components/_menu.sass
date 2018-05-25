@@ -4,8 +4,8 @@ nav.navbar
         display: block
         background: url(/img/logocolor.png) no-repeat top center
         background-size: contain
-        height: 55px
-        width: 194px
+        height: 43px
+        width: 150px
         span
             display: none
     ul
@@ -14,7 +14,10 @@ nav.navbar
         text-transform: uppercase
         font-weight: bold        
         li
+            border-bottom: 2px solid #fff
             &.active
+                border-bottom: 2px solid #0089C0
+            &:hover
                 border-bottom: 2px solid #0089C0
             a
                 &.whats
@@ -26,6 +29,16 @@ nav.navbar
                     padding-left: 20px !important
                     margin-left: 5px
     ul
+        .linha
+            height: 100%
+            width: 100%
+            .col-menor
+                width: 165px
+                float: left
+                margin-right: 40px
+            .col-maior
+                width: 310px
+                float: left
         .dropdown-item
             &.active, &:active
                 background-color: #007bff !important
@@ -33,12 +46,22 @@ nav.navbar
                 background-color: #0089C0 !important
         &.solutions
             &.dropdown-menu
-                width: 350px
+                width: 630px
+                padding: 40px 55px
+                .dropdown-item
+                    // padding: 0
                 li 
+                    // border: 1px solid blue
                     height: 40px
+                    line-height: 40px
+                    margin: 10px 0
+                    float: left
+                    width: 100%
                     a
-                        &.dropdown-item
-                            padding: 20px 0 5px 40px
+                        padding: 0 0 0 40px 
+                        display: block
+                        // &.dropdown-item
+                        //     padding: 20px 0 5px 40px
                         &.solucoes
                             background-size: 30px !important
                             background-position-x: 2px !important
@@ -56,4 +79,8 @@ nav.navbar
                             background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat center
                         &.solucoes-escritorios-e-ambientes-corporativos
                             background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat center
-                            
+                    &.pqno 
+                        margin-right: 40px
+                        width: 160px
+                    &.gde
+                        // width: 260px

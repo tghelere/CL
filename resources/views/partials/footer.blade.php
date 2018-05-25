@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <img src="/img/logomono.png" width="250" alt="{{ config('app.name') }}">
+          <img src="/img/logomono.png" width="200" alt="{{ config('app.name') }}">
         </div>
         <div class="col-md-5 font-italic">
           <text-content :page="'footer'" :classe="'footer-text'"></text-content>
@@ -14,7 +14,7 @@
           <h4 class="text-uppercase">Institucional</h4>
           <ul class="list">
             <li><a title="Quem Somos" href="{{ route('quem-somos') }}">Quem Somos</a></li>
-            <li><a title="Blog" href="{{ route('blog') }}">Blog</a></li>
+            {{-- <li><a title="Blog" href="{{ route('blog') }}">Blog</a></li> --}}
             <li><a title="Trabalhe Aqui" href="{{ route('trabalhe-conosco') }}">Trabalhe Aqui</a></li>
           </ul>
         </div>
