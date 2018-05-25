@@ -22,7 +22,7 @@
             return {
                 banners : [],
                 swiperOption: {
-                    loop: true,
+                    // loop: true,
                     autoplay: {
                         delay: 6000,
                         disableOnInteraction: true
@@ -68,7 +68,7 @@
         bottom: 95px
         left: 20%
         background-color: rgba(24, 74, 99, 0.85)
-        color: #fff
+        color: #fff !important
         h4
             font-size: 24px
             line-height: 27px
@@ -76,6 +76,7 @@
         p
             font-size: 18px
             line-height: 23px
+            color: #fff
         a.leia
             background-color: rgba(24, 74, 99, 1)
             padding: 5px 10px

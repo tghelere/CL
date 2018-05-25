@@ -45,6 +45,6 @@
     margin: 30px 0
 // .home-testimonies
 .footer-text
-    margin-top: 2.8rem
+    margin-top: 1rem
     font-size: 10px
 </style>
