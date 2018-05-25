@@ -1,7 +1,7 @@
 <template>
     <div>
         <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
-
+<vue-snotify></vue-snotify>
         <!-- Modal Component -->
         <b-modal ref="reqAQuote" v-model="modalShow" hide-footer hide-header id="modal">
             <loading :active.sync="isLoading" :can-cancel="false"></loading>
@@ -82,8 +82,19 @@
     import BootstrapVue from 'bootstrap-vue'        
     import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-    import Loading from 'vue-loading-overlay';
-    import 'vue-loading-overlay/dist/vue-loading.min.css';
+    import Loading from 'vue-loading-overlay'
+    import 'vue-loading-overlay/dist/vue-loading.min.css'
+
+    import Snotify, { SnotifyPosition } from 'vue-snotify'
+    import 'vue-snotify/styles/material.css'
+    
+    const options = {
+        toast: {
+            position: SnotifyPosition.centerTop
+        }
+    }
+
+    Vue.use(Snotify, options)
 
     Vue.use(BootstrapVue)
 
@@ -116,29 +127,30 @@
         methods: {
             onSubmit (evt) {
                 evt.preventDefault()
-                // this.isLoading = true
+                this.isLoading = true
 
-                const action1 = '/orcamento/' //envia o email
-                const action2 = '/api/budget/' //salva o dado no banco pela api
+                const action1 = '/api/budget/' //salva o dado no banco pela api
+                const action2 = '/orcamento/' //envia o email
 
-                const token = document.head.querySelector('meta[name="csrf-token"]');
-                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+                const token = document.head.querySelector('meta[name="csrf-token"]')
+                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
 
-                axios.post(action1, this.form).then(response => {
-                    console.log(response)
+                axios.post(action1, this.form).then(response => { // Salva no banco primeiro, dando tudo certo, envia o email
+                    axios.post(action2, this.form).then(response => {  // Envia o email, dando tudo certo, reseta o form e esconde o loading
+                        this.resetForm()
+                        this.isLoading = false
+                        this.modalShow = false
+                        this.$snotify.success('Solicitação de Orçamento enviada com sucesso!', { timeout: 5000 })
+                    }).catch(error => {
+                        this.isLoading = false
+                        this.modalShow = false
+                        this.$snotify.error('Falha ao enviar a Solicitação de Orçamento!', { timeout: 5000 })
+                        throw new Error(error)
+                    })
                 }).catch(error => {
+                    this.isLoading = false
                     console.error(error.message)
                 })
-
-                axios.post(action2, this.form).then(response => {
-                    console.log(response)
-                }).catch(error => {
-                    console.error(error.message)
-                })
-
-            //    resetForm()
-
-                // this.isLoading = false
 
             },
             hideModal () {
