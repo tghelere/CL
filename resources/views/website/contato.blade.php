@@ -4,7 +4,7 @@
 <div class="container-fluid">
         <banner :page="'{{ Route::currentRouteName() }}'" ></banner>        
     </div>
-    <div class="container corpo border-none">
+    <div class="container corpo">
         <div class="bradcrump">
             <p class="text-uppercase">home / {{$data['title']}}</p>           
         </div>

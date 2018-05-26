@@ -3,8 +3,7 @@
         <h3 v-if="page == 'home'" class="text-uppercase text-center">Serviços</h3>
         <ul class="row justify-content-center">
             <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center col-md-2">
-                <a :href="service.url" :title="service.title">
-                    <img :src="'/img/icons/services/' + service.icon" :alt="service.title" height="80" width="80">
+                <a :href="service.url" :title="service.title" :class="service.slug">
                     <span>{{ service.title }}</span>
                 </a>
             </li>
@@ -54,10 +53,24 @@
             width: 150px
             display: block
             a
-                display: block
+                display: inline-block
                 color: #000
-                img
-                    margin: 0 2px 10px
+                height: 80px
+                width: 100px
+                &.servicos-limpeza
+                    background: url(/img/icons/services/servicos-limpeza.png) no-repeat top center
+                &.servicos-portaria
+                    background: url(/img/icons/services/servicos-portaria.png) no-repeat top center
+                &.servicos-jardinagem
+                    background: url(/img/icons/services/servicos-jardinagem.png) no-repeat top center
+                &.servicos-recepcao
+                    background: url(/img/icons/services/servicos-recepcao.png) no-repeat top center
+                &.servicos-controladoria-de-acesso
+                    background: url(/img/icons/services/servicos-controladoria-de-acesso.png) no-repeat top center
+                &:hover
+                    background-position-y: -81px
                 span
+                    padding-top: 90px
                     display: block
+                    margin: 0 auto
 </style>
