@@ -1,8 +1,8 @@
 <template>
     <div>
         <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
-<vue-snotify></vue-snotify>
-        <!-- Modal Component -->
+        <vue-snotify></vue-snotify>
+        
         <b-modal ref="reqAQuote" v-model="modalShow" hide-footer hide-header id="modal">
             <loading :active.sync="isLoading" :can-cancel="false"></loading>
             <b-link class="seta" @click="hideModal"></b-link>
@@ -12,7 +12,7 @@
             </b-row>
             
             <p>Agradecemos pelo seu interesse em nossos serviços. Preencha os campos abaixo para que possamos conhecer suas necessidades.</p>
-            <b-form @submit="onSubmit">
+            <b-form @submit.prevent="onSubmit">
                 <b-form-group>
                     <b-form-select id="segment" :options="solutions" required v-model="form.segment">
                         <template slot="first">
@@ -125,30 +125,27 @@
             this.getStates()
         },
         methods: {
-            onSubmit (evt) {
-                evt.preventDefault()
+            onSubmit () {
+
                 this.isLoading = true
 
-                const action1 = '/api/budget/' //salva o dado no banco pela api
-                const action2 = '/orcamento/' //envia o email
+                const action1 = '/api/budget/'
+                const action2 = '/orcamento/'
 
-                const token = document.head.querySelector('meta[name="csrf-token"]')
-                window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content
-
-                axios.post(action1, this.form).then(response => { // Salva no banco primeiro, dando tudo certo, envia o email
-                    axios.post(action2, this.form).then(response => {  // Envia o email, dando tudo certo, reseta o form e esconde o loading
+                axios.post(action1, this.form).then(response => {
+                    axios.post(action2, this.form).then(response => {
                         this.resetForm()
                         this.isLoading = false
                         this.modalShow = false
                         this.$snotify.success('Solicitação de Orçamento enviada com sucesso!', { timeout: 5000 })
                     }).catch(error => {
                         this.isLoading = false
-                        this.modalShow = false
                         this.$snotify.error('Falha ao enviar a Solicitação de Orçamento!', { timeout: 5000 })
                         throw new Error(error)
                     })
                 }).catch(error => {
                     this.isLoading = false
+                    this.$snotify.error('Falha ao enviar a Solicitação de Orçamento!', { timeout: 5000 })
                     console.error(error.message)
                 })
 
@@ -219,7 +216,7 @@
     position: fixed
     bottom: 45vh
     right: 5px
-    z-index: 10
+    z-index: 5
     cursor: pointer
     &:hover
         background-position-y: -110px

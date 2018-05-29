@@ -1,6 +1,9 @@
 <template>
     <div>
-        <b-form @submit="onSubmit" class="m50">
+        <vue-snotify></vue-snotify>
+        <loading :active.sync="isLoading" :can-cancel="false"></loading>
+
+        <b-form @submit.prevent="onSubmit" class="m50">
             <b-form-group>
                 <b-form-select id="complaint" :options="complaints" required v-model="form.complaint">
                     <template slot="first">
@@ -20,7 +23,7 @@
             <b-row>                   
                 <b-col md="4">
                     <b-form-group>
-                        <b-form-select @input="getCities(form.state)" id="states" required v-model="form.state" :options="states">
+                        <b-form-select @input="getCities(form.state.id)" id="states" required v-model="form.state" :options="states">
                             <template slot="first">
                                 <option :value="null" disabled>UF *</option>
                             </template>
@@ -50,13 +53,30 @@
 </template>
 
 <script>
+
     import BootstrapVue from 'bootstrap-vue'        
     import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+    import Loading from 'vue-loading-overlay'
+    import 'vue-loading-overlay/dist/vue-loading.min.css'
+
+    import Snotify, { SnotifyPosition } from 'vue-snotify'
+    import 'vue-snotify/styles/material.css'
+    
+    const options = {
+        toast: {
+            position: SnotifyPosition.centerTop
+        }
+    }
+
+    Vue.use(Snotify, options)
+
     Vue.use(BootstrapVue)
 
     export default {
         data () {
             return {
+                isLoading: false,
                 complaints: ['Denúncia', 'Elogio', 'Reclamação', 'Sugestão'],
                 states: [],
                 cities: [],
@@ -75,26 +95,67 @@
             this.getStates()
         },        
         methods: {
-            onSubmit (evt) {
-                evt.preventDefault();
-                console.log(this.form);
+            onSubmit () {
+                
+                this.isLoading = true
+
+                const action1 = '/api/ombud/'
+                const action2 = '/ouvidoria/'
+
+                axios.post(action1, this.form).then(response => {
+                    axios.post(action2, this.form).then(response => {
+                        if (response.data.type  == 'error') {
+                            this.isLoading = false
+                            this.$snotify.error('Falha ao enviar sua mensagem! Tente novamente após alguns minutos.', { timeout: 5000 })
+                        }else{
+                            this.resetForm()
+                            this.isLoading = false
+                            this.$snotify.success('Sua mensagem foi enviada com sucesso!', { timeout: 5000 })
+                        }
+                    }).catch(error => {
+                        this.isLoading = false
+                        this.$snotify.error('Falha ao enviar sua mensagem!', { timeout: 5000 })
+                        throw new Error(error)
+                    })
+                }).catch(error => {
+                    this.isLoading = false
+                    console.error(error.message)
+                })
+
             },
             getStates(){
                 const action = '/api/states'
                 axios.get(action).then(response => {
-                    this.states = response.data.data.map(estado => ({ value: estado.id, text: estado.abbr }))
+                    this.states = response.data.data.map(state => ({ value: {id: state.id, name: state.name}, text: state.abbr}))
                 }).catch(error => {
                     console.error(error)
                 })
             },
             getCities(id){
+                this.isLoading = true
                 const action = '/api/cities/state/' + id                
                 axios.get(action).then(response => {
-                    this.cities = [...response.data.data.map(cidade => ({ value: cidade.id, text: cidade.name }))]
+                    this.cities = [...response.data.data.map(city => ({ value: {id: city.id, name: city.name}, text: city.name }))]
+                    this.isLoading = false
                 }).catch(error => {
                     console.error(error)
+                    this.isLoading = false
                 })
             },
+            resetForm () {
+                this.form = {
+                    complaint: null,
+                    name: '',
+                    email: '',
+                    phone: '',
+                    state: null,
+                    city: null,
+                    message: '',
+                }
+            },
+        },
+        components: {
+            Loading
         },
     }
 </script>

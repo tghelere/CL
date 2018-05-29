@@ -11,17 +11,16 @@
 
 ![{{ config('app.name') }}](http://35.198.6.139/img/logocolor.png "{{ config('app.name') }}")
 
-## {{ $content['title'] }} através do site.
+## Mensagem de __{{ $content['title'] }}__ através do site.
 ---
  | 
 --- | ---
-** Segmento de atuação: ** | *{{ $content['segment'] }}*  
-**Número de colaboradores:** | *{{ $content['contributors'] }}*  
-**Modalidade de serviço:** | *{{ $content['modality'] }}*  
+**Tipo de mensagem:** | *{{ $content['type'] }}*  
 **Nome:** | *{{ $content['name'] }}*  
 **E-mail:** | *{{ $content['email'] }}*  
 **Telefone:** | *{{ $content['phone'] }}*  
 **Cidade / Estado:** | *{{ $content['city'] }} - {{ $content['state'] }}*  
+**Mensagem:** | *{{ $content['message'] }}*  
 
 
 {{-- Subcopy --}}

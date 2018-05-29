@@ -33,12 +33,12 @@ class OmbudController extends Controller
     {
         $ombud = new Ombud;
         
-        $ombud->type = $request->input('type');
-        $ombud->name = $request->input('name');
-        $ombud->email = $request->input('email');
-        $ombud->phone = $request->input('phone');
-        $ombud->city_id = $request->input('city_id');
-        $ombud->message = $request->input('message');
+        $ombud->type = $request->json('complaint');
+        $ombud->name = $request->json('name');
+        $ombud->email = $request->json('email');
+        $ombud->phone = $request->json('phone');
+        $ombud->city_id = $request->json('city.id');
+        $ombud->message = $request->json('message');
         
         if ($ombud->save()) {
             return new OmbudResource($ombud);

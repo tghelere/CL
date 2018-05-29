@@ -15,13 +15,13 @@
 ---
  | 
 --- | ---
-** Segmento de atuação: ** | *{{ $content['segment'] }}*  
-**Número de colaboradores:** | *{{ $content['contributors'] }}*  
-**Modalidade de serviço:** | *{{ $content['modality'] }}*  
 **Nome:** | *{{ $content['name'] }}*  
 **E-mail:** | *{{ $content['email'] }}*  
 **Telefone:** | *{{ $content['phone'] }}*  
 **Cidade / Estado:** | *{{ $content['city'] }} - {{ $content['state'] }}*  
+**Interesse:** | *{{ $content['interest'] }}*  
+**Breve descrição:** | *{{ $content['description'] }}*  
+**Currículo:** | *[Currículo Link]({{ $content['curriculum'] }})*  
 
 
 {{-- Subcopy --}}

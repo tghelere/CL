@@ -31,16 +31,29 @@ class CandidateController extends Controller
      */
     public function store(Request $request)
     {
-        $candidate = $request->isMethod('put') ? Candidate::findOrFail($request->candidate_id) : new Candidate;
+   
+        if ($request->hasFile('curriculum')) {
+            
+            $filenameWithExt = $request->file('curriculum')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $ext = $request->file('curriculum')->getClientOriginalExtension();
+            $newFilename = date('Y-m-d--H-m-s')."-".md5($filename).".".$ext;
+            $path = $request->file('curriculum')->storeAs('public/curriculums', $newFilename);
+            
+        }
+
+        // $candidate = $request->isMethod('put') ? Candidate::findOrFail($request->candidate_id) : new Candidate;
+        $candidate = new Candidate;
         
-        $candidate->id = $request->input('candidate_id');
+        // $candidate->id = $request->json('candidate_id');
         $candidate->name = $request->input('name');
         $candidate->email = $request->input('email');
-        $candidate->city_id = $request->input('city_id');
+        $candidate->phone = $request->input('phone');
+        $candidate->city_id = $request->input('city');
         $candidate->interest = $request->input('interest');
-        $candidate->presentation = $request->input('presentation');
-        $candidate->file_name = $request->input('file_name');        
-        
+        $candidate->presentation = $request->input('description');
+        $candidate->file_name = $newFilename;
+
         if ($candidate->save()) {
             return new CandidateResource($candidate);
         }

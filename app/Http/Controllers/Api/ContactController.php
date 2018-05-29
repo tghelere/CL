@@ -33,11 +33,11 @@ class ContactController extends Controller
     {
         $contact = new Contact;
         
-        $contact->name = $request->input('name');
-        $contact->email = $request->input('email');
-        $contact->phone = $request->input('phone');
-        $contact->city_id = $request->input('city_id');
-        $contact->message = $request->input('message');
+        $contact->name = $request->json('name');
+        $contact->email = $request->json('email');
+        $contact->phone = $request->json('phone');
+        $contact->city_id = $request->json('city.id');
+        $contact->message = $request->json('message');
         
         if ($contact->save()) {
             return new ContactResource($contact);

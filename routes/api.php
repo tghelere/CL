@@ -41,7 +41,7 @@ Route::namespace('Api')->group(function () {
     Route::get('candidates', 'CandidateController@index');
     Route::get('candidate/{id}', 'CandidateController@show');
     Route::post('candidate', 'CandidateController@store');
-    Route::put('candidate', 'CandidateController@store');
+    // Route::put('candidate', 'CandidateController@store');
     Route::delete('candidate/{id}', 'CandidateController@destroy');
 
 // States

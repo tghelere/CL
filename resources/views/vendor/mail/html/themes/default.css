@@ -209,6 +209,7 @@ img {
     border: solid 1px rgb(180, 180, 180);
     padding: 10px;
     text-shadow: 1px 1px 1px #fff;
+    min-width: 18%
 }
 .content-cell thead{
     display: none;
