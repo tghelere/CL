@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests;
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Resources\Post as PostResource;
 use Illuminate\Support\Str;
 
@@ -58,19 +59,18 @@ class PostController extends Controller
         return new PostResource($post);
     }
     
-    // precisa fazer o relacionamento de tabelas
-    
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $category
      * @return \Illuminate\Http\Response
      */
-    // public function category($category)
-    // {
-    //     $posts = Post::where('category', $category)->get();        
-    //     return new PostResource($posts);
-    // }
+    public function category($category)
+    {
+        $category = Category::where('slug', $category)->get()->first();        
+        $posts = $category->posts;
+        return new PostResource($posts);
+    }
 
     /**
      * Remove the specified resource from storage.

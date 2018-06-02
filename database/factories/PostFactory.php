@@ -15,4 +15,5 @@ $factory->define(Post::class, function (Faker $faker) {
         'image' => $faker->imageUrl($width = 640, $height = 480),
         'slug' => $slug,
     ];
+
 });

@@ -17,7 +17,7 @@ class BannersTableSeeder extends Seeder
     {
         Banner::truncate();
 
-        $inst_pages = ['quem-somos', 'contato', 'ouvidoria', 'trabalhe-conosco'];    
+        $inst_pages = ['quem-somos', 'contato', 'ouvidoria', 'trabalhe-conosco', 'blog'];    
         $services_pages = Service::all()->pluck('slug')->toArray();
         $solutions_pages = Solution::all()->pluck('slug')->toArray();
 

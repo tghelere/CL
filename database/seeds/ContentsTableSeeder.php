@@ -36,7 +36,7 @@ class ContentsTableSeeder extends Seeder
             '<p>Se voc&ecirc; deseja entrar em contato com a Centrallimp para enviar sugest&otilde;es ou obter informa&ccedil;&otilde;es complementares da Empresa, utilize o formul&aacute;rio abaixo.</p>',
 
             // blog
-            'blog',
+            '<p>Blog text</p>',
 
             // ouvidoria
             '<p>Para entrar em contato conosco para enviar cr&iacute;ticas, sugest&otilde;es ou obter informa&ccedil;&otilde;es complementares da empresa, preencha corretamente o formul&aacute;rio abaixo.</p>',

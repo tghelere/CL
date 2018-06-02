@@ -16,7 +16,7 @@
                 <h4 class="text-uppercase">Institucional</h4>
                 <ul class="list">
                   <li><a title="Quem Somos" href="{{ route('quem-somos') }}">Quem Somos</a></li>
-                  {{-- <li><a title="Blog" href="{{ route('blog') }}">Blog</a></li> --}}
+                  <li><a title="Blog" href="{{ route('blog') }}">Blog</a></li>
                   <li><a title="Trabalhe Aqui" href="{{ route('trabalhe-conosco') }}">Trabalhe Aqui</a></li>
                 </ul>
               </div>

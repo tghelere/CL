@@ -39,7 +39,7 @@
                         </div>
                     </ul>
                 </li>
-                {{-- <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li> --}}
+                <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                 <li class="nav-item {{ (Route::is('trabalhe-conosco') ? 'active' : '') }}"><a class="nav-link" href="{{ route('trabalhe-conosco') }}">Trabalhe Conosco</a></li>
                 <li class="nav-item {{ (Route::is('ouvidoria') ? 'active' : '') }}"><a class="nav-link" href="{{ route('ouvidoria') }}">Ouvidoria</a></li>
                 <li class="nav-item {{ (Route::is('contato') ? 'active' : '') }}"><a class="nav-link" href="{{ route('contato') }}">Contato</a></li>
@@ -48,7 +48,7 @@
                 <li class="nav-item"><a class="nav-link whats" title="Whatsapp: {{ config('app.celphone_f') }}" target="_blank" href="https://api.whatsapp.com/send?phone={{ config('app.celphone') }}">{{ config('app.celphone_f') }}</a></li>
             </ul>
 
-            <!-- <ul class="navbar-nav ml-auto">
+            {{-- <ul class="navbar-nav ml-auto">
                 @guest
                     <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                     <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
@@ -71,7 +71,7 @@
                         </div>
                     </li>
                 @endguest
-            </ul> -->
+            </ul> --}}
         </div>
     </div>
 </nav>

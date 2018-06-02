@@ -12,10 +12,11 @@ class BlogController extends Controller
         $data = [
             'page' => 'blog',
             'title' => 'Blog',
+            'h1' => 'Blog Centrallimp',
             'keywords' => '',
             'description' => '',            
         ];
         
-        return view('website.blog', compact('data'));
+    	return view('website.blog', compact('data'));
     }    
 }
