@@ -39,7 +39,7 @@
                         </div>
                     </ul>
                 </li>
-                <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
+                <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }} {{ (preg_match("/^blog[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}">Blog</a></li>
                 <li class="nav-item {{ (Route::is('trabalhe-conosco') ? 'active' : '') }}"><a class="nav-link" href="{{ route('trabalhe-conosco') }}">Trabalhe Conosco</a></li>
                 <li class="nav-item {{ (Route::is('ouvidoria') ? 'active' : '') }}"><a class="nav-link" href="{{ route('ouvidoria') }}">Ouvidoria</a></li>
                 <li class="nav-item {{ (Route::is('contato') ? 'active' : '') }}"><a class="nav-link" href="{{ route('contato') }}">Contato</a></li>

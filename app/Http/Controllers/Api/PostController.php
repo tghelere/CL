@@ -20,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::paginate(6);
 
         return PostResource::collection($posts);
     }
@@ -37,6 +37,7 @@ class PostController extends Controller
         
         $post->id = $request->input('post_id');
         $post->title = $request->input('title');
+        $post->description = $request->input('description');
         $post->body = $request->input('body');
         $post->image = $request->input('image');
         $post->slug = Str::slug($request->input('title'));
@@ -44,6 +45,19 @@ class PostController extends Controller
         if ($post->save()) {
             return new PostResource($post);
         }
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function slug($slug)
+    {
+        $post = Post::where('slug', $slug)->get()->first();
+        
+        return new PostResource($post);
     }
 
     /**
@@ -62,13 +76,24 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
+     * @return \Illuminate\Http\Response
+     */
+    public function categories()
+    {
+        $category = Category::withCount('posts')->get();
+        return new PostResource($category);
+    }
+
+    /**
+     * Display the specified resource.
+     *
      * @param  string  $category
      * @return \Illuminate\Http\Response
      */
     public function category($category)
     {
         $category = Category::where('slug', $category)->get()->first();        
-        $posts = $category->posts;
+        $posts = $category->posts()->paginate(6);
         return new PostResource($posts);
     }
 

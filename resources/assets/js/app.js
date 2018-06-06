@@ -21,6 +21,9 @@ Vue.component('form-candidates', require('./components/forms/FormCandidatesCompo
 Vue.component('form-ombuds', require('./components/forms/FormOmbudsComponent.vue'));
 Vue.component('form-contact', require('./components/forms/FormContactComponent.vue'));
 
+Vue.component('blog-all-posts', require('./components/blog/BlogAllPostsComponent.vue'));
+Vue.component('blog-post', require('./components/blog/BlogPostComponent.vue'));
+
 const app = new Vue({
     el: '#app'
 });

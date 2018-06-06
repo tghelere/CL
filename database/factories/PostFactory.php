@@ -11,8 +11,9 @@ $factory->define(Post::class, function (Faker $faker) {
 
     return [
         'title' => $title,
+        'description' => $faker->text($maxNbChars = 150),
         'body' => $faker->paragraph(4),
-        'image' => $faker->imageUrl($width = 640, $height = 480),
+        'image' => '/img/blog/posts/' . $faker->numberBetween($min = 1, $max = 6) . '.jpg',
         'slug' => $slug,
     ];
 

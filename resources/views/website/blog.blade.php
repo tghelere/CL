@@ -12,6 +12,8 @@
         <h1 class="text-center text-uppercase" >{{$data['h1']}}</h1>
         <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
     </div>
+
+    <blog-all-posts></blog-all-posts>
     
 </div>
 @endsection

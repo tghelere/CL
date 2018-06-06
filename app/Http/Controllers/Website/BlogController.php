@@ -18,5 +18,19 @@ class BlogController extends Controller
         ];
         
     	return view('website.blog', compact('data'));
-    }    
+    }
+    
+    public function post($post)
+    {
+        $data = [
+            'page' => 'post',
+            'title' => 'Post',
+            'h1' => 'Post Title',
+            'keywords' => '',
+            'description' => '',
+            'slug' => $post,
+        ];
+
+        return view('website.blog-post', compact('data'));
+    }
 }
