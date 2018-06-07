@@ -2,48 +2,49 @@
     <div class="row">
         <div class="col-md-9">
             <div class="row">
-                <div class="col-md-4" v-for="(post, index) in allPosts" :key='index'>
-                    <div class="item-post">
-                        <a :href="'/blog/post/' + post.slug" :title="post.title" >
+                <div class="col-md-4" v-for="(post, index) in allPosts.data" :key='index'>
+                    <a class="link-post" :href="'/blog/post/' + post.slug" :title="post.title" >
+                        <div class="item-post">
                             <img :src="post.image" :alt="post.title" class="img-fluid img-thumbnail" >
                             <h4>{{post.title}}</h4>
                             <p>{{post.description}}</p>
-                        </a>
-                    </div>
+                            <ul class="list-inline list-unstyled">
+                                <li class="list-inline-item mr-3 blue text-uppercase" v-for="(cat, index) in post.categories" :key="index" >
+                                    {{cat.name}}
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="row justify-content-center">
-                <pagination class="" :data="pagination" :limit="1" @pagination-change-page="getAllPosts"></pagination>
+                <pagination :data="allPosts" :limit="1" @pagination-change-page="getAllPosts"></pagination>
             </div>
         </div>
+        
         <div class="col-md-3">
             <div class="row search">
                 <div class="col-md-12">
-                    <input type="text" v-model="search" placeholder="Buscar conteúdo">
+                    <input type="text" v-model="search" @keyup.enter="getSearch(search)" placeholder="Buscar conteúdo">
                 </div>
             </div>
             <div class="row newsletter">
                 <div class="col-md-12">
-                    Cadastre-se para receber atualizações semanais sobre ...
-                    <form action="">
-                        <input type="text" placeholder="Digite seu e-mail">
-                        <button class="btn btn-primary" type="submit">Cadastrar</button>
-                    </form>
+                    <form-newsletter :page="'blog'" ></form-newsletter>
                 </div>
             </div>
             <div class="row filter">
                 <div class="col-md-12">
                     <div class="border">
-                        <p>Filtrar por assuntos</p>
-                        <ul>
+                        <p class="text-uppercase text-center">Filtrar por assuntos</p>
+                        <ul class="categories list-unstyled">
                             <li v-for="(cat, index) in categoriesCount" :key='index'>
-                                <a @click.prevent="filterSubject(cat.slug)" href="#" >{{cat.name}} ({{cat.posts_count}})</a>
+                                <a @click.prevent="filterSubject(cat.slug)" :class="{ active: categorySelected == cat.slug}" href="#" >{{cat.name}} ({{cat.posts_count}})</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
 </template>
@@ -53,20 +54,9 @@
     export default {
         data () {
             return {
-                allPosts: { 
-                    data: [],
-                    meta: {},
-                },
-                pagination: {
-                    // current_page:1,
-                    // from:1,
-                    // last_page:10,
-                    // path:"http://centrallimp.com.br/api/posts",
-                    // per_page:6,
-                    // to:6,
-                    // total:60,
-                },
+                allPosts: {},
                 categoriesCount: {},
+                categorySelected: '',
                 search: '',
             }
         },
@@ -74,30 +64,11 @@
             this.getAllPosts(),
             this.getCategoriesCount()
         },
-        // computed: {
-        //     filteredItems() {
-        //         let filterItems = this.allPosts.data
-        //         if (this.search.toLowerCase() > 0) {
-        //             filterItems = filterItems.filter(post => {
-        //                 return post.title.toLowerCase().indexOf(this.search.toLowerCase()) > -1
-        //             })
-        //         }
-        //         console.log(filterItems);
-                
-        //         return filterItems
-        //     }
-        // },
-        // watch: {
-        //     filteredItems(items){
-        //         this.updateMeta(items)
-        //     }
-        // },
         methods: {
-            getAllPosts(){
-                const action = '/api/posts/'
+            getAllPosts(page = 1){
+                const action = '/api/posts?page=' + page
                 axios.get(action).then(response => {
-                    this.allPosts = response.data.data
-                    this.pagination = response.data.meta
+                    this.allPosts = response.data
                 }).catch(error => {
                     console.error(error)
                 })
@@ -113,13 +84,19 @@
             filterSubject(slug){
                 const action = '/api/posts/category/' + slug
                 axios.get(action).then(response => {
+                    this.categorySelected = slug
                     this.allPosts = response.data
                 }).catch(error => {
                     console.error(error)
                 })
             },
-            updateMeta(items){
-
+            getSearch(search){
+                const action = '/api/posts/search/' + search
+                axios.get(action).then(response => {
+                    this.allPosts = response.data
+                }).catch(error => {
+                    console.error(error)
+                })
             },
         },
     }
@@ -130,18 +107,27 @@
     margin-bottom: 40px
     input, .border
         width: 100%
-        padding-left: 5px
+        padding-left: 10px
         margin-bottom: 10px
-    button
-        display: block
-        margin: 0 auto
+.search input
+    border: 0
+    border-bottom: 1px solid #000
+    &:focus
+        outline: none
+    &::placeholder
+        text-transform: uppercase 
 .filter
     p
-        margin-top: 20px
-        text-align: center
+        margin-top: 20px        
         font-size: 14px
-        text-transform: uppercase
-    ul
+    ul.categories
+        padding-left: 10px
         li
-            list-style: none
+            a
+                &.active
+                    font-weight: bold
+.blue
+    color: #0056b3
+    font-size: 11px
+
 </style>

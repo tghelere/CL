@@ -1,6 +1,14 @@
 <template>
     <div class="row">
-       {{post.title}}
+        <div class="col-md-12">
+            <h1 class="text-capitalize">{{post.title}}</h1>
+            <ul class="list-inline list-unstyled">
+                <li class="list-inline-item text-uppercase" v-for="(cat, index) in post.categories" :key='index'>
+                    <u>{{cat.name}}</u>
+                </li>
+            </ul>
+            <div v-html="post.body"></div>
+        </div>
     </div>
 </template>
 
@@ -33,6 +41,10 @@
     }
 </script>
 
-<style scoped>
-
+<style lang="sass" scoped>
+h1, ul
+    padding-left: 0
+ul li
+    margin-right: 15px
+    color: #0056b3
 </style>

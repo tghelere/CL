@@ -25,7 +25,7 @@ class BlogController extends Controller
         $data = [
             'page' => 'post',
             'title' => 'Post',
-            'h1' => 'Post Title',
+            'h1' => 'BLOG Centrallimp',
             'keywords' => '',
             'description' => '',
             'slug' => $post,

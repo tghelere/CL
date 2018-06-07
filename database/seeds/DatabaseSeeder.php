@@ -22,11 +22,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(ContactsTableSeeder::class);
         // $this->call(OmbudsTableSeeder::class);
         // $this->call(BudgetsTableSeeder::class);
-        // $this->call(BannersTableSeeder::class);
-        // $this->call(ContentsTableSeeder::class);
-        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        //     $this->call(CategoriesTableSeeder::class);
-        //     $this->call(PostsTableSeeder::class);
-        // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $this->call(BannersTableSeeder::class);
+        $this->call(ContentsTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+            $this->call(CategoriesTableSeeder::class);
+            $this->call(PostsTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

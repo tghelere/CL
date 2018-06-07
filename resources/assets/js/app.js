@@ -20,6 +20,7 @@ Vue.component('form-request-a-quote', require('./components/forms/FormRequestAQu
 Vue.component('form-candidates', require('./components/forms/FormCandidatesComponent.vue'));
 Vue.component('form-ombuds', require('./components/forms/FormOmbudsComponent.vue'));
 Vue.component('form-contact', require('./components/forms/FormContactComponent.vue'));
+Vue.component('form-newsletter', require('./components/forms/FormNewsletterComponent.vue'));
 
 Vue.component('blog-all-posts', require('./components/blog/BlogAllPostsComponent.vue'));
 Vue.component('blog-post', require('./components/blog/BlogPostComponent.vue'));

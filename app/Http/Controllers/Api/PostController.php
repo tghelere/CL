@@ -20,9 +20,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(6);
+        $posts = Post::with('categories')->paginate(6);
 
-        return PostResource::collection($posts);
+        return new PostResource($posts);
     }
 
     /**
@@ -50,12 +50,25 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param  string  $search
+     * @return \Illuminate\Http\Response
+     */
+    public function search($search)
+    {
+        $postBody = Post::where('body', 'LIKE', "%{$search}%")->with('categories')->paginate(6);
+        
+        return new PostResource($postBody);
+    }
+
+    /**
+     * Display the specified resource.
+     *
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
     public function slug($slug)
     {
-        $post = Post::where('slug', $slug)->get()->first();
+        $post = Post::where('slug', $slug)->with('categories')->get()->first();
         
         return new PostResource($post);
     }
@@ -93,7 +106,7 @@ class PostController extends Controller
     public function category($category)
     {
         $category = Category::where('slug', $category)->get()->first();        
-        $posts = $category->posts()->paginate(6);
+        $posts = $category->posts()->with('categories')->paginate(6);
         return new PostResource($posts);
     }
 

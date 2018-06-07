@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Newsletter;
 use App\Http\Resources\Newsletter as NewsletterResource;
+use Symfony\Component\HttpFoundation\Response;
 
 class NewsletterController extends Controller
 {
@@ -34,9 +35,22 @@ class NewsletterController extends Controller
         $newsletter = new Newsletter;
         
         $newsletter->email = $request->input('email');
-        
-        if ($newsletter->save()) {
-            return new NewsletterResource($newsletter);
+
+        try{
+            if ($newsletter->save()) {
+                return new NewsletterResource($newsletter);
+            }            
+        }catch(\Illuminate\Database\QueryException $e){
+            $errorCode = $e->errorInfo[1];
+            if($errorCode == 1062){
+                $returnData = array(
+                    'status' => 'error',
+                    'message' => 'Este E-mail já foi cadastrado'
+                );
+                return Response()->json($returnData, 409);
+            }
+
         }
+        
     }   
 }
