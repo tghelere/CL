@@ -11,11 +11,11 @@
 
         <div class="content">
             <h1 class="text-center text-uppercase" >{{$data['title']}}</h1>
-            <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
+            <text-content :page="'{{ Route::currentRouteName() }}'"></text-content>
         </div>
         
         <div class="row justify-content-center icones">
-            <home-services class="col-md-10" ></home-services>
+            <services :page="'servicos'" class="col-md-10" ></services>
         </div>
     </div>
 @endsection

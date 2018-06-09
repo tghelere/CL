@@ -26,6 +26,18 @@ class PostController extends Controller
     }
 
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function limit($limit)
+    {
+        $posts = Post::latest()->offset(0)->limit($limit)->get();
+
+        return new PostResource($posts);
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -95,6 +107,19 @@ class PostController extends Controller
     {
         $category = Category::withCount('posts')->get();
         return new PostResource($category);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  string  $category
+     * @return \Illuminate\Http\Response
+     */
+    public function categoryLast($category)
+    {
+        $category = Category::where('slug', $category)->get()->first();        
+        $post = $category->posts()->orderBy('created_at', 'desc')->get()->first();
+        return new PostResource($post);
     }
 
     /**

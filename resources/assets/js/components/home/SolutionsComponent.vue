@@ -1,8 +1,9 @@
 <template>
     <div class="componente" v-show="solutions.length > 0">
+        <loading :active.sync="isLoading" :can-cancel="false"></loading>
         <ul class="list-unstyled">
             <li v-for="(solution, index) in solutions" :key='index' class="border" :class="solution.slug">
-                <a href="" :title="solution.title">
+                <a href="" @click.prevent="selectSolution(solution.slug); changeSelected(solution.title);" :title="solution.title">
                     <span class="text-uppercase">
                         {{ solution.title }}
                     </span>
@@ -10,35 +11,59 @@
             </li>
         </ul>
         <div class="post">
-            <h3>Industrias</h3>
-            <!-- <h5>Soluções Centrallimp para Industrias</h5> -->
+            <h3>{{selected}}</h3>
             <text-content :page="'home-solutions'"></text-content>
             <hr>
-            <!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non quos consectetur obcaecati odio molestias repellat. Aut odit corporis voluptas, quia nisi totam quam accusamus illum, perspiciatis inventore consequatur qui nesciunt.</p>
-            <a title="Leia mais" class="text-uppercase" href="">Leia mais</a> -->
+            <h5>{{post.title}}</h5>
+            <p>{{post.description}}</p>
+            <a title="Leia mais" class="text-uppercase" :href="'/blog/post/' + post.slug">Leia mais</a>
         </div>
     </div>
 </template>
 
 <script>
+    import Loading from 'vue-loading-overlay'
+    import 'vue-loading-overlay/dist/vue-loading.min.css'
     export default {
         data () {
             return {
+                isLoading: false,
                 solutions: [],
+                post: {},
+                selected: ''
             }
         },
         created () {
-            this.getTitles()
+            this.getSolutions()
         },
         methods: {
-            getTitles(){
+            changeSelected(solution){
+                this.selected = solution
+            },
+            selectSolution(slug){
+                this.isLoading = true
+                const action = '/api/post/category/' + slug
+                axios.get(action).then(response => {
+                    this.post = response.data.data
+                    this.isLoading = false
+                }).catch(error => {
+                    console.error(error)
+                    this.isLoading = false
+                })
+            },
+            getSolutions(){
                 const action = '/api/solutions'
                 axios.get(action).then(response => {
                     this.solutions = response.data.data
+                    this.selected = this.solutions[0].title
+                    this.selectSolution(this.solutions[0].slug)
                 }).catch(error => {
                     console.error(error)
                 })
             }
+        },
+        components: {
+            Loading
         },
     }
 </script>
@@ -61,49 +86,49 @@ ul
         // padding: 10px
         text-align: center        
                 
-        &.solucoes-industrias
+        &.industrias
             background: url(/img/thumbs/solutions/industry.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(67, 64, 65, 0.6)
                 &:hover
                     background-color: rgba(67, 64, 65, 0.3)
-        &.solucoes-varejo
+        &.varejo
             background: url(/img/thumbs/solutions/varejo.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(242, 158, 33, 0.6)
                 &:hover
                     background-color: rgba(242, 158, 33, 0.3)
-        &.solucoes-orgaos-publicos
+        &.orgaos-publicos
             background: url(/img/thumbs/solutions/porteiro.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(69, 163, 104, 0.6)
                 &:hover
                     background-color: rgba(69, 163, 104, 0.3)
-        &.solucoes-condominios
+        &.condominios
             background: url(/img/thumbs/solutions/condominios.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(0, 161, 162, 0.6)
                 &:hover
                     background-color: rgba(0, 161, 162, 0.3)
-        &.solucoes-clinicas-e-hospitais
+        &.clinicas-e-hospitais
             background: url(/img/thumbs/solutions/hospital.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(152, 191, 19, 0.6)
                 &:hover
                     background-color: rgba(152, 191, 19, 0.3)
-        &.solucoes-escolas-e-universidades
+        &.escolas-e-universidades
             background: url(/img/thumbs/solutions/escola.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(61, 121, 151, 0.6)
                 &:hover
                     background-color: rgba(61, 121, 151, 0.3)
-        &.solucoes-escritorios-e-ambientes-corporativos
+        &.escritorios-e-ambientes-corporativos
             background: url(/img/thumbs/solutions/escritorio.jpg) no-repeat top center
             background-size: cover
             a
@@ -127,8 +152,8 @@ ul
         width: 400px
         float: left
         margin-top: 230px
-        h3
-            font-weight: bold
+        hr
+            margin: 40px 0
         a
             color: #000
             font-weight: bold

@@ -82,7 +82,9 @@ Route::namespace('Api')->group(function () {
 // Posts
     Route::get('posts', 'PostController@index');
     Route::get('posts/category/{category}', 'PostController@category');
+    Route::get('post/category/{category}', 'PostController@categoryLast');
     Route::get('posts/categories', 'PostController@categories');
+    Route::get('posts/limit/{limit}', 'PostController@limit');
     Route::get('post/id/{id}', 'PostController@show');
     Route::get('posts/search/{search}', 'PostController@search');
     Route::get('post/{slug}', 'PostController@slug');

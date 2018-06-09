@@ -29,7 +29,7 @@
         </div>
 
         <div class="row justify-content-center">
-            <home-services :page="'home'" class="col-md-10" ></home-services>
+            <services :page="'home'" class="col-md-10" ></services>
         </div>
 
         <home-testimonies></home-testimonies>

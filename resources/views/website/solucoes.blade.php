@@ -11,7 +11,7 @@
 
         <div class="content">
             <h1 class="text-center text-uppercase" >{{$data['title']}}</h1>
-            <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
+            <text-content :page="'{{ Route::currentRouteName() }}'"></text-content>
         </div>
     </div>
 @endsection

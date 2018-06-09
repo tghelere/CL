@@ -19,8 +19,8 @@
 **E-mail:** | *{{ $content['email'] }}*  
 **Telefone:** | *{{ $content['phone'] }}*  
 **Cidade / Estado:** | *{{ $content['city'] }} - {{ $content['state'] }}*  
-**Interesse:** | *{{ $content['interest'] }}*  
-**Breve descrição:** | *{{ $content['description'] }}*  
+**Vaga pretendida:** | *{{ $content['interest'] }}*  
+**Mensagem:** | *{{ $content['description'] }}*  
 **Currículo:** | *[Currículo Link]({{ $content['curriculum'] }})*  
 
 

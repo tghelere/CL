@@ -5,7 +5,7 @@ use App\Models\Solution;
 
 class SolutionsTableSeeder extends Seeder
 {
-    private $solution_slug = ['solucoes-industrias', 'solucoes-varejo', 'solucoes-orgaos-publicos', 'solucoes-condominios', 'solucoes-clinicas-e-hospitais', 'solucoes-escolas-e-universidades', 'solucoes-escritorios-e-ambientes-corporativos'];
+    private $solution_slug = ['industrias', 'varejo', 'orgaos-publicos', 'condominios', 'clinicas-e-hospitais', 'escolas-e-universidades', 'escritorios-e-ambientes-corporativos'];
     private $solution_title = ['Indústrias', 'Varejo', 'Orgãos públicos', 'Condomínios', 'Clínicas e Hospitais', 'Escolas e Universidades', 'Escritórios e Ambientes Corporativos'];
     private $solution_description = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit autem nihil tempora, odio reiciendis, sint quisquam cum quaerat blanditiis laborum culpa at quas mollitia maxime. Culpa enim quisquam dolores distinctio?";
     private $solution_thumb = ['solution_industrias.png', 'solution_varejo.png', 'solution_orgaos-publicos.png', 'solution_condominios.png', 'solution_clinicas-e-hospitais.png', 'solution_escolas-e-universidades.png', 'solution_escritorios-e-ambientes-corporativos.png'];

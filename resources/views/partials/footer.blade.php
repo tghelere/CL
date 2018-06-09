@@ -5,7 +5,7 @@
         <div class="col-md-3">
           <img src="/img/logomono.png" width="200" alt="{{ config('app.name') }}">
         </div>
-        <div class="col-md-5 font-italic">
+        <div class="col-md-5">
           <text-content :page="'footer'" :classe="'footer-text'"></text-content>
         </div>
       </div>

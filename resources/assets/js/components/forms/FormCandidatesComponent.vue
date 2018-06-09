@@ -37,19 +37,22 @@
                                     </b-form-group>
                                 </b-col>
                             </b-row>
-                            <div class="borda">
+                            <!-- <div class="borda">
                                 <b-form-group label="Interesse (selecione uma ou mais alternativas) *" >
                                     <b-form-checkbox-group id="interest" v-model="form.interest" :options="services"></b-form-checkbox-group>
                                 </b-form-group>
-                            </div>
+                            </div> -->
+                            <b-form-group>
+                                <b-form-input id="vaga" type="text" v-model="form.vaga" required placeholder="Vaga pretendida *"></b-form-input>
+                            </b-form-group>
                         </b-col>
                         <b-col md="6">
                             <b-form-group>
-                                <b-form-textarea id="description" required v-model="form.description" placeholder="Breve Apresentação *" :rows="5" :max-rows="6"></b-form-textarea>                            
+                                <b-form-textarea id="description" required v-model="form.description" placeholder="Mensagem *" :rows="5" :max-rows="6"></b-form-textarea>                            
                             </b-form-group>
-                            <div class="borda">
+                            <div class="borda2">
                                 <b-form-group label="Anexar curriculo * (Formatos: *.pdf / *.doc / *.docx)">
-                                    <b-form-file id="curriculum" required v-model="form.curriculum" class="mt-3" accept=".docx, .doc, .pdf" :state="Boolean(form.curriculum)" placeholder="Nenhum arquivo selecionado..." ></b-form-file>
+                                    <b-form-file id="curriculum" required v-model="form.curriculum" accept=".docx, .doc, .pdf" :state="Boolean(form.curriculum)" placeholder="Nenhum arquivo selecionado..." ></b-form-file>
                                 </b-form-group>
                             </div>
                             <b-row>
@@ -90,7 +93,7 @@
         data () {
             return {
                 isLoading: false,
-                services: [],
+                // services: [],
                 states: [],
                 cities: [],
                 form: {
@@ -99,14 +102,15 @@
                     phone: '',
                     state: null,
                     city: null,
-                    interest: [],
+                    // interest: [],
+                    vaga: '',
                     description: '',
                     curriculum: null,
                 },                
             }
         },
         created () {
-            this.getServices(),
+            // this.getServices(),
             this.getStates()
         },        
         methods: {
@@ -123,7 +127,8 @@
                 fd.append('phone', this.form.phone)
                 fd.append('state', this.form.state)
                 fd.append('city', this.form.city.id)
-                fd.append('interest', this.form.interest.join(', '))
+                // fd.append('interest', this.form.interest.join(', '))
+                fd.append('interest', this.form.vaga)
                 fd.append('description', this.form.description)
                 fd.append('curriculum', this.form.curriculum)
 
@@ -153,14 +158,14 @@
                 })
 
             },
-            getServices(){
-                const action = '/api/services'
-                axios.get(action).then(response => {
-                    this.services = [...response.data.data.map(service => (service.title))]
-                }).catch(error => {
-                    console.error(error)
-                })
-            },
+            // getServices(){
+            //     const action = '/api/services'
+            //     axios.get(action).then(response => {
+            //         this.services = [...response.data.data.map(service => (service.title))]
+            //     }).catch(error => {
+            //         console.error(error)
+            //     })
+            // },
             getStates(){
                 const action = '/api/states'
                 axios.get(action).then(response => {
@@ -187,7 +192,8 @@
                     phone: '',
                     state: null,
                     city: null,
-                    interest: [],
+                    // interest: [],
+                    vaga: '',
                     description: '',
                     curriculum: null,
                 }

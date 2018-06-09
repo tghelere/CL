@@ -14,8 +14,7 @@
             <text-content class="text-center" :page="'{{ Route::currentRouteName() }}'"></text-content>
             <div class="row">
                 <div class="col-md-6 mt-50 info">
-                    <h4>Sede</h4>
-                    <h5>{{ config('app.name') }} Londrina</h5>
+                    <h4>{{ config('app.name') }} Londrina</h4>
                     <p>Rua Augusto Severo, 203, Aeroporto</p>
                     <p>Cep: 86039-650 - Londrina - PR </p>
                     <p><a title="Fone: {{ config('app.phone_f') }}" href="tel:{{ config('app.phone') }}">{{ config('app.phone_f') }}</a> / <a title="Whatsapp: {{ config('app.celphone_f') }}" target="_blank" href="https://api.whatsapp.com/send?phone={{ config('app.celphone') }}">{{ config('app.celphone_f') }}</a></p>

@@ -10,7 +10,6 @@
                 <b-col md="5"><b-img class="" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
                 <b-col md="7"><h4 class="text-uppercase">Solicitação de orçamento</h4></b-col>
             </b-row>
-            
             <p>Agradecemos pelo seu interesse em nossos serviços. Preencha os campos abaixo para que possamos conhecer suas necessidades.</p>
             <b-form @submit.prevent="onSubmit">
                 <b-form-group>
@@ -23,15 +22,19 @@
 
                 <b-form-group label="Número de colaboradores">
                     <b-form-radio-group id="contributors" v-model="form.contributors" required>
-                        <b-form-radio value="1 a 10">1 a 10</b-form-radio>
+                        <b-form-radio value="1 a 5">1 a 5</b-form-radio>
+                        <b-form-radio value="5 a 10">5 a 10</b-form-radio>
                         <b-form-radio value="10 a 20">10 a 20</b-form-radio>
                         <b-form-radio value="20 a 30">20 a 30</b-form-radio>
                         <b-form-radio value="acima de 30">acima de 30</b-form-radio>
                     </b-form-radio-group>
                 </b-form-group>
 
-                <b-form-group label="Modalidade de serviço (selecione uma ou mais)">
+                <!-- <b-form-group label="Modalidade de serviço (selecione uma ou mais)">
                     <b-form-checkbox-group id="modality" v-model="form.modality" :options="services"></b-form-checkbox-group>
+                </b-form-group> -->
+                <b-form-group>
+                    <b-form-input id="modality" type="text" v-model="form.modality" required placeholder="Modalidade de serviço *"></b-form-input>
                 </b-form-group>
 
                 <b-form-group>
@@ -104,13 +107,14 @@
                 isLoading: false,
                 modalShow: false,
                 solutions: [],
-                services: [],
+                // services: [],
                 states: [],
                 cities: [],
                 form: {
                     segment: null,
                     contributors: '',
-                    modality: [],
+                    // modality: [],
+                    modality: '',
                     name: '',
                     email: '',
                     phone: '',
@@ -121,7 +125,7 @@
         },
         created () {
             this.getSolutions(),
-            this.getServices(),
+            // this.getServices(),
             this.getStates()
         },
         methods: {
@@ -156,19 +160,20 @@
             getSolutions(){
                 const action = '/api/solutions'
                 axios.get(action).then(response => {
+                    response.data.data.push( { id: '8', title: 'Outros', } )
                     this.solutions = [...response.data.data.map(solution => ({ value: {id: solution.id, name: solution.title}, text: solution.title }))]
                 }).catch(error => {
                     console.error(error)
                 })
             },
-            getServices(){
-                const action = '/api/services'
-                axios.get(action).then(response => {
-                    this.services = [...response.data.data.map(service => (service.title))]
-                }).catch(error => {
-                    console.error(error)
-                })
-            },
+            // getServices(){
+            //     const action = '/api/services'
+            //     axios.get(action).then(response => {
+            //         this.services = [...response.data.data.map(service => (service.title))]
+            //     }).catch(error => {
+            //         console.error(error)
+            //     })
+            // },
             getStates(){
                 const action = '/api/states'
                 axios.get(action).then(response => {
@@ -192,7 +197,8 @@
                 this.form = {
                     segment: null,
                     contributors: '',
-                    modality: [],
+                    // modality: [],
+                    modality: '',
                     name: '',
                     email: '',
                     phone: '',
