@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 class HomeController extends Controller
 {
     public function index(){
-    	return view('admin.home');
+        $text = 'Home';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 }

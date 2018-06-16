@@ -27,8 +27,7 @@
             getText () {                
                 const action = '/api/contents/' + this.page
                 axios.get(action).then(response => {
-                    this.text = response.data.data[0]
-                    
+                    this.text = response.data.data
                 }).catch(error => {
                     console.error(error)
                 })

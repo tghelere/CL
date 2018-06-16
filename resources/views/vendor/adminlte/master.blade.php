@@ -9,20 +9,20 @@
             @yield('title', config('adminlte.title', 'AdminLTE 2'))
             @yield('title_postfix', config('adminlte.title_postfix', ''))</title>
 
-    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/bootstrap/dist/css/bootstrap.min.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
     
-    @if(config('adminlte.plugins.select2'))
+    {{-- @if(config('adminlte.plugins.select2'))
     <!-- Select2 -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.css">
-    @endif
+    @endif --}}
     
     <!-- Theme style -->
     
-    @if(config('adminlte.plugins.datatables'))
+    {{-- @if(config('adminlte.plugins.datatables'))
     <!-- DataTables -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
-    @endif
+    @endif --}}
     
     @yield('adminlte_css')
     
@@ -32,13 +32,14 @@
     <![endif]-->
     
     <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic"> --}}
     
     
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
-    {{-- <link href="{{ mix('css/admin.css') }}" rel="stylesheet"> --}}
+    <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/offcanvas.css') }}">
 </head>
 <body class="hold-transition @yield('body_class')">
     
@@ -69,7 +70,7 @@
         
         
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}"></script>
+        <script src="{{ mix('js/admin.js') }}"></script>
         
 </body>
 </html>

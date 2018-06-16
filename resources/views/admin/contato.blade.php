@@ -1,9 +1,11 @@
 @extends('adminlte::page')
 
-@section('title', ' - Contato')
+@section('title', $data['title'])
 
 @section('content_header')
-    <h1>Contato</h1>
+    <h1 class="text-center">{{$data['title']}}</h1>
+    <hr>
+    @include('partials.adminText') 
 @stop
 
 @section('content')

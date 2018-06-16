@@ -1,26 +1,12 @@
-nav.navbar
-    padding-top: 30px
-    a.logo
-        display: block
-        background: url(/img/logocolor.png) no-repeat top center
-        background-size: contain
-        height: 55px
-        width: 194px
-        span
-            display: none
-    ul
-        font-size: 12px
-        &.menu
-        text-transform: uppercase
-        font-weight: bold        
-        li
-            &.active
-                border-bottom: 2px solid #0089C0
-            a.whats
-                    display: block
-                    background: url(/img/icons/ico_mn-whatsapp-b.png) no-repeat top
-                    background-size: 18px //contain
-                    background-position-x: 0
-                    background-position-y: 6px
-                    padding-left: 20px !important
-                    margin-left: 5px
+.main-sidebar, .skin-blue .main-header .logo
+    width: 250px
+
+.main-header .navbar, .content-wrapper, .main-footer
+    margin-left: 250px
+
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > span:not(.pull-right), .sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > .treeview-menu
+    width: 250px 
+
+.sidebar-mini:not(.sidebar-mini-expand-feature).sidebar-collapse .sidebar-menu > li:hover > a > .pull-right-container
+    left: 254px !important
+    top: -35px !important

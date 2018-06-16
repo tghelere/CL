@@ -9,13 +9,13 @@
 @section('body_class', 'login-page')
 
 @section('body')
-    <div class="login-box">
-        <div class="login-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
-        </div>
-        <!-- /.login-logo -->
-        <div class="login-box-body">
-            <p class="login-box-msg">{{ trans('adminlte::adminlte.login_message') }}</p>
+    <div class="login-box" id="app">
+        {{-- <div class="login-logo mb-0">
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo') !!}</a>
+        </div> --}}
+        <h1 class="text-center">Admin<b>Centrallimp</b></h1>
+        <div class="login-box-body p-3 bg-white rounded box-shadow">
+            <p class="text-center">{{ trans('adminlte::adminlte.login_message') }}</p>
             <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
                 {!! csrf_field() !!}
 
@@ -40,7 +40,7 @@
                     @endif
                 </div>
                 <div class="row">
-                    <div class="col-xs-8">
+                    <div class="col-md-8">
                         <div class="checkbox icheck">
                             <label>
                                 <input type="checkbox" name="remember"> {{ trans('adminlte::adminlte.remember_me') }}
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <!-- /.col -->
-                    <div class="col-xs-4">
+                    <div class="col-md-4">
                         <button type="submit"
                                 class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
                     </div>

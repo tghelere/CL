@@ -31,11 +31,25 @@ class ContentController extends Controller
      */
     public function store(Request $request)
     {
-        $content = $request->isMethod('put') ? Content::findOrFail($request->content_id) : new Content;
         
-        $content->id = $request->input('content_id');
+        $content = $request->isMethod('put') ? Content::findOrFail($request->id) : new Content;
+        $content->id = $request->input('id');
         $content->page = $request->input('page');
-        $content->content = $request->input('content');     
+        $content->content = $request->input('content');
+
+        try{
+            if ($content->save()) {
+                return new ContentResource($content);
+            }            
+        }catch(\Illuminate\Database\QueryException $e){
+            $errorCode = $e->errorInfo[1];
+            $returnData = array(
+                'status' => 'error',
+                'message' => $errorCode,
+            );
+            return Response()->json($returnData);
+
+        }
 
         if ($content->save()) {
             return new ContentResource($content);
@@ -64,7 +78,7 @@ class ContentController extends Controller
     public function page($page)
     {
         
-        $content = Content::where('page', $page)->get();
+        $content = Content::where('page', $page)->get()->first();
         
         return new ContentResource($content);
 

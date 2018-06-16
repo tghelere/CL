@@ -15,9 +15,9 @@ return [
 
     'title' => 'AdminCentrallimp',
 
-    'title_prefix' => 'AdminCentrallimp',
+    'title_prefix' => '',
 
-    'title_postfix' => '',
+    'title_postfix' => ' | AdminCentrallimp',
 
     /*
     |--------------------------------------------------------------------------
@@ -244,7 +244,7 @@ return [
                     'icon'  =>  'hand-o-right',
                 ],
                 [
-                    'text' => 'Escritórios e Ambientes Corp.',
+                    'text' => 'Escrit. e Ambientes Corp.',
                     'url'  => 'admin/solucoes/escritorios-e-ambientes-corporativos',
                     'icon'  =>  'hand-o-right',
                 ],

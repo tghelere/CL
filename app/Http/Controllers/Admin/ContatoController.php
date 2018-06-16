@@ -8,7 +8,12 @@ use App\Http\Controllers\Controller;
 class ContatoController extends Controller
 {
     public function index(){
-    	return view('admin.contato');
+    	$text = 'Contato';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 
     public function read(){

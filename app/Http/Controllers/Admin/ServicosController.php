@@ -8,23 +8,43 @@ use App\Http\Controllers\Controller;
 class ServicosController extends Controller
 {
     public function limpeza(){
-    	$title = 'Servicos > Limpeza';
-    	return view('admin.servicos', compact('title'));
+        $text = 'Serviços - Limpeza';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.servicos', compact('data'));
     }
     public function portaria(){
-    	$title = 'Servicos > Portaria';
-    	return view('admin.servicos', compact('title'));
+        $text = 'Serviços - Portaria';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.servicos', compact('data'));
     }
     public function jardinagem(){
-    	$title = 'Servicos > Jardinagem';
-    	return view('admin.servicos', compact('title'));
+        $text = 'Serviços - Jardinagem';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.servicos', compact('data'));
     }
     public function recepcao(){
-    	$title = 'Servicos > Recepcao';
-    	return view('admin.servicos', compact('title'));
+        $text = 'Serviços - Recepção';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.servicos', compact('data'));
     }
     public function controladoriaDeAcesso(){
-    	$title = 'Servicos > controladoria de acesso';
-    	return view('admin.servicos', compact('title'));
+        $text = 'Serviços - Controladoria de acesso';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.servicos', compact('data'));
     }
 }

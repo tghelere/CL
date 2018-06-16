@@ -14,6 +14,7 @@ const path_js = 'resources/assets/js/'
 const path_sass = 'resources/assets/sass/'
 
 mix.js(path_js + 'app.js', 'public/js')
+    .js(path_js + 'admin.js', 'public/js')
     .js(path_js + 'jquery.js', 'public/js')
     .sass(path_sass + 'style.sass', 'public/css')
     .sass(path_sass + 'admin.sass', 'public/css');

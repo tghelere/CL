@@ -8,7 +8,12 @@ use App\Http\Controllers\Controller;
 class TrabalheConoscoController extends Controller
 {
     public function index(){
-    	return view('admin.trabalhe-conosco');
+        $text = 'Trabalhe Conosco';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
     public function read(){
     	return view('admin.trabalhe-conosco-recrutamento');

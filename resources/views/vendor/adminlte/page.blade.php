@@ -54,7 +54,7 @@
                 </a>
             @endif
                 <!-- Navbar Right Menu -->
-                <div class="navbar-custom-menu">
+                <div class="navbar-custom-menu sair">
 
                     <ul class="nav navbar-nav">
                         <li>

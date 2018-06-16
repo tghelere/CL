@@ -8,31 +8,59 @@ use App\Http\Controllers\Controller;
 class SolucoesController extends Controller
 {
     public function industrias(){
-    	$title = 'Soluçoes > industrias';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Indústrias';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
     public function varejo(){
-    	$title = 'Soluçoes > varejo';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Varejo';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
     public function orgaosPublicos(){
-    	$title = 'Soluçoes > orgaosPublicos';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Órgãos Públicos';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
     public function condominios(){
-    	$title = 'Soluçoes > condominios';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Condomínios';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
     public function clinicasHospitais(){
-    	$title = 'Soluçoes > clinicasHospitais';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Clínicas e Hospitais';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
     public function escolasUniversidades(){
-    	$title = 'Soluçoes > escolasUniversidades';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Escolas e Universidades';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
     public function escritoriosAmbientesCorporativos(){
-    	$title = 'Soluçoes > escritoriosAmbientesCorporativos';
-    	return view('admin.solucoes', compact('title'));
+        $text = 'Soluções - Escritórios e Ambientes Corporativos';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.solucoes', compact('data'));
     }
 }

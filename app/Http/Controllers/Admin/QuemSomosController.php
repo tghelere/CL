@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 class QuemSomosController extends Controller
 {
     public function index(){
-    	return view('admin.quem-somos');
+        $text = 'Quem Somos';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 }
