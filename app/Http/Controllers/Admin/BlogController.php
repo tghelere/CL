@@ -15,4 +15,12 @@ class BlogController extends Controller
         ];
     	return view('admin.' . $data['page'], compact('data'));
     }
+    public function posts(){
+    	$text = 'Blog - Posts';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
+    }
 }

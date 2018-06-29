@@ -4,9 +4,10 @@
     @include('partials.head')         
 </head>
 <body>
-    {{-- <!-- Google Tag Manager (noscript) -->
+    @if(app()->env != 'local')
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KRRFNLQ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) --> --}}
+    @endif
+    
     <div id="app" class="{{ (preg_match("/^servicos-[a-z\-]+$/", Route::currentRouteName()) ? 'servicos' : '') }} {{ (preg_match("/^solucoes-[a-z\-]+$/", Route::currentRouteName()) ? 'solucoes' : '') }} {{ Route::currentRouteName() }}">
         @include('partials.nav')
         

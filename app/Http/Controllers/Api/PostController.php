@@ -10,6 +10,7 @@ use App\Models\Post;
 use App\Models\Category;
 use App\Http\Resources\Post as PostResource;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -20,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('categories')->paginate(6);
+        $posts = Post::with('categories')->get();
 
         return new PostResource($posts);
     }
@@ -43,20 +44,76 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    public function update(Request $request)
+    {
+        $post = Post::findOrFail($request->id);
+        try{
+            if ($request->hasFile('image')) {
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $ext = $request->file('image')->getClientOriginalExtension();
+                $newFilename = Str::slug($request->input('title'))."_cover.".$ext;
+                $folder = 'public/images/posts/'.$request->id.'/';
+                Storage::delete($folder.$post->image); //apagando imagem anterior
+                $path = $request->file('image')->storeAs($folder, $newFilename); //salvando nova imagem
+                $post->image = $newFilename;
+            }else{
+                $post->image = $request->input('image');
+            }
+            $post->id = $request->input('id');
+            $post->title = $request->input('title');
+            $post->description = $request->input('description');
+            $post->body = $request->input('body');
+            $post->slug = Str::slug($request->input('title'));
+            $post->status = $request->input('status');
+            $post->updated_at = $request->input('updated_at');
+            if ($request->input('action') == 'changeStatus') {
+                $post->categories()->sync($request->input('categories'));
+            } else {
+                $cat = json_decode($request->input('categories'));
+                $post->categories()->sync($cat);
+            }
+            
+            if ($post->save()) {
+                return new PostResource($post);
+            }            
+        }catch(\Illuminate\Database\QueryException $e){
+            return Response()->json($e);
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        $post = $request->isMethod('put') ? Post::findOrFail($request->post_id) : new Post;
-        
-        $post->id = $request->input('post_id');
-        $post->title = $request->input('title');
-        $post->description = $request->input('description');
-        $post->body = $request->input('body');
-        $post->image = $request->input('image');
-        $post->slug = Str::slug($request->input('title'));
-
-        if ($post->save()) {
-            return new PostResource($post);
+        $post = new Post;
+        try{
+            if ($request->hasFile('image')) {
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $ext = $request->file('image')->getClientOriginalExtension();
+                $newFilename = Str::slug($request->input('title'))."_cover.".$ext;
+            }
+            $post->title = $request->input('title');
+            $post->description = $request->input('description');
+            $post->body = $request->input('body');
+            $post->slug = Str::slug($request->input('title'));
+            $post->status = $request->input('status');
+            $post->image = $newFilename;
+            $cat = json_decode($request->input('cat'));
+            if ($post->save()) {
+                $path = $request->file('image')->storeAs('public/images/posts/'.$post->id, $newFilename);
+                $post->categories()->sync($cat);
+                return new PostResource($post);
+            }
+        }catch(\Illuminate\Database\QueryException $e){
+            return Response()->json($e);
         }
+      
     }
 
     /**
@@ -146,6 +203,10 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
 
         if ($post->delete()) {
+            // $pathFile = 'public/images/posts/'.$post->id.'/'.$post->image;
+            // Storage::delete($pathFile); 
+            $directory = 'public/images/posts/'.$post->id;
+            Storage::deleteDirectory($directory);
             return new PostResource($post);    
         }
     }

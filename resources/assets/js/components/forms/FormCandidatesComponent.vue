@@ -20,7 +20,7 @@
                             <b-row>                   
                                 <b-col md="4">
                                     <b-form-group>
-                                        <b-form-select @input="getCities(form.state.id)" id="states" required v-model="form.state" :options="states">
+                                        <b-form-select @input="form.state != null ? getCities(form.state.id) : ''" id="states" required v-model="form.state" :options="states">
                                             <template slot="first">
                                                 <option :value="null" disabled>UF *</option>
                                             </template>
@@ -115,29 +115,22 @@
         },        
         methods: {
             onSubmit () {
-
                 this.isLoading = true
-
                 const action1 = '/api/candidate/'
                 const action2 = '/trabalhe-conosco/'
-
                 const fd = new FormData()
-                fd.append('name', this.form.name)
-                fd.append('email', this.form.email)
-                fd.append('phone', this.form.phone)
-                fd.append('state', this.form.state)
-                fd.append('city', this.form.city.id)
-                // fd.append('interest', this.form.interest.join(', '))
-                fd.append('interest', this.form.vaga)
-                fd.append('description', this.form.description)
-                fd.append('curriculum', this.form.curriculum)
-
+                    fd.append('name', this.form.name)
+                    fd.append('email', this.form.email)
+                    fd.append('phone', this.form.phone)
+                    fd.append('state', this.form.state)
+                    fd.append('city', this.form.city.id)
+                    // fd.append('interest', this.form.interest.join(', '))
+                    fd.append('interest', this.form.vaga)
+                    fd.append('description', this.form.description)
+                    fd.append('curriculum', this.form.curriculum)
                 const config = { headers: { 'Content-Type': 'multipart/form-data' } }
-                
                 axios.post(action1, fd, config).then(response => {
-
                     this.form.filename = response.data.data.file_name
-
                     axios.post(action2, this.form).then(response => {
                         if (response.data.type  == 'error') {
                             this.isLoading = false
@@ -204,7 +197,3 @@
         },
     }
 </script>
-
-<style lang="sass" scoped>
-
-</style>

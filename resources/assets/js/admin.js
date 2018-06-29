@@ -16,7 +16,12 @@ Vue.use(require('vue-moment'), {
 
 // Admin components
     Vue.component('admin-form-text-content', require('./components/admin/forms/TextContentComponent.vue'))
-
+    // Vue.component('admin-data-tables', require('./components/admin/lists/DataTablesComponent.vue'))
+    Vue.component('admin-blog-posts', require('./components/admin/blog/PostsComponent.vue'))
+    
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        moment: moment
+    }
 })

@@ -34,7 +34,8 @@ class TrabalheConoscoController extends Controller
             'phone' => $request->json('phone'),
             'state' => $request->json('state.name'),
             'city' => $request->json('city.name'),
-            'interest' => implode(', ', $request->json('interest')),
+            'interest' => $request->json('interest'),
+            // 'interest' => implode(', ', $request->json('interest')),
             'description' => $request->json('description'),
             'curriculum' => config('app.url') . "/storage/curriculums/" . $request->json('filename'),
         ];

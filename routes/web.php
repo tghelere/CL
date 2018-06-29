@@ -39,7 +39,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
 	Route::get('/', 'AdminController@index')->name('index-Admin');
 	Route::get('home', 'HomeController@index')->name('home-Admin');
 	Route::get('quem-somos', 'QuemSomosController@index')->name('quem-somos-Admin');
-	Route::get('blog', 'BlogController@index')->name('blog-Admin');
+	Route::get('blog/pagina', 'BlogController@index')->name('blog-Admin');
+	Route::get('blog/posts', 'BlogController@posts')->name('blog-Admin-posts');
 	Route::group(['prefix' => 'servicos'], function(){
 		Route::redirect('/', 'servicos/limpeza');
 		Route::get('limpeza', 'ServicosController@limpeza')->name('servicos-limpeza-Admin');

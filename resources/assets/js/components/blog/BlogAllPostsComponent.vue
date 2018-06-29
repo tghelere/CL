@@ -1,8 +1,9 @@
 <template>
-    <div class="row">
-        <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-4" v-for="(post, index) in allPosts.data" :key='index'>
+<b-container fluid>
+    <b-row>
+        <b-col md="9">
+            <b-row>
+                <b-col md="4" v-for="(post, index) in allPosts" :key='index' :current-page="currentPage" :per-page="perPage">
                     <a class="link-post" :href="'/blog/post/' + post.slug" :title="post.title" >
                         <div class="item-post">
                             <img :src="post.image" :alt="post.title" class="img-fluid img-thumbnail" >
@@ -15,12 +16,17 @@
                             </ul>
                         </div>
                     </a>
-                </div>
-            </div>
-            <div class="row justify-content-center">
+                </b-col>
+            </b-row>
+            <b-row>
+                <b-col md="12" class="my-1">
+                    <b-pagination align="center" :total-rows="totalRows" :per-page="perPage" v-model="currentPage" class="my-0" />
+                </b-col>
+            </b-row>
+            <!-- <div class="row justify-content-center">
                 <pagination :data="allPosts" :limit="1" @pagination-change-page="getAllPosts"></pagination>
-            </div>
-        </div>
+            </div> -->
+        </b-col>
         
         <div class="col-md-3">
             <div class="row search">
@@ -46,18 +52,27 @@
                 </div>
             </div>
         </div>
-    </div>
+    </b-row>
+</b-container>
 </template>
 
 <script>
-    Vue.component('pagination', require('laravel-vue-pagination'))
+    // Vue.component('pagination', require('laravel-vue-pagination'))
+
+    import BootstrapVue from 'bootstrap-vue'        
+    import 'bootstrap-vue/dist/bootstrap-vue.css'
+    Vue.use(BootstrapVue)
+
     export default {
         data () {
             return {
-                allPosts: {},
+                allPosts: [],
                 categoriesCount: {},
                 categorySelected: '',
                 search: '',
+                currentPage: 1,
+                perPage: 10,
+                totalRows: 0,
             }
         },
         created() {
@@ -65,10 +80,11 @@
             this.getCategoriesCount()
         },
         methods: {
-            getAllPosts(page = 1){
-                const action = '/api/posts?page=' + page
+            getAllPosts(){
+                const action = '/api/posts'
                 axios.get(action).then(response => {
-                    this.allPosts = response.data
+                    this.allPosts = response.data.data
+                    this.totalRows = this.allPosts.length
                 }).catch(error => {
                     console.error(error)
                 })

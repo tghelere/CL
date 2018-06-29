@@ -253,8 +253,20 @@ return [
         ],
         [
             'text' => 'Blog',
-            'url'  => 'admin/blog',
-            'icon' => 'pencil'
+            // 'url'  => 'admin/contato',
+            'icon' => 'pencil',
+            'submenu' => [
+                [
+                    'text'  =>  'Página',
+                    'url'   =>  'admin/blog/pagina',
+                    'icon'  =>  'edit',
+                ],
+                [
+                    'text'  =>  'Posts',
+                    'url'   =>  'admin/blog/posts',
+                    'icon' => 'newspaper-o',
+                ],
+            ],
         ],
         [
             'text' => 'Newsletter',
