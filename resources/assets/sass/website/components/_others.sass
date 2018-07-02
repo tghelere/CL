@@ -7,6 +7,8 @@
     position: relative
     &.mt-orange
         border-top: 5px solid #F29E21
+    &.mt-green
+        border-top: 5px solid #33875A
     &.mt-blue
         border-top: 3px solid #0089C0
     h1
@@ -15,9 +17,13 @@
         margin: 50px 0
     ul
         text-align: left
+    .content
+        width: 80%
+        margin: 0 auto
+        
 .bradcrump 
     p
-        font-size: 10px !important
+        // font-size: 10px !important
         color: #808080 !important
         font-weight: bold !important
 
@@ -29,27 +35,27 @@
     border: 1px solid #d8d8d8
     padding: 10px
 
-h1
-    font-size: 20px
-    font-weight: bold
-    color: #707070
-    text-transform: uppercase
+// h1
+//     font-size: 20px
+//     font-weight: bold
+//     color: #707070
+//     text-transform: uppercase
 
-h2
-    font-size: 16px
-    color: #27292C
-    text-transform: uppercase
+// h2
+//     font-size: 16px
+//     color: #27292C
+//     text-transform: uppercase
 
-h3
-    font-size: 14px
-    font-weight: bold
-    color: #27292C
-    text-transform: uppercase
+// h3
+//     font-size: 14px
+//     font-weight: bold
+//     color: #27292C
+//     text-transform: uppercase
 
-p, li
-    font-size: 12px
-    line-height: 18px
-    color: #27292C
+// p, li
+//     font-size: 12px
+//     line-height: 18px
+//     color: #27292C
 
 .blog-post 
     .bradcrump 
@@ -63,11 +69,15 @@ p, li
         outline: none
         box-shadow: none
 
-.sticky-top.scrolled
+.navbar.sticky-top.scrolled
     background-color: #fff !important
-    transition: background-color 200ms linear
-.navbar.scrolled
-    padding: 0.2rem 1rem
-    opacity: .93
-    transition: padding opacity 200ms linear
+    opacity: .90
+    transition: background-color opacity 400ms linear
+    #top-bar
+        height: unset
+        a.logo
+            margin: unset
 
+.corpo, .blog-post
+    p
+        font-size: 14px !important

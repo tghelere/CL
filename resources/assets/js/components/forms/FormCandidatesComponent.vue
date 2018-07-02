@@ -48,7 +48,7 @@
                         </b-col>
                         <b-col md="6">
                             <b-form-group>
-                                <b-form-textarea id="description" required v-model="form.description" placeholder="Mensagem *" :rows="5" :max-rows="6"></b-form-textarea>                            
+                                <b-form-textarea id="description" v-model="form.description" placeholder="Mensagem" :rows="5" :max-rows="6"></b-form-textarea>                            
                             </b-form-group>
                             <div class="borda2">
                                 <b-form-group label="Anexar curriculo * (Formatos: *.pdf / *.doc / *.docx)">

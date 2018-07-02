@@ -215,8 +215,8 @@
 
 <style lang="sass" scoped>
 .link-quote
-    background: url(/img/bot_orcamento.png) no-repeat top center
-    height: 110px
+    background: url(/img/orcamento_azul.png) no-repeat top center
+    height: 140px
     width: 150px
     display: block
     position: fixed
@@ -225,7 +225,7 @@
     z-index: 5
     cursor: pointer
     &:hover
-        background-position-y: -110px
+        background-position-y: -140px
     &:focus
         outline: 0
     span

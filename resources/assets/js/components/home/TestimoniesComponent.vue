@@ -29,7 +29,7 @@
             return {
                 testimonies: [],
                 swiperOption: {
-                    loop: true,
+                    loop: false,
                     autoHeight: true,
                     centeredSlides: true,
                     navigation: {
@@ -57,19 +57,24 @@
 
 <style lang="sass" scoped>
 .componente
-    margin-bottom: 80px
+    // margin-bottom: 80px
+    color: #fff
     .text
-        padding: 10px 10px
+        padding: 20px 10px
+        h3
+            margin-top: 50px
     .testimonies
         padding: 10px 50px
 
     .testimonies
         hr, p
             margin-bottom: 0
+        hr
+            background-color: #fff
         p.nome
             font-size: 12px
-            color: #707070
+            // color: #707070
         p.instituto
             font-size: 10px
-            color: #707070
+            // color: #707070
 </style>

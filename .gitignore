@@ -16,3 +16,4 @@ yarn-error.log
 .env
 /tmp
 /public/tmp
+/public/mix-manifest.json

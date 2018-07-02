@@ -3,8 +3,9 @@
         <swiper :options="swiperOption">
             <swiper-slide v-for="(banner, index) in banners" :key='index'>
                 <img :src="'/img/banners/' + banner.image" :alt="banner.title">
+                <!-- <div class="imagem" :style="'background: url('+ post.image +') no-repeat center center;'"></div> -->
                 <div v-if="banner.title != null" class="text container">
-                    <h4 v-show="banner.title != null">{{ banner.title }}</h4>
+                    <h2 v-show="banner.title != null">{{ banner.title }}</h2>
                     <p v-show="banner.description != null">{{ banner.description }}</p>
                     <a v-show="banner.link != null" :href="banner.link" class="leia text-uppercase" title="Leia Mais">Leia Mais</a>
                 </div>
@@ -23,6 +24,7 @@
                 banners : [],
                 swiperOption: {
                     // loop: true,
+                    centeredSlides: true,
                     autoplay: {
                         delay: 6000,
                         disableOnInteraction: true
@@ -69,14 +71,15 @@
         left: 20%
         background-color: rgba(24, 74, 99, 0.85)
         color: #fff !important
-        h4
-            font-size: 24px
-            line-height: 27px
-            font-weight: bold
-        p
-            font-size: 18px
-            line-height: 23px
+        h2
             color: #fff
+            // font-size: 24px
+            // line-height: 27px
+            // font-weight: bold
+        // p
+        //     font-size: 18px
+        //     line-height: 23px
+        //     color: #fff
         a.leia
             background-color: rgba(24, 74, 99, 1)
             padding: 5px 10px

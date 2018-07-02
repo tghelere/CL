@@ -45,7 +45,7 @@ class ContentsTableSeeder extends Seeder
             '<p>Profissionais qualificados, preocupados com o autodesenvolvimento e comprometidos com os ideais da empresa. Este &eacute; o perfil que a Centrallimp procura e investe para o crescimento na carreira. Preencha seus dados e participe de processos de sele&ccedil;&atilde;o:</p>',
 
             // footer
-            '<p>Especialistas em diminuir custos e melhorar a produtividade de empresas e condom&iacute;nios.</p>',
+            '<p class="tipo2">Especialistas em diminuir custos e melhorar a produtividade de empresas e condom&iacute;nios.</p>',
 
             // home-testimonies
             '<p>A satisfa&ccedil;&atilde;o de nossos clientes s&atilde;o os nossos melhores indicadores de qualidade. Estamos sempre atentos &agrave;s suas necessidades, comprometidos com excel&ecirc;ncia nos servi&ccedil;os prestados.</p>',

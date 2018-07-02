@@ -7,7 +7,7 @@
                         <!-- <img :src="post.image" :alt="post.title" class="img-fluid" > -->
                         <div class="imagem" :style="'background: url('+ post.image +') no-repeat center center;'"></div>
                         <h4>{{post.title}}</h4>
-                        <p>{{post.description}}</p>
+                        <p class="tipo2">{{post.description}}</p>
                     </div>
                 </a>
             </div>
@@ -48,9 +48,9 @@ a.link-post2
             .imagem
                 opacity: .8        
         .imagem
-            height: 100px
+            height: 123px
             width: 100%
             background-size: cover
-        h4
+        h4, p
             color: #3f3f3f
 </style>

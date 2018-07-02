@@ -11,22 +11,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-        // $this->call(ServicesTableSeeder::class);
-        // $this->call(SolutionsTableSeeder::class);
-        // $this->call(TestimoniesTableSeeder::class);
-        // $this->call(NewslettersTableSeeder::class);
-        // $this->call(StatesTableSeeder::class); //comentar após semear
-        // $this->call(CitiesTableSeeder::class); //comentar após semear
-        // $this->call(CandidatesTableSeeder::class);
-        // $this->call(ContactsTableSeeder::class);
-        // $this->call(OmbudsTableSeeder::class);
-        // $this->call(BudgetsTableSeeder::class);
-        // $this->call(BannersTableSeeder::class);
-        // $this->call(ContentsTableSeeder::class);
-        // DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        //     $this->call(CategoriesTableSeeder::class);
-        //     $this->call(PostsTableSeeder::class);
-        // DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+        $this->call(UsersTableSeeder::class);
+        $this->call(ServicesTableSeeder::class);
+        $this->call(SolutionsTableSeeder::class);
+        $this->call(TestimoniesTableSeeder::class);
+        $this->call(NewslettersTableSeeder::class);
+        $this->call(StatesTableSeeder::class); //comentar após semear
+        $this->call(CitiesTableSeeder::class); //comentar após semear
+        $this->call(CandidatesTableSeeder::class);
+        $this->call(ContactsTableSeeder::class);
+        $this->call(OmbudsTableSeeder::class);
+        $this->call(BudgetsTableSeeder::class);
+        $this->call(BannersTableSeeder::class);
+        $this->call(ContentsTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+            $this->call(CategoriesTableSeeder::class);
+            $this->call(PostsTableSeeder::class);
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

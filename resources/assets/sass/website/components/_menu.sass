@@ -1,4 +1,10 @@
 nav.navbar
+    padding: 0
+    background-color: #fff
+    #top-bar
+        height: 120px
+    .menu-h
+        height: 100%
     .dropdown:hover>.dropdown-menu
         display: block
         // padding-top: 30px
@@ -6,28 +12,45 @@ nav.navbar
         display: block
         background: url(/img/logocolor.png) no-repeat top center
         background-size: contain
-        height: 43px
-        width: 150px
+        height: 71px
+        width: 250px
+        margin-top: -30px
         span
             display: none
     ul
-        font-size: 12px
+        // font-size: 12px
         &.menu
         text-transform: uppercase
-        font-weight: bold        
+        font-weight: bold
+        &.navbar-nav
+            height: 100%
         li
             border-bottom: 2px solid #fff
+            h5.root
+                margin-top: 40px
             &.active
                 border-bottom: 2px solid #0089C0
+                background-color: #0089C0
+                a h5.root
+                    color: #fff !important
             &:hover
                 border-bottom: 2px solid #0089C0
             a
+                color: rgba(0, 0, 0, 0.5)
                 &.whats
                     display: block
-                    background: url(/img/icons/ico_mn-whatsapp-b2.png) no-repeat top
+                    background: url(/img/icons/whatsapp.svg) no-repeat top
                     background-size: 18px //contain
                     background-position-x: 0
-                    background-position-y: 6px
+                    background-position-y: 46px
+                    padding-left: 20px !important
+                    margin-left: 5px
+                &.phone
+                    display: block
+                    background: url(/img/icons/phone.svg) no-repeat top
+                    background-size: 18px //contain
+                    background-position-x: 0
+                    background-position-y: 46px
                     padding-left: 20px !important
                     margin-left: 5px
     ul
@@ -35,12 +58,13 @@ nav.navbar
             height: 100%
             width: 100%
             .col-menor
-                width: 165px
+                width: 175px
                 float: left
-                margin-right: 40px
+                // margin-right: 40px
             .col-maior
-                width: 310px
+                width: 340px
                 float: left
+                margin-left: 30px
         .dropdown-item
             &.active, &:active
                 background-color: #fff !important
@@ -50,41 +74,49 @@ nav.navbar
                 // background-color: #0089C0 !important
         &.solutions
             &.dropdown-menu
-                width: 630px
-                padding: 40px 55px
+                width: 640px
+                padding: 30px 45px
                 .dropdown-item
                     // padding: 0
                 li 
                     // border: 1px solid blue
                     height: 40px
                     line-height: 40px
-                    margin: 10px 0
+                    margin: 5px 0
                     float: left
                     width: 100%
+                    &.active
+
                     a
+                        color: rgba(0, 0, 0, 0.5)
                         padding: 0 0 0 40px 
                         display: block
+                        height: 40px
+                        h5
+                            line-height: 40px
+                            margin: 0
+                            padding: 0
                         // &.dropdown-item
                         //     padding: 20px 0 5px 40px
                         &.solucoes
                             background-size: 30px !important
                             background-position-x: 2px !important
-                        &.solucoes-industrias
-                            background: url(/img/icons/solucoes-industrias.png) no-repeat center
-                        &.solucoes-varejo
-                            background: url(/img/icons/solucoes-varejo.png) no-repeat center
-                        &.solucoes-orgaos-publicos
-                            background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat center
-                        &.solucoes-condominios
-                            background: url(/img/icons/solucoes-condominios.png) no-repeat center
-                        &.solucoes-clinicas-e-hospitais
-                            background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat center
-                        &.solucoes-escolas-e-universidades
-                            background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat center
-                        &.solucoes-escritorios-e-ambientes-corporativos
-                            background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat center
-                    &.pqno 
-                        margin-right: 40px
-                        width: 160px
-                    &.gde
+                        &.industrias
+                            background: url(/img/icons/solucoes-industrias.png) no-repeat top
+                        &.varejo
+                            background: url(/img/icons/solucoes-varejo.png) no-repeat top
+                        &.orgaos-publicos
+                            background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat top
+                        &.condominios
+                            background: url(/img/icons/solucoes-condominios.png) no-repeat top
+                        &.clinicas-e-areas-de-saude
+                            background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat top
+                        &.escolas-e-universidades
+                            background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat top
+                        &.escritorios-e-ambientes-corporativos
+                            background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat top
+                    // &.pqno 
+                    //     margin-right: 40px
+                    //     width: 160px
+                    // &.gde
                         // width: 260px

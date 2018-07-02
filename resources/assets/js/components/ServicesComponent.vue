@@ -3,8 +3,9 @@
         <h3 v-if="page == 'home'" class="text-uppercase text-center">Serviços</h3>
         <ul class="row justify-content-center">
             <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center col-md-2">
-                <a :href="service.url" :title="service.title" :class="service.slug">
-                    <span>{{ service.title }}</span>
+                <a :href="service.url" :title="service.title" >
+                    <div class="img" :class="service.slug"></div>
+                    <h5>{{ service.title }}</h5>
                 </a>
             </li>
         </ul>
@@ -44,33 +45,48 @@
 .componente
     margin-bottom: 100px
     h3
-        margin: 80px auto 50px
+        margin: 80px auto 5px
     ul
         padding: 0 !important
         margin-bottom: 0
         li
             list-style: none
-            width: 150px
+            padding: 0
+            margin: 0 2px
+            // width: 30%
             display: block
+            background-size: 30px
+            
             a
                 display: inline-block
                 color: #000
-                height: 80px
-                width: 100px
-                &.servicos-limpeza
-                    background: url(/img/icons/services/servicos-limpeza.png) no-repeat top center
-                &.servicos-portaria
-                    background: url(/img/icons/services/servicos-portaria.png) no-repeat top center
-                &.servicos-jardinagem
-                    background: url(/img/icons/services/servicos-jardinagem.png) no-repeat top center
-                &.servicos-recepcao
-                    background: url(/img/icons/services/servicos-recepcao.png) no-repeat top center
-                &.servicos-controladoria-de-acesso
-                    background: url(/img/icons/services/servicos-controladoria-de-acesso.png) no-repeat top center
+                padding: 20px 2px
+                height: 100%
+                width: 100%
+                .img
+                    margin: 40px auto 0
+                    width: 80px
+                    height: 80px
+                    &.servicos-limpeza
+                        background: url(/img/icons/services/home_limpeza_180px.png) no-repeat top center
+                    &.servicos-portaria
+                        background: url(/img/icons/services/home_portaria80px.png) no-repeat top center
+                    &.servicos-jardinagem
+                        background: url(/img/icons/services/home_jardinagem_180px.png) no-repeat top center
+                    &.servicos-recepcao
+                        background: url(/img/icons/services/home_recepcao_180px.png) no-repeat top center
+                    &.servicos-controladoria-de-acesso
+                        background: url(/img/icons/services/home_controladoria80px.png) no-repeat top center
                 &:hover
-                    background-position-y: -81px
-                span
-                    padding-top: 90px
+                    background-color: #0089c0
+                    text-decoration: none
+                    color: #fff
+                    .img
+                        background-position-y: -80px
+
+                h5
+                    padding-top: 15px
                     display: block
                     margin: 0 auto
+                    
 </style>

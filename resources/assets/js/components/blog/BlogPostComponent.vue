@@ -7,7 +7,7 @@
                     <u>{{cat.name}}</u>
                 </li>
             </ul>
-            <div v-html="post.body"></div>
+            <div class="blog-post" v-html="post.body"></div>
         </div>
     </div>
 </template>

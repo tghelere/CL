@@ -21,6 +21,7 @@ class CreateBannersTable extends Migration
             $table->string('title')->nullable();
             $table->string('description')->nullable();
             $table->string('link')->nullable();
+            $table->string('colorbox', 10)->nullable();
             $table->timestamps();
         });
     }

@@ -4,9 +4,7 @@
         <ul class="list-unstyled">
             <li v-for="(solution, index) in solutions" :key='index' class="border" :class="solution.slug">
                 <a href="" @click.prevent="selectSolution(solution.slug); changeSelected(solution.title);" :title="solution.title">
-                    <span class="text-uppercase">
-                        {{ solution.title }}
-                    </span>
+                    <h5>{{ solution.title }}</h5>
                 </a>
             </li>
         </ul>
@@ -14,9 +12,9 @@
             <h3>{{selected}}</h3>
             <text-content :page="'home-solutions'"></text-content>
             <hr>
-            <h5>{{post.title}}</h5>
-            <p>{{post.description}}</p>
-            <a title="Leia mais" class="text-uppercase" :href="'/blog/post/' + post.slug">Leia mais</a>
+            <h3>{{post.title}}</h3>
+            <p class="tipo2">{{post.description}}</p>
+            <a title="Leia mais" class="text-uppercase tipo3" :href="'/blog/post/' + post.slug">Leia mais</a>
         </div>
     </div>
 </template>
@@ -101,7 +99,7 @@ ul
                 &:hover
                     background-color: rgba(242, 158, 33, 0.3)
         &.orgaos-publicos
-            background: url(/img/thumbs/solutions/porteiro.jpg) no-repeat top center
+            background: url(/img/thumbs/solutions/orgaospublicos.jpg) no-repeat top center
             background-size: cover
             a
                 background-color: rgba(69, 163, 104, 0.6)
@@ -114,7 +112,7 @@ ul
                 background-color: rgba(0, 161, 162, 0.6)
                 &:hover
                     background-color: rgba(0, 161, 162, 0.3)
-        &.clinicas-e-hospitais
+        &.clinicas-e-areas-de-saude
             background: url(/img/thumbs/solutions/hospital.jpg) no-repeat top center
             background-size: cover
             a
@@ -143,10 +141,10 @@ ul
             height: 100%
             width: 100%
             text-decoration: none
-            span
+            h5
                 color: #fff
-                font-weight: bold
-                font-size: 13px
+                // font-weight: bold
+                // font-size: 13px
 
 .post
         width: 400px
@@ -156,7 +154,7 @@ ul
             margin: 40px 0
         a
             color: #000
-            font-weight: bold
+            // font-weight: bold
 
 
 

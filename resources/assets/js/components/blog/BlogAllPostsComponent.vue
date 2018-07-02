@@ -1,39 +1,41 @@
 <template>
 <b-container fluid>
+    <loading :active.sync="isLoading" :can-cancel="false"></loading>
     <b-row>
         <b-col md="9">
             <b-row>
-                <b-col md="4" v-for="(post, index) in allPosts" :key='index' :current-page="currentPage" :per-page="perPage">
+                <b-col md="4" v-for="(post, index) in postsPaged" :key='index' :current-page="currentPage" :per-page="perPage" @filtered="onFiltered">
                     <a class="link-post" :href="'/blog/post/' + post.slug" :title="post.title" >
                         <div class="item-post">
-                            <img :src="post.image" :alt="post.title" class="img-fluid img-thumbnail" >
-                            <h4>{{post.title}}</h4>
-                            <p>{{post.description}}</p>
-                            <ul class="list-inline list-unstyled">
-                                <li class="list-inline-item mr-3 blue text-uppercase" v-for="(cat, index) in post.categories" :key="index" >
-                                    {{cat.name}}
-                                </li>
-                            </ul>
+                            <img :src="post.image" :alt="post.title" class="img-fluid" >
+                            <div class="text">
+                                <h3>{{post.title}}</h3>
+                                <p class="tipo2">{{post.description}}</p>
+                                <ul class="list-inline list-unstyled">
+                                    <li class="list-inline-item mr-3 text-uppercase" v-for="(cat, index) in post.categories" :key="index" >
+                                        {{cat.name}}
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </a>
                 </b-col>
             </b-row>
             <b-row>
-                <b-col md="12" class="my-1">
+                <b-col class="my-1">
                     <b-pagination align="center" :total-rows="totalRows" :per-page="perPage" v-model="currentPage" class="my-0" />
                 </b-col>
             </b-row>
-            <!-- <div class="row justify-content-center">
-                <pagination :data="allPosts" :limit="1" @pagination-change-page="getAllPosts"></pagination>
-            </div> -->
         </b-col>
         
-        <div class="col-md-3">
-            <div class="row search">
-                <div class="col-md-12">
-                    <input type="text" v-model="search" @keyup.enter="getSearch(search)" placeholder="Buscar conteúdo">
-                </div>
-            </div>
+        <b-col md="3">
+            <b-row class="search">
+                <b-col>
+                    <input type="text" v-model="filter" placeholder="Buscar conteúdo">
+                    <!-- <input type="text" v-model="search" @keyup.enter="getSearch(search)" placeholder="Buscar conteúdo"> -->
+                    <!-- <b-form-input type="text" v-model="filter" placeholder="Buscar conteúdo" /> -->
+                </b-col>
+            </b-row>
             <div class="row newsletter">
                 <div class="col-md-12">
                     <form-newsletter :page="'blog'" ></form-newsletter>
@@ -42,16 +44,19 @@
             <div class="row filter">
                 <div class="col-md-12">
                     <div class="border">
-                        <p class="text-uppercase text-center">Filtrar por assuntos</p>
+                        <h5 class="text-uppercase text-center">Filtrar por assuntos</h5>
                         <ul class="categories list-unstyled">
                             <li v-for="(cat, index) in categoriesCount" :key='index'>
                                 <a @click.prevent="filterSubject(cat.slug)" :class="{ active: categorySelected == cat.slug}" href="#" >{{cat.name}} ({{cat.posts_count}})</a>
                             </li>
+                            <!-- <li>
+                                <a href="">Todas as categorias</a>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
+        </b-col>
     </b-row>
 </b-container>
 </template>
@@ -63,16 +68,26 @@
     import 'bootstrap-vue/dist/bootstrap-vue.css'
     Vue.use(BootstrapVue)
 
+    import Loading from 'vue-loading-overlay'
+    import 'vue-loading-overlay/dist/vue-loading.min.css'
+
     export default {
         data () {
             return {
                 allPosts: [],
+                currentPage: 1,
+                perPage: 6,
+                totalRows: 0,
                 categoriesCount: {},
                 categorySelected: '',
-                search: '',
-                currentPage: 1,
-                perPage: 10,
-                totalRows: 0,
+                // search: '',
+                isLoading: false,
+                filter: null,
+            }
+        },
+        computed: {
+            postsPaged(){
+                return this.allPosts.slice((this.currentPage - 1) * this.perPage,this.currentPage * this.perPage)
             }
         },
         created() {
@@ -81,69 +96,56 @@
         },
         methods: {
             getAllPosts(){
+                this.isLoading = true
                 const action = '/api/posts'
                 axios.get(action).then(response => {
                     this.allPosts = response.data.data
                     this.totalRows = this.allPosts.length
+                    this.isLoading = false
                 }).catch(error => {
                     console.error(error)
+                    this.isLoading = false
                 })
             },
             getCategoriesCount(){
+                this.isLoading = true
                 const action = '/api/posts/categories/'
                 axios.get(action).then(response => {
                     this.categoriesCount = response.data.data
+                    this.isLoading = false
                 }).catch(error => {
                     console.error(error)
+                    this.isLoading = false
                 })
             },
             filterSubject(slug){
+                this.isLoading = true
                 const action = '/api/posts/category/' + slug
                 axios.get(action).then(response => {
                     this.categorySelected = slug
-                    this.allPosts = response.data
+                    this.allPosts = response.data.data
+                    this.totalRows = this.allPosts.length
+                    this.isLoading = false
                 }).catch(error => {
                     console.error(error)
+                    this.isLoading = false
                 })
             },
-            getSearch(search){
-                const action = '/api/posts/search/' + search
-                axios.get(action).then(response => {
-                    this.allPosts = response.data
-                }).catch(error => {
-                    console.error(error)
-                })
+            onFiltered(filteredItems) {
+                this.totalRows = filteredItems.length
+                this.currentPage = 1
             },
+            // getSearch(search){
+            //     const action = '/api/posts/search/' + search
+            //     axios.get(action).then(response => {
+            //         this.allPosts = response.data
+            //     }).catch(error => {
+            //         console.error(error)
+            //     })
+            // },
+        },
+        components: {
+            Loading,
         },
     }
 </script>
-<style lang="sass" scoped>
-.search, .newsletter, .filter
-    padding: 5px 2px
-    margin-bottom: 40px
-    input, .border
-        width: 100%
-        padding-left: 10px
-        margin-bottom: 10px
-.search input
-    border: 0
-    border-bottom: 1px solid #000
-    &:focus
-        outline: none
-    &::placeholder
-        text-transform: uppercase 
-.filter
-    p
-        margin-top: 20px        
-        font-size: 14px
-    ul.categories
-        padding-left: 10px
-        li
-            a
-                &.active
-                    font-weight: bold
-.blue
-    color: #0056b3
-    font-size: 11px
-
-</style>

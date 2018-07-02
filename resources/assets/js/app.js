@@ -23,8 +23,6 @@ Vue.use(VueAwesomeSwiper)
     Vue.component('form-contact', require('./components/forms/FormContactComponent.vue'))
     Vue.component('form-newsletter', require('./components/forms/FormNewsletterComponent.vue'))
 
-    // Vue.component('teste', require('./components/blog/teste.vue'))
-
     Vue.component('blog-all-posts', require('./components/blog/BlogAllPostsComponent.vue'))
     Vue.component('blog-post', require('./components/blog/BlogPostComponent.vue'))
 

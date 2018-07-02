@@ -1,6 +1,6 @@
 <template>
     <div v-show="banners.length > 0" class="banner">    
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide v-for="(banner, index) in banners" :key='index'>
                 <img :src="'/img/banners/' + banner.image" :alt="banner.title" height="400">
             </swiper-slide>
@@ -21,7 +21,10 @@
         },
         data () {
             return {
-                banners : [],                
+                banners : [],
+                swiperOption: {
+                    centeredSlides: true,
+                },
             }
         },
         created () {

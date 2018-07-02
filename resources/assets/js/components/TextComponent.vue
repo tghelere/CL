@@ -39,11 +39,6 @@
 <style lang="sass" scoped>
 .home-text
     text-align: center
-    font-size: 14px
     line-height: 18px
     margin: 30px 0
-// .home-testimonies
-.footer-text
-    margin-top: 1rem
-    font-size: 10px
 </style>

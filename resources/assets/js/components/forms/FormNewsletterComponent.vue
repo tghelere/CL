@@ -3,8 +3,8 @@
         <vue-snotify></vue-snotify>
         <loading :active.sync="isLoading" :can-cancel="false"></loading>
         <div class="newsletter">
-            <h4>Newsletter</h4>
-            <p>Cadastre-se para receber atualizações semanais sobre ...</p>
+            <h3 class="text-uppercase text-center">Atualizações</h3>
+            <p class="text-center">Cadastre-se para receber nossas atualizações de conteúdo</p>
             <b-form @submit.prevent="onSubmit"> 
                 <b-form-group>
                     <b-form-input id="email" type="email" v-model="form.email" required placeholder="Digite seu e-mail"></b-form-input>
@@ -85,10 +85,10 @@
 
 <style lang="sass" scoped>
 .newsletter
-    background-color: #272A2E
+    // background-color: #272A2E
     padding: 5%
-    h4, p
-        color: #fff
+    // h3, p
+    //     color: #fff
     form button
         &.blog-post
             padding: 4% 8%

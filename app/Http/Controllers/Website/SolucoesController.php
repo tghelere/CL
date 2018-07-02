@@ -51,7 +51,7 @@ class SolucoesController extends Controller
     	$data = [
             'page' => 'solucoes',
             'title-category' => 'Soluções',
-            'title' => 'Clínicas e Hospitais',
+            'title' => 'Clínicas e Áreas de Saúde',
             'keywords' => '',
             'description' => '',            
         ];

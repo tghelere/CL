@@ -16,13 +16,13 @@ Route::namespace('Website')->group(function () {
 	});
 	Route::group(['prefix' => 'solucoes'], function(){
 		Route::redirect('/', 'solucoes/industrias');        
-		Route::get('industrias', 'SolucoesController@industrias')->name('solucoes-industrias');
-		Route::get('varejo', 'SolucoesController@varejo')->name('solucoes-varejo');
-		Route::get('orgaos-publicos', 'SolucoesController@orgaosPublicos')->name('solucoes-orgaos-publicos');
-		Route::get('condominios', 'SolucoesController@condominios')->name('solucoes-condominios');
-		Route::get('clinicas-e-hospitais', 'SolucoesController@clinicasHospitais')->name('solucoes-clinicas-e-hospitais');
-		Route::get('escolas-e-universidades', 'SolucoesController@escolasUniversidades')->name('solucoes-escolas-e-universidades');
-		Route::get('escritorios-e-ambientes-corporativos', 'SolucoesController@escritoriosAmbientesCorporativos')->name('solucoes-escritorios-e-ambientes-corporativos');	
+		Route::get('industrias', 'SolucoesController@industrias')->name('industrias');
+		Route::get('varejo', 'SolucoesController@varejo')->name('varejo');
+		Route::get('orgaos-publicos', 'SolucoesController@orgaosPublicos')->name('orgaos-publicos');
+		Route::get('condominios', 'SolucoesController@condominios')->name('condominios');
+		Route::get('clinicas-e-areas-de-saude', 'SolucoesController@clinicasHospitais')->name('clinicas-e-areas-de-saude');
+		Route::get('escolas-e-universidades', 'SolucoesController@escolasUniversidades')->name('escolas-e-universidades');
+		Route::get('escritorios-e-ambientes-corporativos', 'SolucoesController@escritoriosAmbientesCorporativos')->name('escritorios-e-ambientes-corporativos');	
 	});
 	Route::get('trabalhe-conosco', 'TrabalheConoscoController@index')->name('trabalhe-conosco');
 	Route::post('trabalhe-conosco', 'TrabalheConoscoController@post')->name('trabalhe-conosco-post');

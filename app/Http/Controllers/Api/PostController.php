@@ -188,7 +188,7 @@ class PostController extends Controller
     public function category($category)
     {
         $category = Category::where('slug', $category)->get()->first();        
-        $posts = $category->posts()->with('categories')->paginate(6);
+        $posts = $category->posts()->with('categories')->get();
         return new PostResource($posts);
     }
 
