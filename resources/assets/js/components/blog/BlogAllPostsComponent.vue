@@ -7,7 +7,7 @@
                 <b-col md="4" v-for="(post, index) in postsPaged" :key='index' :current-page="currentPage" :per-page="perPage">
                     <a class="link-post" :href="'/blog/post/' + post.slug" :title="post.title" >
                         <div class="item-post">
-                            <img :src="post.image" :alt="post.title" class="img-fluid" >
+                            <img :src="'/storage/images/posts/' + post.id + '/' +  post.image" :alt="post.title" class="img-fluid" >
                             <div class="text">
                                 <h3>{{post.title}}</h3>
                                 <p class="tipo2">{{post.description}}</p>
@@ -89,7 +89,7 @@
             },
             filtered(){
                 return this.allPosts.filter((post) => {
-                    return post.title.match(this.filter) || post.description.match(this.filter) || post.body.match(this.filter)
+                    return post.title.toLowerCase().match(this.filter.toLowerCase()) || post.description.toLowerCase().match(this.filter.toLowerCase()) || post.body.toLowerCase().match(this.filter.toLowerCase())
                 })
             },
             totalRows(){

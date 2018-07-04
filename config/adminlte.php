@@ -113,6 +113,24 @@ return [
             'text' => 'Home',
             'url'  => 'admin/home',
             'icon' => 'home',
+            'submenu' => [
+                [
+                    'text'  =>  'Banners',
+                    'url'   =>  'admin/home/banners',
+                    'icon'  => 'picture-o',
+                ],
+                [
+                    'text'  =>  'Textos',
+                    'url'   =>  'admin/home/textos',
+                    'icon'  =>  'edit',
+                ],
+                [
+                    'text'  =>  'Depoimentos',
+                    'url'   =>  'admin/home/depoimentos',
+                    'icon'  =>  'commenting-o',
+                ],
+                
+            ],
         ],
         [
             'text' => 'Quem Somos',
@@ -133,8 +151,8 @@ return [
                     'text'  =>  'Recrutamento',
                     'url'   =>  'admin/trabalhe-conosco/recrutamento',
                     'icon' => 'envelope-open',
-                    'label' => 6,
-                    'label_color' => 'primary',
+                    // 'label' => 6,
+                    // 'label_color' => 'primary',
                 ],
             ],
         ],
@@ -152,8 +170,8 @@ return [
                     'text'  =>  'Mensagens',
                     'url'   =>  'admin/contato/mensagens',
                     'icon' => 'envelope-open',
-                    'label' => 2,
-                    'label_color' => 'primary',
+                    // 'label' => 2,
+                    // 'label_color' => 'primary',
                 ],
             ],
         ],
@@ -171,8 +189,8 @@ return [
                     'text'  =>  'Mensagens',
                     'url'   =>  'admin/ouvidoria/mensagens',
                     'icon' => 'envelope-open',
-                    'label' => 12,
-                    'label_color' => 'primary',
+                    // 'label' => 12,
+                    // 'label_color' => 'primary',
                 ],
             ],
         ],
@@ -277,8 +295,8 @@ return [
             'text' => 'Orçamentos',
             'url'  => 'admin/orcamento',
             'icon' => 'briefcase',
-            'label' => 4,
-            'label_color' => 'danger',
+            // 'label' => 4,
+            // 'label_color' => 'danger',
         ],
         [
             'text' => 'Rodapé',
@@ -346,8 +364,8 @@ return [
     */
 
     'plugins' => [
-        'datatables' => true,
-        'select2'    => true,
-        'chartjs'    => true,
+        'datatables' => false,
+        'select2'    => false,
+        'chartjs'    => false,
     ],
 ];

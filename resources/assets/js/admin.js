@@ -2,10 +2,10 @@ require('./bootstrap.admin')
 
 window.Vue = require('vue')
 
-// import VueAwesomeSwiper from 'vue-awesome-swiper'
-// import 'swiper/dist/css/swiper.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
-// Vue.use(VueAwesomeSwiper)
+Vue.use(VueAwesomeSwiper)
 
 const moment = require('moment')
 require('moment/locale/pt-br')
@@ -22,6 +22,8 @@ Vue.use(require('vue-moment'), {
     Vue.component('admin-candidate-messages', require('./components/admin/lists/CandidateMessagesComponent.vue'))
     Vue.component('admin-newsletters', require('./components/admin/lists/NewslettersComponent.vue'))
     Vue.component('admin-blog-posts', require('./components/admin/blog/PostsComponent.vue'))
+
+    Vue.component('home-banners', require('./components/home/BannersComponent.vue'))
     
 const app = new Vue({
     el: '#app',

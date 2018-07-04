@@ -12,9 +12,11 @@
             <h3>{{selected}}</h3>
             <text-content :page="'home-solutions'"></text-content>
             <hr>
-            <h3>{{post.title}}</h3>
-            <p class="tipo2">{{post.description}}</p>
-            <a title="Leia mais" class="text-uppercase tipo3" :href="'/blog/post/' + post.slug">Leia mais</a>
+            <div v-if="post.title">
+                <h3>{{post.title}}</h3>
+                <p class="tipo2">{{post.description}}</p>
+                <a title="Leia mais" class="text-uppercase tipo3" :href="'/blog/post/' + post.slug">Leia mais</a>
+            </div>
         </div>
     </div>
 </template>
@@ -27,7 +29,11 @@
             return {
                 isLoading: false,
                 solutions: [],
-                post: {},
+                post: {
+                    title: '',
+                    description: '',
+                    slug: ''
+                },
                 selected: ''
             }
         },
@@ -42,9 +48,15 @@
                 this.isLoading = true
                 const action = '/api/post/category/' + slug
                 axios.get(action).then(response => {
-                    this.post = response.data.data
-                    this.isLoading = false
+                    if (response.data == '') {
+                        this.resetPost()
+                        this.isLoading = false
+                    }else{
+                        this.post = response.data.data
+                        this.isLoading = false
+                    }
                 }).catch(error => {
+                    this.resetPost()
                     console.error(error)
                     this.isLoading = false
                 })
@@ -58,7 +70,14 @@
                 }).catch(error => {
                     console.error(error)
                 })
-            }
+            },
+            resetPost() {
+                this.post = {
+                    title: '',
+                    description: '',
+                    slug: ''
+                }
+            },
         },
         components: {
             Loading
@@ -155,9 +174,5 @@ ul
         a
             color: #000
             // font-weight: bold
-
-
-
-
 
 </style>

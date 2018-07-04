@@ -102,8 +102,9 @@
                         <b-form-input id="description" type="text" v-model="modalForm.description" required placeholder="Descrição *"></b-form-input>
                     </b-form-group>
                     <b-form-group label="Imagem de capa">
-                        <img class="d-block mx-auto mt-3 mb-3" v-if="typeof(modalForm.image) == 'string'" :src="'/storage/images/posts/'+ modalForm.id + '/' + modalForm.image" fluid alt="Sem imagem de capa">
+                        <img class="d-block mx-auto mt-3 mb-3 capa" v-if="typeof(modalForm.image) == 'string'" :src="'/storage/images/posts/'+ modalForm.id + '/' + modalForm.image" fluid alt="Sem imagem de capa">
                         <b-form-file accept="image/jpeg, image/png, image/gif" v-model="modalForm.image" placeholder="Alterar imagem de capa..."></b-form-file>
+                        <p>*Use sempre imagens com a proporção 800 x 600 px.</p>
                     </b-form-group>
                     <b-form-group label="Status">
                         <b-form-radio-group 

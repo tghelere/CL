@@ -14,6 +14,6 @@ class NewslettersTableSeeder extends Seeder
     {
         Newsletter::truncate();
 
-        factory(Newsletter::class)->times(30)->create();
+        factory(Newsletter::class)->times(2)->create();
     }
 }

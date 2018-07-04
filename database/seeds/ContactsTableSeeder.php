@@ -14,6 +14,6 @@ class ContactsTableSeeder extends Seeder
     {
         Contact::truncate();
 
-        factory(Contact::class)->times(15)->create();
+        factory(Contact::class)->times(2)->create();
     }
 }

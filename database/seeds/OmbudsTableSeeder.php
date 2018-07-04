@@ -14,6 +14,6 @@ class OmbudsTableSeeder extends Seeder
     {
         Ombud::truncate();
 
-        factory(Ombud::class)->times(15)->create();
+        factory(Ombud::class)->times(2)->create();
     }
 }

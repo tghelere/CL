@@ -8,7 +8,10 @@
 @stop
 
 @section('content')
-    @include('partials.adminText') 
+    <admin-form-text-content 
+    :page="'home'" 
+    :title="'Campo de texto da página Home (abaixo dos banners)'"
+    ></admin-form-text-content>
     <admin-form-text-content 
         :page="'home-solutions'" 
         :title="'Campo de texto da página Home - Soluções'"

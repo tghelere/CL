@@ -14,6 +14,6 @@ class BudgetsTableSeeder extends Seeder
     {
         Budget::truncate();
 
-        factory(Budget::class)->times(25)->create();
+        factory(Budget::class)->times(2)->create();
     }
 }

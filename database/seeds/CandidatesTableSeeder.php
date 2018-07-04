@@ -14,6 +14,6 @@ class CandidatesTableSeeder extends Seeder
     {
         Candidate::truncate();
 
-        factory(Candidate::class)->times(15)->create();
+        factory(Candidate::class)->times(2)->create();
     }
 }

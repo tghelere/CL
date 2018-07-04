@@ -4,8 +4,7 @@
             <div class="col-md-12" v-for="(post, index) in posts" :key="index">
                 <a class="link-post2" :href="'/blog/post/' + post.slug" :title="post.title">
                     <div class="post2">
-                        <!-- <img :src="post.image" :alt="post.title" class="img-fluid" > -->
-                        <div class="imagem" :style="'background: url('+ post.image +') no-repeat center center;'"></div>
+                        <div class="imagem" :style="urlImg(post.id, post.image)"></div>
                         <h4>{{post.title}}</h4>
                         <p class="tipo2">{{post.description}}</p>
                     </div>
@@ -33,6 +32,9 @@
                 }).catch(error => {
                     console.error(error)
                 })
+            },
+            urlImg(id, img) {
+                return 'background: url(/storage/images/posts/' + id + '/' + img + ') no-repeat center center; background-size: cover;'
             },
         }
     }

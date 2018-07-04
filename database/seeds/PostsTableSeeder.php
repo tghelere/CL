@@ -17,7 +17,7 @@ class PostsTableSeeder extends Seeder
         Post::truncate();
 
 
-        factory(Post::class)->times(60)->create();
+        factory(Post::class)->times(2)->create();
 
 
         // faz o relacionamento dos posts com as categorias

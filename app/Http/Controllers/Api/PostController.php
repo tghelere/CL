@@ -176,7 +176,10 @@ class PostController extends Controller
     {
         $category = Category::where('slug', $category)->get()->first();        
         $post = $category->posts()->orderBy('created_at', 'desc')->get()->first();
-        return new PostResource($post);
+        if ($post) {
+            return new PostResource($post);
+        }
+        return;
     }
 
     /**

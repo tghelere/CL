@@ -37,7 +37,9 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
 	Route::get('/', 'AdminController@index')->name('index-Admin');
-	Route::get('home', 'HomeController@index')->name('home-Admin');
+	Route::get('home/banners', 'HomeController@banners')->name('home-banners-Admin');
+	Route::get('home/textos', 'HomeController@textos')->name('home-textos-Admin');
+	Route::get('home/depoimentos', 'HomeController@depoimentos')->name('home-depoimentos-Admin');
 	Route::get('quem-somos', 'QuemSomosController@index')->name('quem-somos-Admin');
 	Route::get('blog/pagina', 'BlogController@index')->name('blog-Admin');
 	Route::get('blog/posts', 'BlogController@posts')->name('blog-Admin-posts');
