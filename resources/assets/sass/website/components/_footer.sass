@@ -7,6 +7,10 @@ footer
         margin-top: 1rem
     p, a
         color: #707070
+    // a
+        
+    //     width: 100%
+        
     h5
         // font-size: 13px
         color: #0089C0
@@ -16,12 +20,21 @@ footer
         padding: 0
         list-style: none        
         &.list
-            li
-                // font-size: 12px
-                line-height: 18px
-                &:before
-                    content: "-"
-                    padding-right: 4px  
+            a
+                &:hover
+                    background-color: #0089C0
+                    color: #fff
+                    text-decoration: none
+                    &:before
+                         color: #fff 
+                li
+                    line-height: 18px
+                    padding: 5px 0
+                    &:hover
+                        background-color: #0089C0
+                    &:before
+                        content: "-"
+                        padding-right: 4px 
         &.social
             li
                 float: left

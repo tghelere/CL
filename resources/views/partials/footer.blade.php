@@ -15,31 +15,31 @@
               <div class="col-md-2">
                 <h5 class="text-uppercase">Institucional</h5>
                 <ul class="list tipo3">
-                  <li><a title="Quem Somos" href="{{ route('quem-somos') }}">Quem Somos</a></li>
-                  <li><a title="Blog" href="{{ route('blog') }}">Blog</a></li>
-                  <li><a title="Trabalhe Aqui" href="{{ route('trabalhe-conosco') }}">Trabalhe Aqui</a></li>
+                  <a title="Quem Somos" href="{{ route('quem-somos') }}"><li>Quem Somos</li></a>
+                  <a title="Blog" href="{{ route('blog') }}"><li>Blog</li></a>
+                  <a title="Trabalhe Aqui" href="{{ route('trabalhe-conosco') }}"><li>Trabalhe Aqui</li></a>
                 </ul>
               </div>
               <div class="col-md-3">
                 <h5 class="text-uppercase">Serviços</h5>
                 <ul class="list tipo3">
-                  <li><a title="Limpeza" href="{{ route('servicos-limpeza') }}">Limpeza</a></li>
-                  <li><a title="Portaria" href="{{ route('servicos-portaria') }}">Portaria</a></li>
-                  <li><a title="Jardinagem" href="{{ route('servicos-jardinagem') }}">Jardinagem</a></li>
-                  <li><a title="Recepção" href="{{ route('servicos-recepcao') }}">Recepção</a></li>
-                  <li><a title="Controladoria de acesso" href="{{ route('servicos-controladoria-de-acesso') }}">Controladoria de acesso</a></li>
+                  <a title="Limpeza" href="{{ route('servicos-limpeza') }}"><li>Limpeza</li></a>
+                  <a title="Portaria" href="{{ route('servicos-portaria') }}"><li>Portaria</li></a>
+                  <a title="Jardinagem" href="{{ route('servicos-jardinagem') }}"><li>Jardinagem</li></a>
+                  <a title="Recepção" href="{{ route('servicos-recepcao') }}"><li>Recepção</li></a>
+                  <a title="Controladoria de acesso" href="{{ route('servicos-controladoria-de-acesso') }}"><li>Controladoria de acesso</li></a>
                 </ul>
               </div>
               <div class="col-md-5">
                 <h5 class="text-uppercase">Soluções</h5>
                 <ul class="list tipo3">
-                  <li><a title="Indústrias" href="{{ route('industrias') }}">Indústrias</a></li>
-                  <li><a title="Varejo" href="{{ route('varejo') }}">Varejo</a></li>
-                  <li><a title="Orgãos públicos" href="{{ route('orgaos-publicos') }}">Orgãos públicos</a></li>
-                  <li><a title="Condomínios" href="{{ route('condominios') }}">Condomínios</a></li>
-                  <li><a title="Clínicas e Áreas de Saúde" href="{{ route('clinicas-e-areas-de-saude') }}">Clínicas e Áreas de Saúde</a></li>
-                  <li><a title="Escolas e Universidades" href="{{ route('escolas-e-universidades') }}">Escolas e Universidades</a></li>
-                  <li><a title="Escritórios e Ambientes Corporativos" href="{{ route('escritorios-e-ambientes-corporativos') }}">Escritórios e Ambientes Corporativos</a></li>
+                  <a title="Indústrias" href="{{ route('industrias') }}"><li>Indústrias</li></a>
+                  <a title="Varejo" href="{{ route('varejo') }}"><li>Varejo</li></a>
+                  <a title="Orgãos públicos" href="{{ route('orgaos-publicos') }}"><li>Orgãos públicos</li></a>
+                  <a title="Condomínios" href="{{ route('condominios') }}"><li>Condomínios</li></a>
+                  <a title="Clínicas e Áreas de Saúde" href="{{ route('clinicas-e-areas-de-saude') }}"><li>Clínicas e Áreas de Saúde</li></a>
+                  <a title="Escolas e Universidades" href="{{ route('escolas-e-universidades') }}"><li>Escolas e Universidades</li></a>
+                  <a title="Escritórios e Ambientes Corporativos" href="{{ route('escritorios-e-ambientes-corporativos') }}"><li>Escritórios e Ambientes Corporativos</li></a>
                 </ul>
               </div>
             </div>

@@ -17,6 +17,11 @@ class ContatoController extends Controller
     }
 
     public function read(){
-    	return view('admin.contato-mensagens');
+        $text = 'Contato Mensagens';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 }

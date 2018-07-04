@@ -8,6 +8,11 @@ use App\Http\Controllers\Controller;
 class OrcamentoController extends Controller
 {
     public function index(){
-    	return view('admin.orcamento');
+    	$text = 'Orçamentos';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 }

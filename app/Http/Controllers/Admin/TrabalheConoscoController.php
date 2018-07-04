@@ -16,6 +16,11 @@ class TrabalheConoscoController extends Controller
     	return view('admin.' . $data['page'], compact('data'));
     }
     public function read(){
-    	return view('admin.trabalhe-conosco-recrutamento');
+    	$text = 'Trabalhe Conosco - Recrutamento';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 }

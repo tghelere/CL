@@ -10,35 +10,35 @@
             <ul class="navbar-nav ml-auto menu">
                 <li class="nav-item dropdown @if( Route::is('quem-somos') || Route::is('trabalhe-conosco') || Route::is('ouvidoria')) {{'active'}} @endif"><a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h5 class="root">Institucional</h5></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a title="Quem Somos" class="dropdown-item {{ (Route::is('quem-somos') ? 'active' : '') }}" href="{{ route('quem-somos') }}"><h5>Quem Somos</h5></a></li>
-                        <li><a title="Trabalhe Conosco" class="dropdown-item {{ (Route::is('trabalhe-conosco') ? 'active' : '') }}" href="{{ route('trabalhe-conosco') }}"><h5>Trabalhe Conosco</h5></a></li>
-                        <li><a title="Ouvidoria" class="dropdown-item {{ (Route::is('ouvidoria') ? 'active' : '') }}" href="{{ route('ouvidoria') }}"><h5>Ouvidoria</h5></a></li>
+                        <li><a title="Quem Somos" class="dropdown-item" href="{{ route('quem-somos') }}"><h5>Quem Somos</h5></a></li>
+                        <li><a title="Trabalhe Conosco" class="dropdown-item" href="{{ route('trabalhe-conosco') }}"><h5>Trabalhe Conosco</h5></a></li>
+                        <li><a title="Ouvidoria" class="dropdown-item" href="{{ route('ouvidoria') }}"><h5>Ouvidoria</h5></a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown {{ (preg_match("/^solucoes-[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h5 class="root">Soluções</h5></a>
                     <ul class="dropdown-menu solutions" aria-labelledby="navbarDropdownMenuLink">
                         <div class="linha">
                             <div class="col-menor">
-                                <li class="pqno"><a title="Indústrias" class="dropdown-item  {{ (Route::is('industrias') ? 'active' : '') }} industrias solucoes" href="{{ route('industrias') }}"><h5>Indústrias</h5></a></li>
-                                <li class="pqno"><a title="Varejo" class="dropdown-item  {{ (Route::is('varejo') ? 'active' : '') }} varejo solucoes" href="{{ route('varejo') }}"><h5>Varejo</h5></a></li>
-                                <li class="pqno"><a title="Orgãos públicos" class="dropdown-item  {{ (Route::is('orgaos-publicos') ? 'active' : '') }} orgaos-publicos solucoes" href="{{ route('orgaos-publicos') }}"><h5>Orgãos públicos</h5></a></li>
-                                <li class="pqno"><a title="Condomínios" class="dropdown-item  {{ (Route::is('condominios') ? 'active' : '') }} condominios solucoes" href="{{ route('condominios') }}"><h5>Condomínios</h5></a></li>
+                                <li class="pqno"><a title="Indústrias" class="dropdown-item industrias solucoes" href="{{ route('industrias') }}"><h5>Indústrias</h5></a></li>
+                                <li class="pqno"><a title="Varejo" class="dropdown-item varejo solucoes" href="{{ route('varejo') }}"><h5>Varejo</h5></a></li>
+                                <li class="pqno"><a title="Orgãos públicos" class="dropdown-item orgaos-publicos solucoes" href="{{ route('orgaos-publicos') }}"><h5>Orgãos públicos</h5></a></li>
+                                <li class="pqno"><a title="Condomínios" class="dropdown-item condominios solucoes" href="{{ route('condominios') }}"><h5>Condomínios</h5></a></li>
                             </div>
                             <div class="col-maior">
-                                <li class="gde"><a title="Clínicas e Áreas de Saúde" class="dropdown-item  {{ (Route::is('clinicas-e-areas-de-saude') ? 'active' : '') }} clinicas-e-areas-de-saude solucoes" href="{{ route('clinicas-e-areas-de-saude') }}"><h5>Clínicas e Áreas de Saúde</h5></a></li>
-                                <li class="gde"><a title="Escolas e Universidades" class="dropdown-item  {{ (Route::is('escolas-e-universidades') ? 'active' : '') }} escolas-e-universidades solucoes" href="{{ route('escolas-e-universidades') }}"><h5>Escolas e Universidades</h5></a></li>
-                                <li class="gde"><a title="Escritórios e Ambientes Corporativos" class="dropdown-item  {{ (Route::is('escritorios-e-ambientes-corporativos') ? 'active' : '') }} escritorios-e-ambientes-corporativos solucoes" href="{{ route('escritorios-e-ambientes-corporativos') }}"><h5>Escritórios e Ambientes Corporativos</h5></a></li>
+                                <li class="gde"><a title="Clínicas e Áreas de Saúde" class="dropdown-item clinicas-e-areas-de-saude solucoes" href="{{ route('clinicas-e-areas-de-saude') }}"><h5>Clínicas e Áreas de Saúde</h5></a></li>
+                                <li class="gde"><a title="Escolas e Universidades" class="dropdown-item escolas-e-universidades solucoes" href="{{ route('escolas-e-universidades') }}"><h5>Escolas e Universidades</h5></a></li>
+                                <li class="gde"><a title="Escritórios e Ambientes Corporativos" class="dropdown-item escritorios-e-ambientes-corporativos solucoes" href="{{ route('escritorios-e-ambientes-corporativos') }}"><h5>Escritórios e Ambientes Corporativos</h5></a></li>
                             </div>
                         </div>
                     </ul>
                 </li>
                 <li class="nav-item dropdown {{ (preg_match("/^servicos-[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h5 class="root">Serviços</h5></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a title="Limpeza" class="dropdown-item {{ (Route::is('servicos-limpeza') ? 'active' : '') }}" href="{{ route('servicos-limpeza') }}"><h5>Limpeza</h5></a></li>
-                        <li><a title="Portaria" class="dropdown-item {{ (Route::is('servicos-portaria') ? 'active' : '') }}" href="{{ route('servicos-portaria') }}"><h5>Portaria</h5></a></li>
-                        <li><a title="Jardinagem" class="dropdown-item {{ (Route::is('servicos-jardinagem') ? 'active' : '') }}" href="{{ route('servicos-jardinagem') }}"><h5>Jardinagem</h5></a></li>
-                        <li><a title="Recepção" class="dropdown-item {{ (Route::is('servicos-recepcao') ? 'active' : '') }}" href="{{ route('servicos-recepcao') }}"><h5>Recepção</h5></a></li>
-                        <li><a title="Controladoria de acesso" class="dropdown-item {{ (Route::is('servicos-controladoria-de-acesso') ? 'active' : '') }}" href="{{ route('servicos-controladoria-de-acesso') }}"><h5>Controladoria de acesso</h5></a></li>
+                        <li><a title="Limpeza" class="dropdown-item" href="{{ route('servicos-limpeza') }}"><h5>Limpeza</h5></a></li>
+                        <li><a title="Portaria" class="dropdown-item" href="{{ route('servicos-portaria') }}"><h5>Portaria</h5></a></li>
+                        <li><a title="Jardinagem" class="dropdown-item" href="{{ route('servicos-jardinagem') }}"><h5>Jardinagem</h5></a></li>
+                        <li><a title="Recepção" class="dropdown-item" href="{{ route('servicos-recepcao') }}"><h5>Recepção</h5></a></li>
+                        <li><a title="Controladoria de acesso" class="dropdown-item" href="{{ route('servicos-controladoria-de-acesso') }}"><h5>Controladoria de acesso</h5></a></li>
                     </ul>
                 </li>
                 <li class="nav-item {{ (Route::is('blog') ? 'active' : '') }} {{ (preg_match("/^blog[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link" href="{{ route('blog') }}"><h5 class="root">Blog</h5></a></li>

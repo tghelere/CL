@@ -7,7 +7,6 @@ nav.navbar
         height: 100%
     .dropdown:hover>.dropdown-menu
         display: block
-        // padding-top: 30px
     a.logo
         display: block
         background: url(/img/logocolor.png) no-repeat top center
@@ -18,105 +17,91 @@ nav.navbar
         span
             display: none
     ul
-        // font-size: 12px
         &.menu
         text-transform: uppercase
         font-weight: bold
         &.navbar-nav
             height: 100%
+        &.dropdown-menu
+            margin: 0
         li
-            border-bottom: 2px solid #fff
-            h5.root
-                margin-top: 40px
-            &.active
-                border-bottom: 2px solid #0089C0
-                background-color: #0089C0
-                a h5.root
-                    color: #fff !important
             &:hover
-                border-bottom: 2px solid #0089C0
+                background-color: #0089C0
+                a.nav-link
+                    color: #fff !important
             a
                 color: rgba(0, 0, 0, 0.5)
+                height: 100%
+                h5
+                    line-height: 25px
+                    margin: 0
+                    &.root
+                        margin-top: 40px
                 &.whats
-                    display: block
                     background: url(/img/icons/whatsapp.svg) no-repeat top
-                    background-size: 18px //contain
-                    background-position-x: 0
-                    background-position-y: 46px
-                    padding-left: 20px !important
-                    margin-left: 5px
                 &.phone
-                    display: block
                     background: url(/img/icons/phone.svg) no-repeat top
-                    background-size: 18px //contain
-                    background-position-x: 0
-                    background-position-y: 46px
-                    padding-left: 20px !important
+                &.whats, &.phone
+                    display: block
+                    background-size: 18px
+                    background-position-x: 5px
+                    background-position-y: 51px
+                    padding-left: 25px !important
                     margin-left: 5px
-    ul
-        .linha
-            height: 100%
-            width: 100%
-            .col-menor
-                width: 175px
-                float: left
-                // margin-right: 40px
-            .col-maior
-                width: 340px
-                float: left
-                margin-left: 30px
-        .dropdown-item
-            &.active, &:active
-                background-color: #fff !important
-                color: #0089C0
-                border-bottom: 2px solid #0089C0
-            &:hover
-                // background-color: #0089C0 !important
+                &:hover
+                    background-color: #0089C0
+                    color: #fff !important
         &.solutions
-            &.dropdown-menu
+            .linha
                 width: 640px
                 padding: 30px 45px
-                .dropdown-item
-                    // padding: 0
-                li 
-                    // border: 1px solid blue
-                    height: 40px
-                    line-height: 40px
-                    margin: 5px 0
+                .col-menor
+                    width: 175px
                     float: left
-                    width: 100%
-                    &.active
-
-                    a
-                        color: rgba(0, 0, 0, 0.5)
-                        padding: 0 0 0 40px 
-                        display: block
-                        height: 40px
-                        h5
-                            line-height: 40px
-                            margin: 0
-                            padding: 0
-                        // &.dropdown-item
-                        //     padding: 20px 0 5px 40px
-                        &.solucoes
-                            background-size: 30px !important
-                            background-position-x: 2px !important
-                        &.industrias
-                            background: url(/img/icons/solucoes-industrias.png) no-repeat top
-                        &.varejo
-                            background: url(/img/icons/solucoes-varejo.png) no-repeat top
-                        &.orgaos-publicos
-                            background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat top
-                        &.condominios
-                            background: url(/img/icons/solucoes-condominios.png) no-repeat top
-                        &.clinicas-e-areas-de-saude
-                            background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat top
-                        &.escolas-e-universidades
-                            background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat top
-                        &.escritorios-e-ambientes-corporativos
-                            background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat top
-                    // &.pqno 
-                    //     margin-right: 40px
-                    //     width: 160px
-                    // &.gde
-                        // width: 260px
+                .col-maior
+                    width: 340px
+                    float: left
+                    margin-left: 30px
+            li 
+                height: 40px
+                line-height: 40px
+                margin: 5px 0
+                width: 100%
+                a
+                    padding: 0 0 0 40px 
+                    h5
+                        line-height: 40px
+                    &.solucoes
+                        background-size: 30px !important
+                        background-position-x: 2px !important
+                        background-position-y: 5px !important
+                    &.industrias
+                        background: url(/img/icons/solucoes-industrias.png) no-repeat top
+                    &.varejo
+                        background: url(/img/icons/solucoes-varejo.png) no-repeat top
+                    &.orgaos-publicos
+                        background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat top
+                    &.condominios
+                        background: url(/img/icons/solucoes-condominios.png) no-repeat top
+                    &.clinicas-e-areas-de-saude
+                        background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat top
+                    &.escolas-e-universidades
+                        background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat top
+                    &.escritorios-e-ambientes-corporativos
+                        background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat top
+.navbar.sticky-top.scrolled
+    background-color: #fff !important
+    border-bottom: 1px solid #dedede
+    opacity: .95
+    box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.090) !important
+    transition: background-color box-shadow border-bottom opacity 1000ms linear
+    #top-bar
+        height: unset
+        a.logo
+            margin: unset
+            width: 180px
+            height: 51px
+        h5
+            margin: 0
+        a.whats, a.phone
+            background-position-y: 11px

@@ -1,11 +1,12 @@
 @extends('adminlte::page')
 
-@section('title', ' - Ouvidoria - Mensagens')
+@section('title', $data['title'])
 
 @section('content_header')
-    <h1>Ouvidoria Mensagens</h1>
+    <h1 class="text-center">{{$data['title']}}</h1>
+    <hr>
 @stop
 
 @section('content')
-    
+    <admin-ombud-messages></admin-ombud-messages>
 @stop

@@ -36,6 +36,7 @@ Route::namespace('Api')->group(function () {
 // Newsletters
     Route::get('newsletters', 'NewsletterController@index');
     Route::post('newsletter', 'NewsletterController@store');
+    Route::delete('newsletter/{id}', 'NewsletterController@destroy');
 
 // Candidates
     Route::get('candidates', 'CandidateController@index');

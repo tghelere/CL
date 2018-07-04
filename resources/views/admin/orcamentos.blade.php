@@ -8,5 +8,5 @@
 @stop
 
 @section('content')
-    <admin-candidate-messages></admin-candidate-messages>
+    <admin-budgets></admin-budgets>
 @stop

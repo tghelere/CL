@@ -4,7 +4,7 @@
     <b-row>
         <b-col md="9">
             <b-row>
-                <b-col md="4" v-for="(post, index) in postsPaged" :key='index' :current-page="currentPage" :per-page="perPage" @filtered="onFiltered">
+                <b-col md="4" v-for="(post, index) in postsPaged" :key='index' :current-page="currentPage" :per-page="perPage">
                     <a class="link-post" :href="'/blog/post/' + post.slug" :title="post.title" >
                         <div class="item-post">
                             <img :src="post.image" :alt="post.title" class="img-fluid" >
@@ -32,8 +32,6 @@
             <b-row class="search">
                 <b-col>
                     <input type="text" v-model="filter" placeholder="Buscar conteúdo">
-                    <!-- <input type="text" v-model="search" @keyup.enter="getSearch(search)" placeholder="Buscar conteúdo"> -->
-                    <!-- <b-form-input type="text" v-model="filter" placeholder="Buscar conteúdo" /> -->
                 </b-col>
             </b-row>
             <div class="row newsletter">
@@ -77,17 +75,25 @@
                 allPosts: [],
                 currentPage: 1,
                 perPage: 6,
-                totalRows: 0,
+                // totalRows: 0,
                 categoriesCount: {},
                 categorySelected: '',
                 // search: '',
                 isLoading: false,
-                filter: null,
+                filter: '',
             }
         },
         computed: {
             postsPaged(){
-                return this.allPosts.slice((this.currentPage - 1) * this.perPage,this.currentPage * this.perPage)
+                return this.filtered.slice((this.currentPage - 1) * this.perPage,this.currentPage * this.perPage)
+            },
+            filtered(){
+                return this.allPosts.filter((post) => {
+                    return post.title.match(this.filter) || post.description.match(this.filter) || post.body.match(this.filter)
+                })
+            },
+            totalRows(){
+                return this.filtered.length
             }
         },
         created() {
@@ -100,7 +106,7 @@
                 const action = '/api/posts'
                 axios.get(action).then(response => {
                     this.allPosts = response.data.data
-                    this.totalRows = this.allPosts.length
+                    // this.totalRows = this.allPosts.length
                     this.isLoading = false
                 }).catch(error => {
                     console.error(error)
@@ -124,17 +130,17 @@
                 axios.get(action).then(response => {
                     this.categorySelected = slug
                     this.allPosts = response.data.data
-                    this.totalRows = this.allPosts.length
+                    // this.totalRows = this.allPosts.length
                     this.isLoading = false
                 }).catch(error => {
                     console.error(error)
                     this.isLoading = false
                 })
             },
-            onFiltered(filteredItems) {
-                this.totalRows = filteredItems.length
-                this.currentPage = 1
-            },
+            // onFiltered(filteredItems) {
+            //     this.totalRows = filteredItems.length
+            //     this.currentPage = 1
+            // },
             // getSearch(search){
             //     const action = '/api/posts/search/' + search
             //     axios.get(action).then(response => {

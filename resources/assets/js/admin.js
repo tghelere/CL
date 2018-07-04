@@ -16,7 +16,11 @@ Vue.use(require('vue-moment'), {
 
 // Admin components
     Vue.component('admin-form-text-content', require('./components/admin/forms/TextContentComponent.vue'))
-    // Vue.component('admin-data-tables', require('./components/admin/lists/DataTablesComponent.vue'))
+    Vue.component('admin-contact-messages', require('./components/admin/lists/ContactMessagesComponent.vue'))
+    Vue.component('admin-ombud-messages', require('./components/admin/lists/OmbudMessagesComponent.vue'))
+    Vue.component('admin-budgets', require('./components/admin/lists/BudgetsComponent.vue'))
+    Vue.component('admin-candidate-messages', require('./components/admin/lists/CandidateMessagesComponent.vue'))
+    Vue.component('admin-newsletters', require('./components/admin/lists/NewslettersComponent.vue'))
     Vue.component('admin-blog-posts', require('./components/admin/blog/PostsComponent.vue'))
     
 const app = new Vue({

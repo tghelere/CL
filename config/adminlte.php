@@ -234,7 +234,7 @@ return [
                     'icon'  =>  'hand-o-right',
                 ],
                 [
-                    'text' => 'Clínicas e Hospitais',
+                    'text' => 'Clínicas e Áreas de Saúde',
                     'url'  => 'admin/solucoes/clinicas-e-hospitais',
                     'icon'  =>  'hand-o-right',
                 ],
@@ -272,8 +272,6 @@ return [
             'text' => 'Newsletter',
             'url'  => 'admin/newsletter',
             'icon' => 'at',
-            'label' => 1, 
-            'label_color' => 'warning',
         ],
         [
             'text' => 'Orçamentos',

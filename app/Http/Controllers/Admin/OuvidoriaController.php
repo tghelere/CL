@@ -16,6 +16,11 @@ class OuvidoriaController extends Controller
     	return view('admin.' . $data['page'], compact('data'));
     }
     public function read(){
-    	return view('admin.ouvidoria-mensagens');
+    	$text = 'Ouvidoria Mensagens';
+        $data = [
+            'title' => $text,
+            'page' => str_slug($text),
+        ];
+    	return view('admin.' . $data['page'], compact('data'));
     }
 }
