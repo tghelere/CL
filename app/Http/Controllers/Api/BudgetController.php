@@ -35,12 +35,12 @@ class BudgetController extends Controller
         
         $budget->solution_id = $request->json('segment.id');
         $budget->number_of_employees = $request->json('contributors');
-        $budget->services = implode(', ', $request->json('modality'));
+        $budget->services = $request->json('modality');
         $budget->name = $request->json('name');
         $budget->email = $request->json('email');
         $budget->phone = $request->json('phone');
         $budget->city_id = $request->json('city.id');
-        
+
         if ($budget->save()) {
             return new BudgetResource($budget);
         }

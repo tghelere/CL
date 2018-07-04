@@ -18,7 +18,7 @@ class OrcamentoController extends Controller
             'title' => 'Solicitação de Orçamento',
             'segment' => $request->json('segment.name'),
             'contributors' => $request->json('contributors'),
-            'modality' => implode(', ', $request->json('modality')),
+            'modality' => $request->json('modality'),
             'name' => $request->json('name'),
             'email' => $request->json('email'),
             'phone' => $request->json('phone'),

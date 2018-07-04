@@ -138,6 +138,7 @@
 
                 axios.post(action1, this.form).then(response => {
                     axios.post(action2, this.form).then(response => {
+                        console.log(response);
                         this.resetForm()
                         this.isLoading = false
                         this.modalShow = false
