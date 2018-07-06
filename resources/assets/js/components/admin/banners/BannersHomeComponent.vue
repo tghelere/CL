@@ -247,15 +247,10 @@
                     fd.append('description', form.description)
                     fd.append('link', form.link)
                     fd.append('colorbox', form.colorbox)
-
-                    console.log(form);
-                    
                 const action = '/api/banner/'
                 axios.post(action, fd).then(response => {
-                    console.log(response);
-
-                    // this.$root.$emit('bv::hide::modal', 'modalForm')
-                    // this.resetForm()
+                    this.$root.$emit('bv::hide::modal', 'modalForm')
+                    this.resetForm()
                     this.getBanners()
                     this.isLoading = false
                     this.$snotify.success('Banner criado com sucesso!', { timeout: 3000 })
