@@ -141,6 +141,8 @@ class BannerController extends Controller
         $banner = Banner::findOrFail($id);
 
         if ($banner->delete()) {
+            $folder = 'public/images/banners/';
+            Storage::delete($folder.$banner->image); //apaga imagem
             return new BannerResource($banner);    
         }
         
