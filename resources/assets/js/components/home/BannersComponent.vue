@@ -1,10 +1,8 @@
 <template>
     <div v-show="banners.length > 0">        
-        <swiper :options="swiperOption">
-            <swiper-slide v-for="(banner, index) in banners" :key='index'>
-                <img :src="'/img/banners/' + banner.image" :alt="banner.title">
-                <!-- <div class="imagem" :style="'background: url('+ post.image +') no-repeat center center;'"></div> -->
-                <div v-if="banner.title != null" class="text container">
+        <swiper :options="swiperOption" v-show="banners.length > 0">
+            <swiper-slide v-for="(banner, index) in banners" :key='index' :style="img(banner.image)">
+                <div v-if="banner.title != null" class="text container" :style="cor(banner.colorbox)">
                     <h2 v-show="banner.title != null">{{ banner.title }}</h2>
                     <p v-show="banner.description != null">{{ banner.description }}</p>
                     <a v-show="banner.link != null" :href="banner.link" class="leia text-uppercase" title="Leia Mais">Leia Mais</a>
@@ -43,6 +41,7 @@
         created () {
             this.getBanners()
         },
+        props: ['height'],
         methods: {
             getBanners(){
                 const action = '/api/banners/home'
@@ -51,43 +50,13 @@
                 }).catch(error => {
                     console.error(error)
                 })
-            }
+            },
+            img(img) {
+                return 'background: url(/storage/images/banners/' + img + ') no-repeat center center; background-size: cover; height:' + this.height + 'px;'
+            },
+            cor(cor) {
+                return 'background-color: ' + cor + ';'
+            },
         },
     }
 </script>
-
-<style lang="sass" scoped>
-.swiper-slide
-    background-position: center
-    background-size: cover    
-    max-height: 550px
-    .text
-        z-index: 5
-        position: absolute
-        width: 410px
-        height: 200px
-        padding: 20px 25px
-        bottom: 95px
-        left: 20%
-        background-color: rgba(24, 74, 99, 0.85)
-        color: #fff !important
-        h2
-            color: #fff
-            // font-size: 24px
-            // line-height: 27px
-            // font-weight: bold
-        // p
-        //     font-size: 18px
-        //     line-height: 23px
-        //     color: #fff
-        a.leia
-            background-color: rgba(24, 74, 99, 1)
-            padding: 5px 10px
-            color: #fff
-            font-weight: bold
-            position: absolute
-            bottom: 0
-            right: 0
-
-
-</style>

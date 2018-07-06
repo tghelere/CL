@@ -1,24 +1,13 @@
 <template>
     <div v-show="banners.length > 0" class="banner">    
         <swiper :options="swiperOption">
-            <swiper-slide v-for="(banner, index) in banners" :key='index'>
-                <img :src="'/img/banners/' + banner.image" :alt="banner.title" height="400">
-            </swiper-slide>
+            <swiper-slide v-for="(banner, index) in banners" :key='index' :style="img(banner.image)"></swiper-slide>
         </swiper>
     </div>
 </template>
 
 <script>
     export default {
-        props: {
-            page: {
-                type: String,
-                required: true
-            },
-            classe: {
-                type: String
-            }
-        },
         data () {
             return {
                 banners : [],
@@ -27,6 +16,7 @@
                 },
             }
         },
+        props: ['page', 'height'],
         created () {
             this.getBanners()
         },
@@ -38,12 +28,10 @@
                 }).catch(error => {
                     console.error(error)
                 })
-            }
+            },
+            img(img) {
+                return 'background: url(/storage/images/banners/' + img + ') no-repeat center center; background-size: cover !important; height:' + this.height + 'px;'
+            },
         },
     }
 </script>
-
-<style lang="sass" scoped>
-.banner
-    height: 400px
-</style>

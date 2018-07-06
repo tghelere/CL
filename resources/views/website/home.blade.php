@@ -4,7 +4,7 @@
     <!-- {{$data['title']}} -->
 
     <div class="container-fluid">
-        <home-banners></home-banners>
+        <home-banners :height="550"></home-banners>
     </div>
 
     <div class="container">

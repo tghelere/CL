@@ -8,6 +8,5 @@
 @stop
 
 @section('content')
-    <home-banners></home-banners>
-    
+    <admin-banners-home :height="300"></admin-banners-home>
 @stop

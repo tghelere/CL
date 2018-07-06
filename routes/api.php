@@ -9,6 +9,7 @@ Route::namespace('Api')->group(function () {
     Route::get('banners/{page}', 'BannerController@page');
     Route::get('banner/{id}', 'BannerController@show');
     Route::post('banner', 'BannerController@store');
+    Route::post('banner/update/', 'BannerController@update');
     Route::put('banner', 'BannerController@store');
     Route::delete('banner/{id}', 'BannerController@destroy');
 

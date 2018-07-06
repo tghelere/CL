@@ -9,10 +9,9 @@
 
 @section('content')
     <admin-blog-posts></admin-blog-posts>
-    {{-- <admin-data-tables 
-        :get="'posts'"
-        :post="'post'"
-        :put="'post'"
-        :delete="'post'"
-    ></admin-data-tables> --}}
+    <admin-banner 
+    :page="'blog-post'" 
+    :title="'Banner dos posts do blog'"
+    :height="300"
+    ></admin-banner>
 @stop

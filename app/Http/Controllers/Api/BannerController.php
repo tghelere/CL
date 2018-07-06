@@ -8,6 +8,9 @@ use App\Models\Banner;
 use App\Http\Resources\Banner as BannerResource;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
+
 class BannerController extends Controller
 {
     /**
@@ -33,12 +36,59 @@ class BannerController extends Controller
     public function store(Request $request)
     {        
         
-        $banner = $request->isMethod('put') ? Banner::findOrFail($request->banner_id) : new Banner;
+        $banner = new Banner;
+
+        try{
+            if ($request->hasFile('image')) {
+                $filenameWithExt = $request->file('image')->getClientOriginalName();
+                $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+                $ext = $request->file('image')->getClientOriginalExtension();
+                $newFilename = Str::slug($filename)."_banner_". $request->input('page') .".".$ext;
+            }
         
-        $banner->id = $request->input('banner_id');
+            $banner->id = $request->input('id');
+            $banner->page = $request->input('page');
+            // $banner->status = $request->input('status');
+            $banner->image = $newFilename;
+            $banner->title = $request->input('title');
+            $banner->description = $request->input('description');
+            $banner->link = $request->input('link');
+            $banner->colorbox = $request->input('colorbox');
+        
+            if ($banner->save()) {
+                $path = $request->file('image')->storeAs('public/images/banners/', $newFilename);
+                return new BannerResource($banner);
+            }
+        }catch(\Illuminate\Database\QueryException $e){
+            return Response()->json($e);
+        }
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {        
+        $banner = Banner::findOrFail($request->id);
+        if ($request->hasFile('image')) {
+            $filenameWithExt = $request->file('image')->getClientOriginalName();
+            $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
+            $ext = $request->file('image')->getClientOriginalExtension();
+            $newFilename = Str::slug($filename)."_banner_". $request->input('page') .".".$ext;
+            $folder = 'public/images/banners/';
+            Storage::delete($folder.$banner->image); //apagando imagem anterior
+            $path = $request->file('image')->storeAs($folder, $newFilename); //salvando nova imagem
+            $banner->image = $newFilename;
+        }else{
+            $banner->image = $request->input('image');
+        }
+        
+        $banner->id = $request->input('id');
         $banner->page = $request->input('page');
-        $banner->status = $request->input('status');
-        $banner->image = $request->input('image');
+        // $banner->status = $request->input('status');
         $banner->title = $request->input('title');
         $banner->description = $request->input('description');
         $banner->link = $request->input('link');
@@ -47,7 +97,6 @@ class BannerController extends Controller
         if ($banner->save()) {
             return new BannerResource($banner);
         }
-
     }
 
     /**

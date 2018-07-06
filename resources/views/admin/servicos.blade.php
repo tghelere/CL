@@ -8,5 +8,6 @@
 @stop
 
 @section('content')
+    @include('partials.adminBanner')
     @include('partials.adminText')     
 @stop

@@ -17,6 +17,16 @@
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/dist/css/AdminLTE.min.css') }}">
     <link href="{{ mix('css/admin.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/offcanvas.css') }}">
+    {{-- favicons --}}
+    <link rel="apple-touch-icon" sizes="180x180" href="/admin-favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/admin-favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/admin-favicons/favicon-16x16.png">
+    <link rel="manifest" href="/admin-favicons/site.webmanifest">
+    <link rel="mask-icon" href="/admin-favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/admin-favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="msapplication-config" content="/admin-favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body class="hold-transition @yield('body_class')">
     
