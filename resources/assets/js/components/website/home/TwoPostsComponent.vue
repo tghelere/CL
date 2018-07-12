@@ -26,12 +26,14 @@
         },
         methods: {
             getPosts(){
-                const action = '/api/posts/limit/2'
-                axios.get(action).then(response => {
-                    this.posts = response.data.data
-                }).catch(error => {
-                    console.error(error)
-                })
+                setTimeout(() => {
+                    const action = '/api/posts/limit/2'
+                    axios.get(action).then(response => {
+                        this.posts = response.data.data
+                    }).catch(error => {
+                        console.error(error)
+                    })
+                }, 1000)
             },
             urlImg(id, img) {
                 return 'background: url(/storage/images/posts/' + id + '/' + img + ') no-repeat center center; background-size: cover;'

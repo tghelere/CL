@@ -1,7 +1,7 @@
 <template>
     <div v-show="banners.length > 0">        
         <swiper :options="swiperOption" v-show="banners.length > 0">
-            <swiper-slide v-for="(banner, index) in banners" :key='index' :style="img(banner.image)">
+            <swiper-slide v-for="(banner, index) in banners" :key='index' class="img-banner" :style="img(banner.image)">
                 <div v-if="banner.title != null" class="text container" :style="cor(banner.colorbox)">
                     <h2 v-show="banner.title != null">{{ banner.title }}</h2>
                     <p v-show="banner.description != null">{{ banner.description }}</p>
@@ -41,7 +41,6 @@
         created () {
             this.getBanners()
         },
-        props: ['height'],
         methods: {
             getBanners(){
                 const action = '/api/banners/home'
@@ -52,7 +51,7 @@
                 })
             },
             img(img) {
-                return 'background: url(/storage/images/banners/' + img + ') no-repeat center center; background-size: cover; height:' + this.height + 'px;'
+                return 'background: url(/storage/images/banners/' + img + ') no-repeat center center; background-size: cover;'
             },
             cor(cor) {
                 return 'background-color: ' + cor + ';'

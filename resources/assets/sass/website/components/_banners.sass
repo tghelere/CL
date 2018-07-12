@@ -10,6 +10,15 @@
     opacity: 1 !important
 .swiper-pagination-bullet-active
     background: #0089C0 !important
+.swiper-container
+    +breakpoint($celular)
+        padding-bottom: 30px !important
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets
+    +breakpoint($celular)
+        bottom: 0 !important
+.swiper-button-prev, .swiper-button-next
+    +breakpoint($celular)
+        display: none !important
 
 .swiper-slide
     background-position: center
@@ -26,6 +35,11 @@
         left: 20%
         opacity: .85
         color: #fff !important
+        +breakpoint($celular)
+            width: 75%
+            height: 50%
+            bottom: 0
+            left: 0
         h2
             color: #fff
         a.leia
@@ -36,9 +50,23 @@
             position: absolute
             bottom: 0
             right: 0
+            +breakpoint($celular)
+                background-color: unset
+                padding: 5px
             &:hover
                 text-decoration: none
                 color: rgba(24, 74, 99, 1)
                 background-color: #fff
 img.form-img
     max-width: 60%
+
+.home_banners
+    .img-banner
+        height: 550px
+        +breakpoint($celular)
+            height: 290px
+.banner_default
+    .img-banner
+        height: 400px
+        +breakpoint($celular)
+            height: 265px

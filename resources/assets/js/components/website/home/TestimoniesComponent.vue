@@ -1,10 +1,8 @@
 <template>
     <div class="row componente">
-        <div class="col-md-6 text">
-            <div>
-                <h3 class="text-uppercase text-center">Opiniões de Clientes</h3>
-                <text-content :page="'home-testimonies'"></text-content>
-            </div>
+        <div class="col-md-6 description">
+            <h3 class="text-uppercase text-center">Opiniões de Clientes</h3>
+            <text-content :page="'home-testimonies'"></text-content>
         </div>
         <div class="col-md-6">
             <swiper class="testimonies-custom" :options="swiperOption" style="height: auto">
@@ -44,37 +42,15 @@
         },
         methods: {
             getTestimonies(){
-                const action = '/api/testimonies'
-                axios.get(action).then(response => {
-                    this.testimonies = response.data.data
-                }).catch(error => {
-                    console.error(error)
-                })
+                setTimeout(() => {
+                    const action = '/api/testimonies'
+                    axios.get(action).then(response => {
+                        this.testimonies = response.data.data
+                    }).catch(error => {
+                        console.error(error)
+                    })
+                }, 1000)
             }
         },
     }
 </script>
-
-<style lang="sass" scoped>
-.componente
-    // margin-bottom: 80px
-    color: #fff
-    .text
-        padding: 20px 10px
-        h3
-            margin-top: 50px
-    .testimonies
-        padding: 10px 50px
-
-    .testimonies
-        hr, p
-            margin-bottom: 0
-        hr
-            background-color: #fff
-        p.nome
-            font-size: 12px
-            // color: #707070
-        p.instituto
-            font-size: 10px
-            // color: #707070
-</style>

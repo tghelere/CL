@@ -7,7 +7,7 @@
             <loading :active.sync="isLoading" :can-cancel="false"></loading>
             <b-link class="seta" @click="hideModal"></b-link>
             <b-row>
-                <b-col md="5"><b-img class="" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
+                <b-col md="5"><b-img class="modal_logo" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
                 <b-col md="7"><h4 class="text-uppercase">Solicitação de orçamento</h4></b-col>
             </b-row>
             <p>Agradecemos pelo seu interesse em nossos serviços. Preencha os campos abaixo para que possamos conhecer suas necessidades.</p>
@@ -46,12 +46,12 @@
                 </b-form-group>
                                 
                 <b-row>
-                    <b-col md="5" class="no-pad-right">
+                    <b-col md="5" class="phone">
                         <b-form-group>
                             <b-form-input id="phone" type="tel" v-model="form.phone" required placeholder="Telefone para contato *"></b-form-input>
                         </b-form-group>
                     </b-col>
-                    <b-col md="2" class="no-pad-left no-pad-right">
+                    <b-col md="2" cols="4" class="state">
                         <b-form-group>
                             <b-form-select @input="getCities(form.state.id)" id="states" required v-model="form.state" :options="states">
                                 <template slot="first">
@@ -60,7 +60,7 @@
                             </b-form-select>
                         </b-form-group>
                     </b-col>
-                    <b-col md="5" class="no-pad-left">
+                    <b-col md="5" cols="8" class="city">
                         <b-form-group>
                             <b-form-select id="cities" :disabled="form.state == null" required v-model="form.city" :options="cities">
                                 <template slot="first">
@@ -158,13 +158,15 @@
                 this.$refs.reqAQuote.hide()
             },
             getSolutions(){
-                const action = '/api/solutions'
-                axios.get(action).then(response => {
-                    response.data.data.push( { id: '8', title: 'Outros', } )
-                    this.solutions = [...response.data.data.map(solution => ({ value: {id: solution.id, name: solution.title}, text: solution.title }))]
-                }).catch(error => {
-                    console.error(error)
-                })
+                setTimeout(() => {
+                    const action = '/api/solutions'
+                    axios.get(action).then(response => {
+                        response.data.data.push( { id: '8', title: 'Outros', } )
+                        this.solutions = [...response.data.data.map(solution => ({ value: {id: solution.id, name: solution.title}, text: solution.title }))]
+                    }).catch(error => {
+                        console.error(error)
+                    })
+                }, 1000)
             },
             // getServices(){
             //     const action = '/api/services'
@@ -175,12 +177,14 @@
             //     })
             // },
             getStates(){
-                const action = '/api/states'
-                axios.get(action).then(response => {
-                    this.states = response.data.data.map(state => ({ value: {id: state.id, name: state.name}, text: state.abbr}))
-                }).catch(error => {
-                    console.error(error)
-                })
+                setTimeout(() => {
+                    const action = '/api/states'
+                    axios.get(action).then(response => {
+                        this.states = response.data.data.map(state => ({ value: {id: state.id, name: state.name}, text: state.abbr}))
+                    }).catch(error => {
+                        console.error(error)
+                    })
+                }, 1000)
             },
             getCities(id){
                 this.isLoading = true
@@ -212,42 +216,3 @@
         },
     }
 </script>
-
-<style lang="sass" scoped>
-.link-quote
-    background: url(/img/orcamento_azul.png) no-repeat top center
-    height: 140px
-    width: 150px
-    display: block
-    position: fixed
-    bottom: 45vh
-    right: 5px
-    z-index: 5
-    cursor: pointer
-    &:hover
-        background-position-y: -140px
-    &:focus
-        outline: 0
-    span
-        display: none
-#modal
-    h4
-        line-height: 65px
-        font-size: 16px
-    p, input, select, label, checkbox, radio
-        font-size: 0.8rem
-    .seta
-        height: 24px
-        width: 8px
-        background: url(/img/icons/seta.png) no-repeat top center
-        display: block
-        position: absolute
-        top: 45%
-        left: 10px
-        &:hover
-            background-position-y: -24px
-    .no-pad-left
-        padding-left: 5px
-    .no-pad-right
-        padding-right: 5px
-</style>

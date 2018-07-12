@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <banner :page="'{{ Route::currentRouteName() }}'" :height="400"></banner>
+        <banner class="banner_default" :page="'{{ Route::currentRouteName() }}'"></banner>
     </div>
     <div class="container corpo  mt-orange">
         <div class="bradcrump">
@@ -14,7 +14,7 @@
             <text-content :page="'{{ Route::currentRouteName() }}'"></text-content>
         </div>
 
-        <form-candidates></form-candidates>
+        <form-candidates class="form-trabalhe"></form-candidates>
         
     </div>
 @endsection

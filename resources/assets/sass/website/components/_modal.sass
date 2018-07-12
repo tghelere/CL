@@ -1,26 +1,19 @@
-.modal.show .modal-dialog
-    // max-width: 650px !important
-    border-left: 8px solid #F29E21
-    max-width: 50vw
-    .modal-content
-        border: 0 !important
-        border-radius: 0 !important
 
 .modal.fade .modal-dialog
     transform: translate(100%, 0)
 
 .modal.show .modal-dialog
+    max-width: 50vw
     transform: translate(51%, 0)
     height: 100%
     margin: 0 auto
-.modal.show .modal-dialog .modal-content    
-    height: 100vh
-.modal-body
-    padding: 5% 10%
-
-#modal    
-    p, input, select, label, checkbox, radio, legend
-        font-size: 0.8rem
-        // line-height: 1.5rem
-    select
-        height: calc(2.15rem)
+    +breakpoint($celular)
+        max-width: 90%
+        height: unset
+    .modal-content
+        border: 0 !important
+        border-radius: 0 !important
+        height: 100vh
+        // +breakpoint($celular)
+        //     height: unset
+        

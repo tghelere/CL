@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container-fluid">
-    <banner :page="'{{ Route::currentRouteName() }}'" :height="400"></banner>
+    <banner class="banner_default" :page="'{{ Route::currentRouteName() }}'"></banner>
 </div>
 <div class="container">
     <div class="bradcrump">

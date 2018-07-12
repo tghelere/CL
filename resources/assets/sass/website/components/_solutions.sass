@@ -1,0 +1,97 @@
+.home_solutions
+    ul
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        flex-wrap: wrap
+        max-height: 560px
+        width: 420px
+        margin-bottom: 0
+        float: left
+        +breakpoint($celular)
+            width: 100%
+            flex-direction: row
+            max-height: unset
+            margin-bottom: 40px
+        li
+            width: 175px
+            height: 175px
+            float: left
+            margin: 5px
+            text-align: center
+            +breakpoint($celular)
+                text-transform: uppercase
+                width: 100%
+                height: 100px
+            &.industrias
+                background: url(/img/thumbs/solutions/industry.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(67, 64, 65, 0.6)
+                    &:hover
+                        background-color: rgba(67, 64, 65, 0.3)
+            &.varejo
+                background: url(/img/thumbs/solutions/varejo.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(242, 158, 33, 0.6)
+                    &:hover
+                        background-color: rgba(242, 158, 33, 0.3)
+            &.orgaos-publicos
+                background: url(/img/thumbs/solutions/orgaospublicos.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(69, 163, 104, 0.6)
+                    &:hover
+                        background-color: rgba(69, 163, 104, 0.3)
+            &.condominios
+                background: url(/img/thumbs/solutions/condominios.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(0, 161, 162, 0.6)
+                    &:hover
+                        background-color: rgba(0, 161, 162, 0.3)
+            &.clinicas-e-areas-de-saude
+                background: url(/img/thumbs/solutions/hospital.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(152, 191, 19, 0.6)
+                    &:hover
+                        background-color: rgba(152, 191, 19, 0.3)
+            &.escolas-e-universidades
+                background: url(/img/thumbs/solutions/escola.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(61, 121, 151, 0.6)
+                    &:hover
+                        background-color: rgba(61, 121, 151, 0.3)
+            &.escritorios-e-ambientes-corporativos
+                background: url(/img/thumbs/solutions/escritorio.jpg) no-repeat center center
+                background-size: cover
+                a
+                    background-color: rgba(0, 137, 192, 0.6)
+                    &:hover
+                        background-color: rgba(0, 137, 192, 0.3)
+            a
+                display: flex
+                align-items: center
+                justify-content: center            
+                padding: 10px
+                height: 100%
+                width: 100%
+                text-decoration: none
+                h5
+                    color: #fff
+                    +breakpoint($celular)
+                        
+    .post
+        width: 400px
+        float: left
+        margin-top: 230px
+        +breakpoint($celular)
+            width: unset
+            display: none
+        hr
+            margin: 40px 0
+        a
+            color: #000

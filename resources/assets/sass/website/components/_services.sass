@@ -1,68 +1,31 @@
-<template>
-    <div class="componente" v-show="services.length > 0">
-        <h3 v-if="page == 'home'" class="text-uppercase text-center">Serviços</h3>
-        <ul class="row justify-content-center">
-            <li v-for="(service, index) in services" :key="index" class="text-uppercase text-center col-md-2">
-                <a :href="service.url" :title="service.title" >
-                    <div class="img" :class="service.slug"></div>
-                    <h5>{{ service.title }}</h5>
-                </a>
-            </li>
-        </ul>
-    </div>
-</template>
-
-<script>
-    export default {
-        props: {
-            page: {
-                type: String,
-                required: true
-            },
-        },
-        data () {
-            return {
-                services: [],
-            }
-        },
-        created () {
-            this.getServices()
-        },
-        methods: {
-            getServices () {
-                const action = '/api/services'
-                axios.get(action).then(response => {
-                    this.services = response.data.data
-                }).catch(error => {
-                    console.error(error)
-                })
-            },
-        },
-    }
-</script>
-
-<style lang="sass" scoped>
-.componente
+.list_services
     margin-bottom: 100px
+    +breakpoint($celular)
+        margin-bottom: 40px
     h3
         margin: 80px auto 5px
     ul
         padding: 0 !important
         margin-bottom: 0
+        +breakpoint($celular)
+            padding-left: 20px !important
         li
             list-style: none
             padding: 0
             margin: 0 2px
-            // width: 30%
             display: block
             background-size: 30px
-            
             a
                 display: inline-block
-                color: #000
+                color: #707070
                 padding: 20px 2px
                 height: 100%
                 width: 100%
+                +breakpoint($celular)
+                    padding: 5px 0
+                    background: url(/img/icons/seta_services.png) no-repeat center 
+                    background-size: 8px
+                    background-position-x: 90%
                 .img
                     margin: 40px auto 0
                     width: 80px
@@ -77,6 +40,9 @@
                         background: url(/img/icons/services/home_recepcao_180px.png) no-repeat top center
                     &.servicos-controladoria-de-acesso
                         background: url(/img/icons/services/home_controladoria80px.png) no-repeat top center
+                    +breakpoint($celular)
+                        margin: unset
+                        float: left
                 &:hover
                     background-color: #0089c0
                     text-decoration: none
@@ -88,5 +54,8 @@
                     padding-top: 15px
                     display: block
                     margin: 0 auto
-                    
-</style>
+                    color: 
+                    +breakpoint($celular)
+                        padding-top: 10%
+                        float: left
+                        margin-left: 40px

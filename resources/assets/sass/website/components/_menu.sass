@@ -3,8 +3,9 @@ nav.navbar
     background-color: #fff
     #top-bar
         height: 120px
-    .menu-h
-        height: 100%
+        +breakpoint($celular)
+            height: 100px
+    
     .dropdown:hover>.dropdown-menu
         display: block
     a.logo
@@ -14,81 +15,203 @@ nav.navbar
         height: 71px
         width: 250px
         margin-top: -30px
+        +breakpoint($celular)
+            height: 44px
+            width: 155px
+            margin: 40px 30px
         span
             display: none
-    ul
-        &.menu
-        text-transform: uppercase
-        font-weight: bold
-        &.navbar-nav
-            height: 100%
-        &.dropdown-menu
-            margin: 0
-        li
-            &:hover
-                background-color: #0089C0
-                a.nav-link
-                    color: #fff !important
-            a
-                color: rgba(0, 0, 0, 0.5)
+    .menu-h
+        height: 100%
+        ul
+            &.menu
+            text-transform: uppercase
+            font-weight: bold
+            &.navbar-nav
                 height: 100%
-                h5
-                    line-height: 25px
-                    margin: 0
-                    &.root
-                        margin-top: 40px
-                &.whats
-                    background: url(/img/icons/whatsapp.svg) no-repeat top
-                &.phone
-                    background: url(/img/icons/phone.svg) no-repeat top
-                &.whats, &.phone
-                    display: block
-                    background-size: 18px
-                    background-position-x: 5px
-                    background-position-y: 51px
-                    padding-left: 25px !important
-                    margin-left: 5px
+            &.dropdown-menu
+                margin: 0
+            li
                 &:hover
                     background-color: #0089C0
-                    color: #fff !important
-        &.solutions
-            .linha
-                width: 640px
-                padding: 30px 45px
-                .col-menor
-                    width: 175px
-                    float: left
-                .col-maior
-                    width: 340px
-                    float: left
-                    margin-left: 30px
-            li 
-                height: 40px
-                line-height: 40px
-                margin: 5px 0
-                width: 100%
+                    a.nav-link
+                        color: #fff !important
                 a
-                    padding: 0 0 0 40px 
+                    color: rgba(0, 0, 0, 0.5)
+                    height: 100%
                     h5
-                        line-height: 40px
-                    &.solucoes
-                        background-size: 30px !important
-                        background-position-x: 2px !important
-                        background-position-y: 5px !important
-                    &.industrias
-                        background: url(/img/icons/solucoes-industrias.png) no-repeat top
-                    &.varejo
-                        background: url(/img/icons/solucoes-varejo.png) no-repeat top
-                    &.orgaos-publicos
-                        background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat top
-                    &.condominios
-                        background: url(/img/icons/solucoes-condominios.png) no-repeat top
-                    &.clinicas-e-areas-de-saude
-                        background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat top
-                    &.escolas-e-universidades
-                        background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat top
-                    &.escritorios-e-ambientes-corporativos
-                        background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat top
+                        line-height: 25px
+                        margin: 0
+                        &.root
+                            margin-top: 40px
+                    &.whats
+                        background: url(/img/icons/whatsapp.svg) no-repeat top
+                    &.phone
+                        background: url(/img/icons/phone.svg) no-repeat top
+                    &.whats, &.phone
+                        display: block
+                        background-size: 18px
+                        background-position-x: 5px
+                        background-position-y: 51px
+                        padding-left: 25px !important
+                        margin-left: 5px
+                    &:hover
+                        background-color: #0089C0
+                        color: #fff !important
+            &.solutions
+                .linha
+                    width: 640px
+                    padding: 30px 45px
+                    .col-menor
+                        width: 175px
+                        float: left
+                    .col-maior
+                        width: 340px
+                        float: left
+                        margin-left: 30px
+                li 
+                    height: 40px
+                    line-height: 40px
+                    margin: 5px 0
+                    width: 100%
+                    a
+                        padding: 0 0 0 40px 
+                        h5
+                            line-height: 40px
+                        &.solucoes
+                            background-size: 30px !important
+                            background-position-x: 2px !important
+                            background-position-y: 5px !important
+                        &.industrias
+                            background: url(/img/icons/solucoes-industrias.png) no-repeat top
+                        &.varejo
+                            background: url(/img/icons/solucoes-varejo.png) no-repeat top
+                        &.orgaos-publicos
+                            background: url(/img/icons/solucoes-orgaos-publicos.png) no-repeat top
+                        &.condominios
+                            background: url(/img/icons/solucoes-condominios.png) no-repeat top
+                        &.clinicas-e-areas-de-saude
+                            background: url(/img/icons/solucoes-clinicas-e-hospitais.png) no-repeat top
+                        &.escolas-e-universidades
+                            background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat top
+                        &.escritorios-e-ambientes-corporativos
+                            background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat top
+    .modal-body a.seta
+        width: 21px
+        height: 17px
+        display: block
+        background: url(/img/icons/setas_clientes_12x20.png) no-repeat bottom left
+        background-size: 20px 35px
+    .icons_mobile
+        margin-top: 30px
+        margin-right: 12px
+        ul li.mobile1
+            margin-right: 15px
+            a.mobile
+                width: 30px
+                height: 30px
+                display: block
+                &.Fone
+                    background: url(/img/icons/icon_phone50px.png) no-repeat center center
+                    background-size: cover
+                &.Whatsapp
+                    background: url(/img/icons/icon_whatsapp50px.png) no-repeat center center
+                    background-size: cover
+                &.Menu
+                    background: url(/img/icons/menu-03.png) no-repeat center center
+                    background-size: cover
+
+                span
+                    display: none
+        +breakpoint($celular)
+            display: block
+        #menu_mobile
+            // padding: unset
+            margin-top: 30px
+            .link_menu
+                // border: 1px solid red
+                display: block
+                padding: 5px 5px 5px 35px
+                width: 100%
+                color: #707070
+                &.phone, &.whats, &.mail
+                    padding-left: 65px
+                &.phone
+                    background: url(/img/icons/phone.svg) no-repeat center left
+                    background-size: 20px
+                    background-position-x: 35px
+                &.whats
+                    background: url(/img/icons/whatsapp.svg) no-repeat center left
+                    background-size: 20px
+                    background-position-x: 35px
+                &.mail
+                    background: url(/img/icons/ico_mn-mail.svg) no-repeat center left
+                    background-size: 20px
+                    background-position-x: 35px
+                    background-position-y: 7px
+            .barra
+                .cinza
+                    color: #fff
+                    padding: 15px 30px
+                    background-color: #272A2E
+                    p
+                        margin: 0
+                .azul
+                    background-color: #0089C0
+                    a
+                        color: #fff
+                        padding: 35px 20px
+                        display: block
+                        background: url(/img/icons/ico_mn-sair-01.svg) no-repeat center center
+                        background-size: 25px
+                        background-position-x: 45px
+            .barra-verde
+                background-color: #78E0A4
+                ul.social
+                    li
+                        float: left
+                        width: 38px
+                        height: 38px
+                        margin-right: 12px
+                        display: block
+                        a
+                            width: 38px
+                            height: 38px
+                            display: block
+                            &.facebook
+                                background: url(/img/icons/social/ms_facebook1.png) no-repeat top                        
+                            &.gplus
+                                background: url(/img/icons/social/ms_gmais1.png) no-repeat top                        
+                            &.linkedIn
+                                background: url(/img/icons/social/ms_likedin1.png) no-repeat top                        
+                            &.youtube
+                                background: url(/img/icons/social/ms_youtube1.png) no-repeat top                        
+                            &.whatsapp
+                                background: url(/img/icons/social/ms_whatsapp1.png) no-repeat top                                            
+                            &:hover
+                                background-position-y: -37px                    
+                        span
+                            display: none
+            .collapse
+                width: 100%
+            ul
+                width: 100%
+                padding-left: 70px
+                li a
+                    padding: 5px 0
+                    margin: 0
+                    color: #707070
+                    &:hover
+                        text-decoration: none !important
+
+        .closed
+            display: inline-block
+        #modal
+            .modal-content
+                img.modal_logo
+                    margin: 0 auto
+                    display: block
+                
 .navbar.sticky-top.scrolled
     background-color: #fff !important
     border-bottom: 1px solid #dedede
@@ -101,6 +224,10 @@ nav.navbar
             margin: unset
             width: 180px
             height: 51px
+            +breakpoint($celular)
+                height: 44px
+                width: 155px
+                margin: 8px 12px
         h5
             margin: 0
         a.whats, a.phone

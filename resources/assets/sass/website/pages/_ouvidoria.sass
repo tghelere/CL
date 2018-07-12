@@ -1,2 +1,19 @@
 .ouvidoria
-    
+    h1
+        +breakpoint($celular)
+            padding-bottom: 0
+    .mt-50, m50
+        +breakpoint($celular)
+            margin: 10px 0
+    img.megaphone
+        +breakpoint($celular)
+            display: none !important
+    .form-ouvidoria
+        form
+            button
+                +breakpoint($celular)
+                    width: 150px
+                    margin: 0 auto
+                    float: none !important
+                    display: block
+                    margin-top: 20px !important

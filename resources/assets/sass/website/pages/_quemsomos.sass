@@ -1,10 +1,17 @@
 .quem-somos
     .treepoints
         margin-top: 80px
+        +breakpoint($celular)
+            margin-top: 20px
+            width: 80%
+            margin: 0 auto
         li
             padding: 35px 20px
             background-size: 50px !important
             background-position: 90px 20px !important
+            +breakpoint($celular)
+                background-position: 20px 20px !important
+                padding: 25px 20px 0
             &.missao
                 background: url(/img/pages/quem-somos/QS_Estrela.png) no-repeat center center
             &.visao
@@ -14,3 +21,10 @@
             p
                 font-size: 13px !important
                 font-weight: 400 !important
+                +breakpoint($celular)
+                    text-align: left !important
+            h2
+                +breakpoint($celular)
+                    text-align: left !important
+                    padding-left: 50px
+                    line-height: 50px

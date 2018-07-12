@@ -24,13 +24,15 @@
             this.getText()
         },
         methods: {
-            getText () {                
-                const action = '/api/contents/' + this.page
-                axios.get(action).then(response => {
-                    this.text = response.data.data
-                }).catch(error => {
-                    console.error(error)
-                })
+            getText () {
+                setTimeout(() => {
+                    const action = '/api/contents/' + this.page
+                    axios.get(action).then(response => {
+                        this.text = response.data.data
+                    }).catch(error => {
+                        console.error(error)
+                    })
+                }, 200)
             },
         },
     }

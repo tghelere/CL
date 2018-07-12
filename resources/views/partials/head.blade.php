@@ -20,6 +20,8 @@
 <meta name="author" content="Thyago Ghelere">
 
 <link href="{{ mix('css/style.css') }}" rel="stylesheet">
+{{-- <link href="/css/style.css" rel="stylesheet"> --}}
+
 {{--  <!-- <link href="{{ mix('css/'.$data['page'].'.css') }}" rel="stylesheet"> --> --}}
 
 

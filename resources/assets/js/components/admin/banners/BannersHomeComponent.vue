@@ -16,7 +16,7 @@
         </swiper>
         <b-row>
             <b-col md="12" class="my-3" >
-                <b-button @click.prevent="resetForm" :variant="'primary'" v-b-modal.modalForm class="font-weight-bold" >
+                <b-button @click.prevent="resetForm" :variant="'primary'" v-b-modal.modalFormBanners class="font-weight-bold" >
                     <i class="fa fa-plus-circle fa-1" aria-hidden="true"></i>
                     Inserir banner
                 </b-button>
@@ -32,8 +32,8 @@
                 <template slot="actions" slot-scope="row">
                     <b-button 
                         size="sm"
-                        v-b-modal.modalForm 
-                        @click.prevent="modalForm = Object.assign({}, row.item)" 
+                        v-b-modal.modalFormBanners 
+                        @click.prevent="modalFormBanners = Object.assign({}, row.item)" 
                         class="mr-1 fa fa-pencil-square" 
                         title="Editar banner"
                         :variant="'outline-primary'">
@@ -55,37 +55,37 @@
                 Tem certeza de que deseja remover este banner?
             </b-modal>
             <b-modal 
-                id="modalForm" 
+                id="modalFormBanners" 
                 size="lg" 
                 hide-footer 
                 @bv::modal::hidden="resetForm"
                 :title="'Edição de banner'">
                 <b-form 
-                    @submit.prevent="modalForm.id > 0 ? putBanner(modalForm) : postBanner(modalForm)"
+                    @submit.prevent="modalFormBanners.id > 0 ? putBanner(modalFormBanners) : postBanner(modalFormBanners)"
                     @input="changeButton" 
                     enctype="multipart/form-data" 
                     >
                     <b-form-group label="Título">
-                        <b-form-input id="title" type="text" v-model="modalForm.title" placeholder="Título"></b-form-input>
+                        <b-form-input id="title" type="text" v-model="modalFormBanners.title" placeholder="Título"></b-form-input>
                     </b-form-group>
                     <b-form-group label="Descrição">
-                        <b-form-input id="description" type="text" v-model="modalForm.description" placeholder="Descrição"></b-form-input>
+                        <b-form-input id="description" type="text" v-model="modalFormBanners.description" placeholder="Descrição"></b-form-input>
                     </b-form-group>
                     <b-row>
                         <b-col md="6">
                             <b-form-group label="Link">
-                                <b-form-input id="link" type="text" v-model="modalForm.link" placeholder="Exemplo: /blog/post/post-de-exemplo"></b-form-input>
+                                <b-form-input id="link" type="text" v-model="modalFormBanners.link" placeholder="Exemplo: /blog/post/post-de-exemplo"></b-form-input>
                             </b-form-group>
                         </b-col>
                         <b-col md="6">
                             <b-form-group label="Cor do quadro de texto">
-                                <b-form-input id="colorbox" type="text" v-model="modalForm.colorbox" placeholder="Exemplo: #defa2e"></b-form-input>
+                                <b-form-input id="colorbox" type="text" v-model="modalFormBanners.colorbox" placeholder="Exemplo: #defa2e"></b-form-input>
                             </b-form-group>
                         </b-col>
                     </b-row>
                     <b-form-group label="Imagem">
-                        <img class="d-block mx-auto mt-3 mb-3 form-img" v-if="typeof(modalForm.image) == 'string'" :src="'/storage/images/banners/' + modalForm.image" fluid alt="Erro ao exibir imagem">
-                        <b-form-file accept="image/jpeg, image/png, image/gif" v-model="modalForm.image" placeholder="Clique para escolher uma imagem para o banner"></b-form-file>
+                        <img class="d-block mx-auto mt-3 mb-3 form-img" v-if="typeof(modalFormBanners.image) == 'string'" :src="'/storage/images/banners/' + modalFormBanners.image" fluid alt="Erro ao exibir imagem">
+                        <b-form-file accept="image/jpeg, image/png, image/gif" v-model="modalFormBanners.image" placeholder="Clique para escolher uma imagem para o banner"></b-form-file>
                     </b-form-group>
                     <b-row v-show="saveButton">
                         <hr>
@@ -145,7 +145,7 @@
                 isLoading: false,
                 sortBy: 'created_at',
                 sortDesc: true,
-                modalForm: {},
+                modalFormBanners: {},
                 fields: [
                     {key: 'id', sortable: true, 'class': 'text-center'},
                     {key: 'page', sortable: true, label: 'Página'},
@@ -195,7 +195,7 @@
                 this.saveButton = true
             },
             resetForm() {
-                this.modalForm = {
+                this.modalFormBanners = {
                     id: null,
                     page: 'home',
                     image: null,
@@ -217,7 +217,7 @@
                     fd.append('colorbox', form.colorbox)
                 const action = '/api/banner/update/'
                 axios.post(action, fd).then(response => {
-                        this.$root.$emit('bv::hide::modal', 'modalForm')
+                        this.$root.$emit('bv::hide::modal', 'modalFormBanners')
                         this.resetForm()
                         this.getBanners()
                         this.isLoading = false
@@ -249,7 +249,7 @@
                     fd.append('colorbox', form.colorbox)
                 const action = '/api/banner/'
                 axios.post(action, fd).then(response => {
-                    this.$root.$emit('bv::hide::modal', 'modalForm')
+                    this.$root.$emit('bv::hide::modal', 'modalFormBanners')
                     this.resetForm()
                     this.getBanners()
                     this.isLoading = false

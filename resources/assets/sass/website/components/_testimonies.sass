@@ -4,6 +4,9 @@
         background: url(/img/icons/setas_clientes_12x20.png) no-repeat top right
         width: 12px
         height: 20px
+        +breakpoint($celular)
+            display: block !important
+            top: unset
         &:hover
             background-position-y: -20px
     .swiper-button-next.swiper-button-black, .swiper-container-rtl .swiper-button-prev.swiper-button-black
@@ -11,5 +14,30 @@
         background: url(/img/icons/setas_clientes_12x20.png) no-repeat top left
         width: 12px
         height: 20px
+        +breakpoint($celular)
+            display: block !important
+            top: unset
         &:hover
             background-position-y: -20px
+
+.home_testimonies            
+    color: #fff
+    .description
+        padding: 20px 10px
+        +breakpoint($celular)
+            padding: 0 15px
+        h3
+            margin-top: 50px
+            +breakpoint($celular)
+                margin: 20px
+        p
+            +breakpoint($celular)
+                text-align: center
+    .testimonies
+        padding: 10px 50px
+        +breakpoint($celular)
+            padding: unset
+        hr, p
+            margin-bottom: 0
+        hr
+            background-color: #fff         

@@ -1,7 +1,7 @@
 <template>
     <div v-show="banners.length > 0" class="banner">    
         <swiper :options="swiperOption">
-            <swiper-slide v-for="(banner, index) in banners" :key='index' :style="img(banner.image)"></swiper-slide>
+            <swiper-slide v-for="(banner, index) in banners" :key='index' class="img-banner" :style="img(banner.image)"></swiper-slide>
         </swiper>
     </div>
 </template>
@@ -16,7 +16,7 @@
                 },
             }
         },
-        props: ['page', 'height'],
+        props: ['page'],
         created () {
             this.getBanners()
         },
@@ -30,7 +30,7 @@
                 })
             },
             img(img) {
-                return 'background: url(/storage/images/banners/' + img + ') no-repeat center center; background-size: cover !important; height:' + this.height + 'px;'
+                return 'background: url(/storage/images/banners/' + img + ') no-repeat center center; background-size: cover !important;'
             },
         },
     }
