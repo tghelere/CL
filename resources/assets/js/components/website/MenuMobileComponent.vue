@@ -3,16 +3,16 @@
         <li v-show="!modalShow" class="list-inline-item  mobile1"><a class="mobile Menu" title="Menu" @click.prevent="modalShow = !modalShow"><span>Menu</span></a></li>
         <!-- <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a> -->
         <b-modal ref="menuMobile" v-model="modalShow" hide-footer hide-header id="modal">
-            <b-link class="seta" @click="hideModal"></b-link>
-            <b-row>
-                <b-col md="5"><b-img class="modal_logo" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
-            </b-row>
             <div id="menu_mobile">
+                <b-link class="close-btn" @click="hideModal"></b-link>
+                <b-row>
+                    <b-col md="5"><b-img class="modal_logo mt-1 mb-3" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>
+                </b-row>
                 <b-row>
                     <a href="/" title="Home" class="text-uppercase link_menu tipo2">Home</a>
                 </b-row>
                 <b-row>
-                    <a v-b-toggle.institucional class="text-uppercase link_menu tipo2">Institucional</a>
+                    <a v-b-toggle.institucional class="text-uppercase link_menu tipo2 clps">Institucional</a>
                     <b-collapse id="institucional" accordion="menu_mobile_accordion" role="mobile_accordion">
                         <ul class="list-unstyled text-uppercase ">
                             <li><a class="tipo3" title="Quem Somos" href="/quem-somos">Quem Somos</a></li>
@@ -22,7 +22,7 @@
                     </b-collapse>
                 </b-row>
                 <b-row>
-                    <a v-b-toggle.solucoes class="text-uppercase link_menu tipo2">Soluções</a>
+                    <a v-b-toggle.solucoes class="text-uppercase link_menu tipo2 clps">Soluções</a>
                     <b-collapse id="solucoes" accordion="menu_mobile_accordion" role="mobile_accordion">
                         <ul class="list-unstyled text-uppercase ">
                             <li><a class="tipo3" title="Indústrias" href="/solucoes/industrias">Indústrias</a></li>
@@ -36,7 +36,7 @@
                     </b-collapse>
                 </b-row>
                 <b-row>
-                    <a v-b-toggle.servicos class="text-uppercase link_menu tipo2">Serviços</a>
+                    <a v-b-toggle.servicos class="text-uppercase link_menu tipo2 clps">Serviços</a>
                     <b-collapse id="servicos" accordion="menu_mobile_accordion" role="mobile_accordion">
                         <ul class="list-unstyled text-uppercase ">
                             <li><a class="tipo3" title="Limpeza" href="/servicos/limpeza">Limpeza</a></li>
@@ -62,26 +62,26 @@
                 <b-row>
                     <a href="mailto:" title="E-mail" class="text-uppercase link_menu tipo2 mail">E-mail</a>
                 </b-row>
-                <b-row class="mt-3 barra">
-                    <b-col cols="8" class="cinza">
-                        <p class="tipo3 mb-2">Centrallimp</p>
-                        <p class="tipo3">R. Augusto Severo, 203</p>
-                        <p class="tipo3">Aeroporto - Londrina - PR</p>
-                    </b-col>
-                    <b-col cols="4" class="azul">
-                        <a href="" class="text-uppercase">Ir</a>
-                    </b-col>
-                </b-row>
-                <b-row class="py-4 barra-verde">
-                    <ul class="list-unstyled list-inline social">
-                        <li class="list-inline-item"><a class="facebook" title="Facebook" href="" target="_blank"><span>Facebook</span></a></li>
-                        <li class="list-inline-item"><a class="gplus" title="GPlus" href="" target="_blank"><span>GPlus</span></a></li>
-                        <li class="list-inline-item"><a class="linkedIn" title="LinkedIn" href="" target="_blank"><span>LinkedIn</span></a></li>
-                        <li class="list-inline-item"><a class="youtube" title="Youtube" href="" target="_blank"><span>Youtube</span></a></li>
-                        <li class="list-inline-item"><a class="whatsapp" title="Whatsapp" href="" target="_blank"><span>Whatsapp</span></a></li>
-                    </ul>
-                </b-row>
             </div>
+            <b-row class="mt-3 barra">
+                <b-col cols="8" class="cinza">
+                    <p class="tipo3 mb-2 text-uppercase">Centrallimp</p>
+                    <p class="tipo3">R. Augusto Severo, 203</p>
+                    <p class="tipo3">Aeroporto - Londrina - PR</p>
+                </b-col>
+                <b-col cols="4" class="azul">
+                    <a href="" class="text-uppercase">Ir</a>
+                </b-col>
+            </b-row>
+            <b-row class="py-4 barra-verde">
+                <ul class="list-unstyled list-inline social">
+                    <li class="list-inline-item"><a class="facebook" title="Facebook" href="" target="_blank"><span>Facebook</span></a></li>
+                    <li class="list-inline-item"><a class="gplus" title="GPlus" href="" target="_blank"><span>GPlus</span></a></li>
+                    <li class="list-inline-item"><a class="linkedIn" title="LinkedIn" href="" target="_blank"><span>LinkedIn</span></a></li>
+                    <li class="list-inline-item"><a class="youtube" title="Youtube" href="" target="_blank"><span>Youtube</span></a></li>
+                    <li class="list-inline-item"><a class="whatsapp" title="Whatsapp" href="" target="_blank"><span>Whatsapp</span></a></li>
+                </ul>
+            </b-row>
         </b-modal>
     </div>
 </template>

@@ -1,7 +1,4 @@
-<div class="mobile-home-screen">
-@if($data['page'] != 'home')
-</div>
-@endif
+
     <nav class="navbar navbar-expand-md navbar-light sticky-top">
         <div class="container" id="top-bar">
             <a class="navbar-brand logo" title="{{ config('app.name') }}" href="{{ route('home') }}">
@@ -23,15 +20,15 @@
                         <ul class="dropdown-menu solutions" aria-labelledby="navbarDropdownMenuLink">
                             <div class="linha">
                                 <div class="col-menor">
-                                    <li class="pqno"><a title="Indústrias" class="dropdown-item industrias solucoes" href="{{ route('industrias') }}"><h5>Indústrias</h5></a></li>
-                                    <li class="pqno"><a title="Varejo" class="dropdown-item varejo solucoes" href="{{ route('varejo') }}"><h5>Varejo</h5></a></li>
-                                    <li class="pqno"><a title="Orgãos públicos" class="dropdown-item orgaos-publicos solucoes" href="{{ route('orgaos-publicos') }}"><h5>Orgãos públicos</h5></a></li>
-                                    <li class="pqno"><a title="Condomínios" class="dropdown-item condominios solucoes" href="{{ route('condominios') }}"><h5>Condomínios</h5></a></li>
+                                    <li class="pqno"><a title="Indústrias" class="dropdown-item industrias solucoes" href="{{ route('solucoes-industrias') }}"><h5>Indústrias</h5></a></li>
+                                    <li class="pqno"><a title="Varejo" class="dropdown-item varejo solucoes" href="{{ route('solucoes-varejo') }}"><h5>Varejo</h5></a></li>
+                                    <li class="pqno"><a title="Orgãos públicos" class="dropdown-item orgaos-publicos solucoes" href="{{ route('solucoes-orgaos-publicos') }}"><h5>Orgãos públicos</h5></a></li>
+                                    <li class="pqno"><a title="Condomínios" class="dropdown-item condominios solucoes" href="{{ route('solucoes-condominios') }}"><h5>Condomínios</h5></a></li>
                                 </div>
                                 <div class="col-maior">
-                                    <li class="gde"><a title="Clínicas e Áreas de Saúde" class="dropdown-item clinicas-e-areas-de-saude solucoes" href="{{ route('clinicas-e-areas-de-saude') }}"><h5>Clínicas e Áreas de Saúde</h5></a></li>
-                                    <li class="gde"><a title="Escolas e Universidades" class="dropdown-item escolas-e-universidades solucoes" href="{{ route('escolas-e-universidades') }}"><h5>Escolas e Universidades</h5></a></li>
-                                    <li class="gde"><a title="Escritórios e Ambientes Corporativos" class="dropdown-item escritorios-e-ambientes-corporativos solucoes" href="{{ route('escritorios-e-ambientes-corporativos') }}"><h5>Escritórios e Ambientes Corporativos</h5></a></li>
+                                    <li class="gde"><a title="Clínicas e Áreas de Saúde" class="dropdown-item clinicas-e-areas-de-saude solucoes" href="{{ route('solucoes-clinicas-e-areas-de-saude') }}"><h5>Clínicas e Áreas de Saúde</h5></a></li>
+                                    <li class="gde"><a title="Escolas e Universidades" class="dropdown-item escolas-e-universidades solucoes" href="{{ route('solucoes-escolas-e-universidades') }}"><h5>Escolas e Universidades</h5></a></li>
+                                    <li class="gde"><a title="Escritórios e Ambientes Corporativos" class="dropdown-item escritorios-e-ambientes-corporativos solucoes" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}"><h5>Escritórios e Ambientes Corporativos</h5></a></li>
                                 </div>
                             </div>
                         </ul>
@@ -89,3 +86,8 @@
             </div>
         </div>
     </nav>
+
+    <div class="mobile-home-screen">
+    @if($data['page'] != 'home')
+    </div>
+    @endif

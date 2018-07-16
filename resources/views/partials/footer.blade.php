@@ -35,19 +35,20 @@
               <div class="col-md-5">
                 <h5 class="text-uppercase">Soluções</h5>
                 <ul class="list tipo3">
-                  <a title="Indústrias" href="{{ route('industrias') }}"><li>Indústrias</li></a>
-                  <a title="Varejo" href="{{ route('varejo') }}"><li>Varejo</li></a>
-                  <a title="Orgãos públicos" href="{{ route('orgaos-publicos') }}"><li>Orgãos públicos</li></a>
-                  <a title="Condomínios" href="{{ route('condominios') }}"><li>Condomínios</li></a>
-                  <a title="Clínicas e Áreas de Saúde" href="{{ route('clinicas-e-areas-de-saude') }}"><li>Clínicas e Áreas de Saúde</li></a>
-                  <a title="Escolas e Universidades" href="{{ route('escolas-e-universidades') }}"><li>Escolas e Universidades</li></a>
-                  <a title="Escritórios e Ambientes Corporativos" href="{{ route('escritorios-e-ambientes-corporativos') }}"><li>Escritórios e Ambientes Corporativos</li></a>
+                  <a title="Indústrias" href="{{ route('solucoes-industrias') }}"><li>Indústrias</li></a>
+                  <a title="Varejo" href="{{ route('solucoes-varejo') }}"><li>Varejo</li></a>
+                  <a title="Orgãos públicos" href="{{ route('solucoes-orgaos-publicos') }}"><li>Orgãos públicos</li></a>
+                  <a title="Condomínios" href="{{ route('solucoes-condominios') }}"><li>Condomínios</li></a>
+                  <a title="Clínicas e Áreas de Saúde" href="{{ route('solucoes-clinicas-e-areas-de-saude') }}"><li>Clínicas e Áreas de Saúde</li></a>
+                  <a title="Escolas e Universidades" href="{{ route('solucoes-escolas-e-universidades') }}"><li>Escolas e Universidades</li></a>
+                  <a title="Escritórios e Ambientes Corporativos" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}"><li>Escritórios e Ambientes Corporativos</li></a>
                 </ul>
               </div>
             </div>
           </div>
           <div class="col-md-4">
-               <a class="align-middle" href="">Ebook</a>
+              {{-- <ebook></ebook> --}}
+               {{-- <a class="align-middle" href="">Ebook</a> --}}
           </div>
       </div>
       <div id="footer-links" class="only_mobile">
@@ -92,13 +93,13 @@
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#footer-links">
             <ul class="list tipo3">
-                <a title="Indústrias" href="{{ route('industrias') }}"><li>Indústrias</li></a>
-                <a title="Varejo" href="{{ route('varejo') }}"><li>Varejo</li></a>
-                <a title="Orgãos públicos" href="{{ route('orgaos-publicos') }}"><li>Orgãos públicos</li></a>
-                <a title="Condomínios" href="{{ route('condominios') }}"><li>Condomínios</li></a>
-                <a title="Clínicas e Áreas de Saúde" href="{{ route('clinicas-e-areas-de-saude') }}"><li>Clínicas e Áreas de Saúde</li></a>
-                <a title="Escolas e Universidades" href="{{ route('escolas-e-universidades') }}"><li>Escolas e Universidades</li></a>
-                <a title="Escritórios e Ambientes Corporativos" href="{{ route('escritorios-e-ambientes-corporativos') }}"><li>Escritórios e Ambientes Corporativos</li></a>
+                <a title="Indústrias" href="{{ route('solucoes-industrias') }}"><li>Indústrias</li></a>
+                <a title="Varejo" href="{{ route('solucoes-varejo') }}"><li>Varejo</li></a>
+                <a title="Orgãos públicos" href="{{ route('solucoes-orgaos-publicos') }}"><li>Orgãos públicos</li></a>
+                <a title="Condomínios" href="{{ route('solucoes-condominios') }}"><li>Condomínios</li></a>
+                <a title="Clínicas e Áreas de Saúde" href="{{ route('solucoes-clinicas-e-areas-de-saude') }}"><li>Clínicas e Áreas de Saúde</li></a>
+                <a title="Escolas e Universidades" href="{{ route('solucoes-escolas-e-universidades') }}"><li>Escolas e Universidades</li></a>
+                <a title="Escritórios e Ambientes Corporativos" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}"><li>Escritórios e Ambientes Corporativos</li></a>
             </ul>
           </div>
       </div>

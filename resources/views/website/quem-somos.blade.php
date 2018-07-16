@@ -17,15 +17,15 @@
             <ul class="row list-unstyled">
                 <li class="col-md-4 missao">
                     <h2 class="text-uppercase text-center">Missão</h2>
-                    <p class="text-center">Ampliar e fortalecer a imagem do tomador junto aos seus clientes, proporcionando ambientes limpos e agradáveis, através da excelência na execução dos serviços com desenvolvimento humano e profissional.</p>
+                    <p class="text-center tipo2">Ampliar e fortalecer a imagem do tomador junto aos seus clientes, proporcionando ambientes limpos e agradáveis, através da excelência na execução dos serviços com desenvolvimento humano e profissional.</p>
                 </li>
                 <li class="col-md-4 visao">
                     <h2 class="text-uppercase text-center">Visão</h2>
-                    <p class="text-center">Ser referência nacional em qualidade no setor de limpeza e conservação até 2020, com crescimento sustentado e com boas práticas comerciais.</p>
+                    <p class="text-center tipo2">Ser referência nacional em qualidade no setor de limpeza e conservação até 2020, com crescimento sustentado e com boas práticas comerciais.</p>
                 </li>
                 <li class="col-md-4 valores">
                     <h2 class="text-uppercase text-center">Valores</h2>
-                    <p class="text-center">Amor pelo que faz, ética e transparência, combate contínuo ao desperdício, trabalho em equipe e responsabilidade Social.</p>
+                    <p class="text-center tipo2">Amor pelo que faz, ética e transparência, combate contínuo ao desperdício, trabalho em equipe e responsabilidade Social.</p>
                 </li>
             </ul>
         </div>

@@ -96,12 +96,7 @@ nav.navbar
                             background: url(/img/icons/solucoes-escolas-e-universidades.png) no-repeat top
                         &.escritorios-e-ambientes-corporativos
                             background: url(/img/icons/solucoes-escritorios-e-ambientes-corporativos.png) no-repeat top
-    .modal-body a.seta
-        width: 21px
-        height: 17px
-        display: block
-        background: url(/img/icons/setas_clientes_12x20.png) no-repeat bottom left
-        background-size: 20px 35px
+    
     .icons_mobile
         margin-top: 30px
         margin-right: 12px
@@ -125,84 +120,117 @@ nav.navbar
                     display: none
         +breakpoint($celular)
             display: block
-        #menu_mobile
-            // padding: unset
-            margin-top: 30px
-            .link_menu
-                // border: 1px solid red
-                display: block
-                padding: 5px 5px 5px 35px
-                width: 100%
-                color: #707070
-                &.phone, &.whats, &.mail
-                    padding-left: 65px
-                &.phone
-                    background: url(/img/icons/phone.svg) no-repeat center left
-                    background-size: 20px
-                    background-position-x: 35px
-                &.whats
-                    background: url(/img/icons/whatsapp.svg) no-repeat center left
-                    background-size: 20px
-                    background-position-x: 35px
-                &.mail
-                    background: url(/img/icons/ico_mn-mail.svg) no-repeat center left
-                    background-size: 20px
-                    background-position-x: 35px
-                    background-position-y: 7px
-            .barra
-                .cinza
-                    color: #fff
-                    padding: 15px 30px
-                    background-color: #272A2E
-                    p
-                        margin: 0
-                .azul
-                    background-color: #0089C0
-                    a
+        .modal.show .modal-dialog .modal-content
+            height: unset
+            .modal-body
+                background-color: #F6F6F6
+                padding: unset
+                .row
+                    margin: 0
+                #menu_mobile
+                    // padding: 10px
+                    a.close-btn
+                        width: 21px
+                        height: 17px
+                        display: block
+                        background: url(/img/icons/setas_clientes_12x20.png) no-repeat bottom left
+                        background-size: 20px 35px
+                        margin: 8px
+                    a.link_menu
+                        display: block
+                        padding: 5px 5px 5px 25px
+                        width: 100%
+                        color: #707070
+                        background: url(/img/icons/seta_services.png) no-repeat center
+                        background-position-x: 95%
+                        background-size: 7px
+                        &.clps
+                            &:not(.collapsed)
+                                background: #0089C0 url(/img/icons/seta_services-b.png) no-repeat center
+                                background-position-x: 95%
+                                color: #fff
+                                background-size: 10px
+                        &.phone, &.whats, &.mail
+                            padding-left: 55px
+                        &.phone
+                            background: url(/img/icons/phone.svg) no-repeat center left
+                            background-size: 20px
+                            background-position-x: 25px
+                        &.whats
+                            background: url(/img/icons/whatsapp.svg) no-repeat center left
+                            background-size: 20px
+                            background-position-x: 25px
+                        &.mail
+                            background: url(/img/icons/ico_mn-mail.svg) no-repeat center left
+                            background-size: 20px
+                            background-position-x: 25px
+                            background-position-y: 7px
+                    .collapse
+                        width: 100%
+                    ul
+                        width: 100%
+                        padding-left: 35px
+                        li 
+                            background: url(/img/icons/seta_services.png) no-repeat center
+                            background-position-x: 95%
+                            background-size: 5px
+                            a
+                                padding: 5px 0
+                                margin: 0
+                                color: #707070
+                                display: block
+                                width: 100%
+                                padding: 0
+                                &:hover
+                                    text-decoration: none !important
+                .barra
+                    .cinza
                         color: #fff
-                        padding: 35px 20px
-                        display: block
-                        background: url(/img/icons/ico_mn-sair-01.svg) no-repeat center center
-                        background-size: 25px
-                        background-position-x: 45px
-            .barra-verde
-                background-color: #78E0A4
-                ul.social
-                    li
-                        float: left
-                        width: 38px
-                        height: 38px
-                        margin-right: 12px
-                        display: block
+                        padding: 15px 30px
+                        background-color: #424041
+                        p
+                            margin: 0
+                    .azul
+                        background-color: #0089C0
                         a
+                            color: #fff
+                            padding: 35px 20px
+                            display: block
+                            background: url(/img/icons/ico_mn-sair-01.svg) no-repeat center center
+                            background-size: 25px
+                            background-position-x: 45px
+                .barra-verde
+                    background-color: #C3D987
+                    ul.social
+                        width: unset
+                        padding: unset
+                        margin: 0 auto
+                        li
+                            float: left
                             width: 38px
                             height: 38px
+                            margin-right: 12px
                             display: block
-                            &.facebook
-                                background: url(/img/icons/social/ms_facebook1.png) no-repeat top                        
-                            &.gplus
-                                background: url(/img/icons/social/ms_gmais1.png) no-repeat top                        
-                            &.linkedIn
-                                background: url(/img/icons/social/ms_likedin1.png) no-repeat top                        
-                            &.youtube
-                                background: url(/img/icons/social/ms_youtube1.png) no-repeat top                        
-                            &.whatsapp
-                                background: url(/img/icons/social/ms_whatsapp1.png) no-repeat top                                            
-                            &:hover
-                                background-position-y: -37px                    
-                        span
-                            display: none
-            .collapse
-                width: 100%
-            ul
-                width: 100%
-                padding-left: 70px
-                li a
-                    padding: 5px 0
-                    margin: 0
-                    color: #707070
-                    &:hover
-                        text-decoration: none !important
+                            a
+                                width: 38px
+                                height: 38px
+                                display: block
+                                &.facebook
+                                    background: url(/img/icons/social/ms_facebook1.png) no-repeat top                        
+                                &.gplus
+                                    background: url(/img/icons/social/ms_gmais1.png) no-repeat top                        
+                                &.linkedIn
+                                    background: url(/img/icons/social/ms_likedin1.png) no-repeat top                        
+                                &.youtube
+                                    background: url(/img/icons/social/ms_youtube1.png) no-repeat top                        
+                                &.whatsapp
+                                    background: url(/img/icons/social/ms_whatsapp1.png) no-repeat top                                            
+                                &:hover
+                                    background-position-y: -37px                    
+                            span
+                                display: none
+            
+            
 
         .closed
             display: inline-block
@@ -218,6 +246,9 @@ nav.navbar
     opacity: .95
     box-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.090) !important
     transition: background-color box-shadow border-bottom opacity 1000ms linear
+    +breakpoint($celular)
+        opacity: unset
+        box-shadow: unset !important
     #top-bar
         height: unset
         a.logo

@@ -8,5 +8,5 @@
 @stop
 
 @section('content')
-   
+    <admin-testimonies class="home_testimonies"></admin-testimonies>
 @stop

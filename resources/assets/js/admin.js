@@ -24,6 +24,7 @@ Vue.use(require('vue-moment'), {
     Vue.component('admin-blog-posts', require('./components/admin/blog/PostsComponent.vue'))
     Vue.component('admin-banners-home', require('./components/admin/banners/BannersHomeComponent.vue'))
     Vue.component('admin-banner', require('./components/admin/banners/BannerComponent.vue'))
+    Vue.component('admin-testimonies', require('./components/admin/TestimoniesComponent.vue'))
     
 const app = new Vue({
     el: '#app',

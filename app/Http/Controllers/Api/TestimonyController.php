@@ -31,9 +31,9 @@ class TestimonyController extends Controller
      */
     public function store(Request $request)
     {
-        $testimony = $request->isMethod('put') ? Testimony::findOrFail($request->testimony_id) : new Testimony;
+        $testimony = $request->isMethod('put') ? Testimony::findOrFail($request->id) : new Testimony;
         
-        $testimony->id = $request->input('testimony_id');
+        $testimony->id = $request->input('id');
         $testimony->name = $request->input('name');
         $testimony->institute = $request->input('institute');
         $testimony->sequence = $request->input('sequence');
