@@ -41,6 +41,6 @@
 <style lang="sass" scoped>
 .home-text
     text-align: center
-    line-height: 18px
-    margin: 30px 0
+    line-height: 25px
+    margin: 60px 0 100px
 </style>

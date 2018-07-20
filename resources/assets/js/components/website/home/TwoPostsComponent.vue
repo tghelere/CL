@@ -55,6 +55,10 @@ a.link-post2
             height: 123px
             width: 100%
             background-size: cover
-        h4, p
-            color: #3f3f3f
+        p
+            color: #707070
+            margin: 5px 0 45px
+        h4
+            color: #000
+            margin: 12px 0
 </style>

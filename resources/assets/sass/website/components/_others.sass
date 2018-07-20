@@ -5,6 +5,8 @@
     display: block
     z-index: 4
     position: relative
+    +breakpoint($celular)
+        width: 80%
     &.mt-orange
         border-top: 5px solid #F29E21
     &.mt-green
@@ -22,6 +24,7 @@
         margin: 0 auto
         
 .bradcrump 
+    display: none
     p
         // font-size: 10px !important
         color: #808080 !important

@@ -6,7 +6,7 @@
                 <a :href="'/solucoes/' + solution.slug" 
                     @mouseover="selectedPost(solution.slug); changeSelected(solution.title)"
                     :title="solution.title">
-                    <h5>{{ solution.title }}</h5>
+                    <h5 class="text-uppercase">{{ solution.title }}</h5>
                 </a>
             </li>
         </ul>

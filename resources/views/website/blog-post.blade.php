@@ -9,7 +9,7 @@
         <p class="text-uppercase">home / blog / {{$data['title']}}</p>            
     </div>
     <div class="content">
-        <h2>{{$data['h1']}}</h2>
+        <h3>{{$data['h1']}}</h3>
         <blog-post :slug="'{{$data['slug']}}'" ></blog-post>
 
         <div class="row bottom-post">

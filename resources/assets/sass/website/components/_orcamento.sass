@@ -1,22 +1,23 @@
 .orcamento
     .link-quote
         background: url(/img/orcamento_azul.png) no-repeat top center
-        height: 140px
-        width: 150px
+        height: 93px
+        width: 100px
         display: block
         position: fixed
-        bottom: 45vh
+        bottom: 5%
         right: 5px
         z-index: 5
         cursor: pointer
+        background-size: 100%
         +breakpoint($celular)
-            background-size: 90px
-            width: 90px
-            height: 83px
+            background-size: 70px
+            width: 70px
+            height: 65px
             bottom: unset
-            top: 22%
+            bottom: 5%
         &:hover
-            background-position-y: -140px
+            background-position-y: -93px
         &:focus
             outline: 0
         span

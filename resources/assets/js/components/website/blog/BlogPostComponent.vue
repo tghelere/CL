@@ -1,8 +1,8 @@
 <template>
     <div class="row">
         <div class="col-md-12">
-            <h1 class="text-capitalize">{{post.title}}</h1>
-            <ul class="list-inline list-unstyled">
+            <h2 class="text-capitalize">{{post.title}}</h2>
+            <ul class="list-inline list-unstyled tags">
                 <li class="list-inline-item text-uppercase" v-for="(cat, index) in post.categories" :key='index'>
                     <u>{{cat.name}}</u>
                 </li>
@@ -44,7 +44,12 @@
 <style lang="sass" scoped>
 h1, ul
     padding-left: 0
-ul li
-    margin-right: 15px
-    color: #0056b3
+ul.tags 
+    margin-bottom: 25px
+    li
+        margin-right: 15px
+        color: #0056b3
+        font-family: 'Open Sans', sans-serif !important
+        font-size: 10px
+        font-weight: 200 !important
 </style>
