@@ -36,7 +36,7 @@
             </b-row>
             <div class="row newsletter">
                 <div class="col-md-12">
-                    <form-newsletter :page="'blog'" ></form-newsletter>
+                    <form-newsletter></form-newsletter>
                 </div>
             </div>
             <div class="row filter">

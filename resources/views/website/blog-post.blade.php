@@ -17,7 +17,7 @@
                 <a class="return btn btn-primary" href="{{ route('blog') }}" title="Voltar ao blog">Voltar ao blog</a>
             </div>
             <div class="col-md-5">
-                <form-newsletter :page="'blog-post'"></form-newsletter>
+                <form-newsletter></form-newsletter>
             </div>
         </div>
 

@@ -7,9 +7,12 @@
             <p class="text-center">Cadastre-se para receber nossas atualizações de conteúdo</p>
             <b-form @submit.prevent="onSubmit"> 
                 <b-form-group>
+                    <b-form-input id="name" type="text" v-model="form.name" required placeholder="Digite seu nome"></b-form-input>
+                </b-form-group>
+                <b-form-group>
                     <b-form-input id="email" type="email" v-model="form.email" required placeholder="Digite seu e-mail"></b-form-input>
                 </b-form-group>
-                <b-button :class="classe" type="submit" variant="primary">Cadastrar</b-button>
+                <b-button class="d-block mx-auto" type="submit" variant="primary">Cadastrar</b-button>
             </b-form>
         </div>
     </div>
@@ -41,17 +44,9 @@
             return {
                 isLoading: false,
                 form: {
+                    name: '',
                     email: '',
                 },                
-            }
-        },
-        props: ['page'],
-        computed: {
-            classe(){
-                if (this.page == 'blog') {
-                    return 'd-block mx-auto'    
-                }
-                return this.page
             }
         },
         methods: {
@@ -73,6 +68,7 @@
             },
             resetForm () {
                 this.form = {
+                    name: '',
                     email: '',
                 }
             },
@@ -85,14 +81,5 @@
 
 <style lang="sass" scoped>
 .newsletter
-    // background-color: #272A2E
     padding: 5%
-    // h3, p
-    //     color: #fff
-    form button
-        &.blog-post
-            padding: 4% 8%
-            float: right
-            margin-top: -60px
-            margin-right: 18px
 </style>

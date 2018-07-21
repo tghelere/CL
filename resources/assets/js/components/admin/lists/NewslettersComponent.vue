@@ -81,6 +81,7 @@
                 newsletters: [],
                 fields: [
                     {key: 'id', sortable: true, 'class': 'text-center'},
+                    {key: 'name', sortable: true, label: 'Nome'},
                     {key: 'email', sortable: true, label: 'E-mail'},
                     {key: 'created_at', sortable: true, label: 'Data', formatter: (value) => { return this.$moment( value ).fromNow()}, 'class': 'text-center'},
                     {key: 'actions', sortable: false, label: 'Ações', 'class': 'text-center' },

@@ -35,6 +35,7 @@ class NewsletterController extends Controller
         $newsletter = new Newsletter;
         
         $newsletter->email = $request->input('email');
+        $newsletter->name = $request->input('name');
 
         try{
             if ($newsletter->save()) {
