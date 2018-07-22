@@ -12,4 +12,5 @@
         :page="'footer'" 
         :title="'Campo de texto do rodapé do site'"
     ></admin-form-text-content>
+    <admin-ebook></admin-ebook>
 @stop

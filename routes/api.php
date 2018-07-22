@@ -102,4 +102,8 @@ Route::namespace('Api')->group(function () {
     Route::put('category', 'CategoryController@store');
     Route::delete('category/{id}', 'CategoryController@destroy');
 
+// Ebooks
+    Route::get('ebooks', 'EbookController@index');
+    Route::post('ebook', 'EbookController@store');
+
 });
