@@ -111,16 +111,14 @@
         methods: {
             getEbook(){
                 this.isLoading = true
-                setTimeout(() => {
-                    const action = '/api/ebooks'
-                    axios.get(action).then(response => {
-                        this.ebook = response.data.data
-                        this.isLoading = false
-                    }).catch(error => {
-                        console.error(error)
-                        this.isLoading = false
-                    })
-                }, 1000)
+                const action = '/api/ebooks'
+                axios.get(action).then(response => {
+                    this.ebook = response.data.data
+                    this.isLoading = false
+                }).catch(error => {
+                    console.error(error)
+                    this.isLoading = false
+                })
             },
             changeButton(){
                 this.saveButton = true

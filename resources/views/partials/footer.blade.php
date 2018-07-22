@@ -1,5 +1,8 @@
 <footer class="shadow">
   <div class="footer-above">
+    <div class="only_mobile ebook-footer my-4">
+        <ebook></ebook>
+    </div>
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -47,11 +50,12 @@
             </div>
           </div>
           <div class="col-md-4">
-              {{-- <ebook></ebook> --}}
+              <ebook></ebook>
                {{-- <a class="align-middle" href="">Ebook</a> --}}
           </div>
       </div>
       <div id="footer-links" class="only_mobile">
+          
           <div class="item-footer" id="headingOne">
               <a class="collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <h5 class="text-uppercase">

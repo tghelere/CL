@@ -27,7 +27,7 @@ Vue.use(VueAwesomeSwiper)
     Vue.component('blog-post', require('./components/website/blog/BlogPostComponent.vue'))
     
     Vue.component('menu-mobile', require('./components/website/MenuMobileComponent.vue'))
-    // Vue.component('ebook', require('./components/website/footer/EbookComponent.vue'))
+    Vue.component('ebook', require('./components/website/footer/EbookComponent.vue'))
 
 const app = new Vue({
     el: '#app'
