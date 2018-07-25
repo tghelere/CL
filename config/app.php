@@ -215,9 +215,9 @@ return [
     ],
 
     'phone' => '+554333210367',
-    'celphone' => '55439991897965',
+    'celphone' => '5543991897965',
     'phone_f' => '43 3321-0367',
-    'celphone_f' => '43 999189-7965',
+    'celphone_f' => '43 99189-7965',
     'contact_mail' => 'emaillondrina@centrallimp.com.br',
 
     'dev_mail' => 'softhingadm@gmail.com',

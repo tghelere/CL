@@ -57,7 +57,7 @@
                     <a href="tel:+554333210367" title="Fone: 43 3321-0367" class="text-uppercase link_menu tipo2 phone">43 3321-0367</a>
                 </b-row>
                 <b-row>
-                    <a href="https://api.whatsapp.com/send?phone=55439991897965" target="_blank" title="Whatsapp: 43 999189-7965" class="text-uppercase link_menu tipo2 whats">43 999189-7965</a>
+                    <a href="https://api.whatsapp.com/send?phone=5543991897965" target="_blank" title="Whatsapp: 43 99189-7965" class="text-uppercase link_menu tipo2 whats">43 99189-7965</a>
                 </b-row>
                 <b-row>
                     <a href="mailto:" title="E-mail" class="text-uppercase link_menu tipo2 mail">E-mail</a>
@@ -69,11 +69,11 @@
                     <p class="tipo3">R. Augusto Severo, 203</p>
                     <p class="tipo3">Aeroporto - Londrina - PR</p>
                 </b-col>
-                <b-col cols="4" class="azul">
-                    <a href="" class="text-uppercase">Ir</a>
+                <b-col cols="4" class="verde">
+                    <a href="https://www.google.com.br/maps/place/Centrallimp+Limpeza+e+Conserva%C3%A7%C3%A3o/@-23.3261945,-51.1453449,17z/data=!3m1!4b1!4m5!3m4!1s0x94eb4373cec23045:0x1fddb7c12bf6fc63!8m2!3d-23.3261994!4d-51.1431562" target="_blank" class="text-uppercase">Ir</a>
                 </b-col>
             </b-row>
-            <b-row class="py-4 barra-verde">
+            <b-row class="py-4 barra-azul">
                 <ul class="list-unstyled list-inline social">
                     <li class="list-inline-item"><a class="facebook" title="Facebook" href="" target="_blank"><span>Facebook</span></a></li>
                     <li class="list-inline-item"><a class="gplus" title="GPlus" href="" target="_blank"><span>GPlus</span></a></li>
