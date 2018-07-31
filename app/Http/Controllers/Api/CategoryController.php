@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use App\Models\Category;
 use App\Models\Post;
+use Illuminate\Support\Str;
 use App\Http\Resources\Category as CategoryResource;
 
 class CategoryController extends Controller
@@ -35,8 +36,8 @@ class CategoryController extends Controller
         $category = $request->isMethod('put') ? Category::findOrFail($request->category_id) : new Category;
         
         $category->id = $request->input('category_id');
-        $category->title = $request->input('title');
-        $category->slug = Str::slug($request->input('title'));
+        $category->name = $request->input('name');
+        $category->slug = Str::slug($request->input('name'));
 
         if ($category->save()) {
             return new CategoryResource($category);

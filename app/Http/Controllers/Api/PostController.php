@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('categories')->get();
+        $posts = Post::with('categories')->orderBy('created_at', 'desc')->get();
 
         return new PostResource($posts);
     }
