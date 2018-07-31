@@ -38,7 +38,7 @@ class ContatoController extends Controller
         ];
 
         try {
-            Mail::to(config('app.dev_mail'))->send(new Contato($this->data));
+            Mail::to(config('app.contact_mail'))->send(new Contato($this->data));
             return ['type' => 'success'];
         } catch (\Exception $e) {
             return ['type' => 'error', 'message' => 'Error - '.$e];

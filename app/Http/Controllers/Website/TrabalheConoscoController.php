@@ -43,7 +43,7 @@ class TrabalheConoscoController extends Controller
         // return $this->data;
 
         try {
-            Mail::to(config('app.dev_mail'))->send(new Recrutamento($this->data));
+            Mail::to(config('app.recruitment_mail'))->send(new Recrutamento($this->data));
             return ['type' => 'success'];
         } catch (\Exception $e) {
             return ['type' => 'error', 'message' => 'Error - '.$e];

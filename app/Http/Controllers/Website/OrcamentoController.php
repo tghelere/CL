@@ -27,7 +27,7 @@ class OrcamentoController extends Controller
         ];
 
         try {
-            Mail::to(config('app.dev_mail'))->send(new Orcamento($this->data));
+            Mail::to(config('app.budget_mail'))->send(new Orcamento($this->data));
             echo 'Mail send successfully';
         } catch (\Exception $e) {
             echo 'Error - '.$e;

@@ -218,7 +218,12 @@ return [
     'celphone' => '5543991897965',
     'phone_f' => '43 3321-0367',
     'celphone_f' => '43 99189-7965',
-    'contact_mail' => 'emaillondrina@centrallimp.com.br',
+    // 'contact_mail' => 'emaillondrina@centrallimp.com.br',
+
+    // destinatarios dos emails dos forms do site
+    'recruitment_mail' => 'vagas@centrallimp.com.br',
+    'contact_mail' => 'suporte@centrallimp.com.br', //contato e ouvidoria
+    'budget_mail' => 'valeria.leite@centrallimp.com.br',
 
     'dev_mail' => 'softhingadm@gmail.com',
 ];
