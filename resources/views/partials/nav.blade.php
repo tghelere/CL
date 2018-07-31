@@ -17,20 +17,14 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown {{ (preg_match("/^solucoes-[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h5 class="root">Soluções</h5></a>
-                        <ul class="dropdown-menu solutions" aria-labelledby="navbarDropdownMenuLink">
-                            <div class="linha">
-                                <div class="col-menor">
-                                    <li class="pqno"><a title="Indústrias" class="dropdown-item industrias solucoes" href="{{ route('solucoes-industrias') }}"><h5>Indústrias</h5></a></li>
-                                    <li class="pqno"><a title="Varejo" class="dropdown-item varejo solucoes" href="{{ route('solucoes-varejo') }}"><h5>Varejo</h5></a></li>
-                                    <li class="pqno"><a title="Orgãos públicos" class="dropdown-item orgaos-publicos solucoes" href="{{ route('solucoes-orgaos-publicos') }}"><h5>Orgãos públicos</h5></a></li>
-                                    <li class="pqno"><a title="Condomínios" class="dropdown-item condominios solucoes" href="{{ route('solucoes-condominios') }}"><h5>Condomínios</h5></a></li>
-                                </div>
-                                <div class="col-maior">
-                                    <li class="gde"><a title="Clínicas e Áreas de Saúde" class="dropdown-item clinicas-e-areas-de-saude solucoes" href="{{ route('solucoes-clinicas-e-areas-de-saude') }}"><h5>Clínicas e Áreas de Saúde</h5></a></li>
-                                    <li class="gde"><a title="Escolas e Universidades" class="dropdown-item escolas-e-universidades solucoes" href="{{ route('solucoes-escolas-e-universidades') }}"><h5>Escolas e Universidades</h5></a></li>
-                                    <li class="gde"><a title="Escritórios e Ambientes Corporativos" class="dropdown-item escritorios-e-ambientes-corporativos solucoes" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}"><h5>Escritórios e Ambientes Corporativos</h5></a></li>
-                                </div>
-                            </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a title="Indústrias" class="dropdown-item" href="{{ route('solucoes-industrias') }}"><h5>Indústrias</h5></a></li>
+                            <li><a title="Varejo" class="dropdown-item" href="{{ route('solucoes-varejo') }}"><h5>Varejo</h5></a></li>
+                            <li><a title="Orgãos públicos" class="dropdown-item" href="{{ route('solucoes-orgaos-publicos') }}"><h5>Orgãos públicos</h5></a></li>
+                            <li><a title="Condomínios" class="dropdown-item" href="{{ route('solucoes-condominios') }}"><h5>Condomínios</h5></a></li>
+                            <li><a title="Clínicas e Áreas de Saúde" class="dropdown-item" href="{{ route('solucoes-clinicas-e-areas-de-saude') }}"><h5>Clínicas e Áreas de Saúde</h5></a></li>
+                            <li><a title="Escolas e Universidades" class="dropdown-item" href="{{ route('solucoes-escolas-e-universidades') }}"><h5>Escolas e Universidades</h5></a></li>
+                            <li><a title="Escritórios e Ambientes Corporativos" class="dropdown-item" href="{{ route('solucoes-escritorios-e-ambientes-corporativos') }}"><h5>Escritórios e Ambientes Corporativos</h5></a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown {{ (preg_match("/^servicos-[a-z\-]+$/", Route::currentRouteName()) ? 'active' : '') }}"><a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><h5 class="root">Serviços</h5></a>

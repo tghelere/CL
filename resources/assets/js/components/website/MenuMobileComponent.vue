@@ -1,6 +1,6 @@
 <template>
-    <div :class="modalShow ? '' : 'closed'">
-        <li v-show="!modalShow" class="list-inline-item  mobile1"><a class="mobile Menu" title="Menu" @click.prevent="modalShow = !modalShow"><span>Menu</span></a></li>
+    <div :class="modalShow ? '' : 'closed'" class="d-inline">
+        <li class="list-inline-item  mobile1"><a class="mobile Menu" title="Menu" @click.prevent="modalShow = !modalShow"><span>Menu</span></a></li>
         <!-- <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a> -->
         <b-modal ref="menuMobile" v-model="modalShow" hide-footer hide-header id="modal">
             <div id="menu_mobile">

@@ -1,17 +1,12 @@
 .contato
     .info
+        margin-top: 50px
+        +breakpoint($celular)
+            margin-top: 30px
         p
             margin: 0
             padding: 0
-        .map-responsive
-            margin-top: 10px
-            overflow: hidden
-            padding-bottom: 50%
-            position: relative
-            height: 0
-            iframe
-                left: 0
-                top: 0
-                height: 100%
-                width: 100%
-                position: absolute
+        #mapa iframe
+            max-width: 100%
+            +breakpoint($celular)
+                margin-top: 25px

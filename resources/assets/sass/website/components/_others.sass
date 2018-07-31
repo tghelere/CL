@@ -17,11 +17,17 @@
         padding-bottom: 50px
     .mt-50
         margin: 50px 0
+    .my-25
+        margin: 25px 0
     ul
         text-align: left
     .content
         width: 80%
-        margin: 0 auto
+        margin: 70px auto 0
+        +breakpoint($celular)
+            margin: 30px auto 0
+            width: 100%
+
         
 .bradcrump 
     display: none

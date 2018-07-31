@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
+        <a @click="modalShow = !modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a>
         <vue-snotify></vue-snotify>
         
         <b-modal ref="reqAQuote" v-model="modalShow" hide-footer hide-header id="modal">

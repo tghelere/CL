@@ -82,6 +82,17 @@ class PostController extends Controller
         }
     }
 
+    private function limitarTexto($texto, $limite){
+        $contador = strlen($texto);
+        if ( $contador >= $limite ) {      
+            $texto = substr($texto, 0, strrpos(substr($texto, 0, $limite), ' ')) . '...';
+            return $texto;
+        }
+        else{
+          return $texto;
+        }
+    } 
+
     /**
      * Store a newly created resource in storage.
      *
@@ -96,7 +107,8 @@ class PostController extends Controller
                 $filenameWithExt = $request->file('image')->getClientOriginalName();
                 $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
                 $ext = $request->file('image')->getClientOriginalExtension();
-                $newFilename = Str::slug($request->input('title'))."_cover.".$ext;
+                // $newFilename = Str::slug($request->input('title'))."_cover.".$ext;
+                $newFilename = Str::slug($this->limitarTexto($request->input('title'), 50))."_cover.".$ext;
             }
             $post->title = $request->input('title');
             $post->description = $request->input('description');
@@ -106,7 +118,7 @@ class PostController extends Controller
             $post->image = $newFilename;
             $cat = json_decode($request->input('cat'));
             if ($post->save()) {
-                $path = $request->file('image')->storeAs('public/images/posts/'.$post->id, $newFilename);
+                $request->file('image')->storeAs('public/images/posts/'.$post->id, $newFilename);
                 $post->categories()->sync($cat);
                 return new PostResource($post);
             }

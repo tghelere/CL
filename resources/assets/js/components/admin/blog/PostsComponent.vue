@@ -303,15 +303,14 @@
             },
             postPost(form) {
                 this.isLoading = true
-                form.cat = [...this.categories.filter((category) => {return form.categories.indexOf(category.slug) != -1})]
-                form.cat = [...form.cat.map( category => category.id)]
+                const selectedCategoriesId = [...this.fcategories.filter((category) => {return form.selectedCategories.indexOf(category.slug) != -1})].map(cat => cat.id)
                 const fd = new FormData()
                     fd.append('title', form.title)
                     fd.append('description', form.description)
                     fd.append('body', form.body)
                     fd.append('image', form.image)
                     fd.append('status', form.status)
-                    fd.append('cat', JSON.stringify(form.cat))
+                    fd.append('cat', JSON.stringify(selectedCategoriesId))
                 const action = '/api/post/'
                 axios.post(action, fd).then(response => {
                     this.$root.$emit('bv::hide::modal', 'modalForm')
