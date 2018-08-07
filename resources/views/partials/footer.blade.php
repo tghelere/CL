@@ -114,17 +114,16 @@
             <li><a class="phone" title="Fone: {{ config('app.phone_f') }}" href="tel:{{ config('app.phone') }}">{{ config('app.phone_f') }}</a></li>
             <li><a class="whats" title="Whatsapp: {{ config('app.celphone_f') }}" target="_blank" href="https://api.whatsapp.com/send?phone={{ config('app.celphone') }}">{{ config('app.celphone_f') }}</a></li>
           </ul>
-          <p class="address">Rua Augusto Severo, 203, Aeroporto - Cep: 86039-650 - Londrina-PR <span class="no_mobile"><u><a target="_black" class="mapa text-uppercase" title="Mapa" href="https://goo.gl/maps/HhdbvX2dABG2">Ver no Mapa</a></u></span></p>
+          <p class="address">Rua Augusto Severo, 203 - Aeroporto - CEP: 86039-650 - Londrina/PR <span class="no_mobile"><u><a target="_black" class="mapa text-uppercase" title="Mapa" href="https://goo.gl/maps/HhdbvX2dABG2">Ver no Mapa</a></u></span></p>
         </div>
         <div class="mapa_footer only_mobile"><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1831.856842400167!2d-51.1440723!3d-23.3261448!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94eb4373cec23045%3A0x1fddb7c12bf6fc63!2sCentrallimp+Limpeza+e+Conserva%C3%A7%C3%A3o!5e0!3m2!1spt-PT!2sbr!4v1526261519710" frameborder="0" style="border:0" allowfullscreen></iframe></div>
         <div class="col-md-4">
           <h5 class="text-uppercase">Social</h5>
           <ul class="social">
-            <li><a class="facebook" title="Facebook" href="" target="_blank"><span>Facebook</span></a></li>
-            <li><a class="gplus" title="GPlus" href="" target="_blank"><span>GPlus</span></a></li>
-            <li><a class="linkedIn" title="LinkedIn" href="" target="_blank"><span>LinkedIn</span></a></li>
-            <li><a class="youtube" title="Youtube" href="" target="_blank"><span>Youtube</span></a></li>
-            <li><a class="whatsapp" title="Whatsapp" href="" target="_blank"><span>Whatsapp</span></a></li>
+            <li><a class="facebook" title="Facebook" href="https://www.facebook.com/centrallimp/" target="_blank"><span>Facebook</span></a></li>
+            <li><a class="linkedIn" title="LinkedIn" href="https://www.linkedin.com/company/centrallimp" target="_blank"><span>LinkedIn</span></a></li>
+            <li><a class="youtube" title="Youtube" href="https://www.youtube.com/channel/UC-yNSUpwOWEdIato2PHwZeQ" target="_blank"><span>Youtube</span></a></li>
+            <li><a class="whatsapp" title="Whatsapp" href="https://api.whatsapp.com/send?phone={{ config('app.celphone') }}" target="_blank"><span>Whatsapp</span></a></li>
           </ul>
         </div>
       </div>

@@ -222,7 +222,8 @@ return [
 
     // destinatarios dos emails dos forms do site
     'recruitment_mail' => 'vagas@centrallimp.com.br',
-    'contact_mail' => 'suporte@centrallimp.com.br', //contato e ouvidoria
+    'contact_mail' => 'suporte@centrallimp.com.br', 
+    'ombuds_mail' => 'luiza.marim@centrallimp.com.br', 
     'budget_mail' => 'valeria.leite@centrallimp.com.br',
 
     'dev_mail' => 'softhingadm@gmail.com',

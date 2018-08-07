@@ -48,8 +48,8 @@ ul.tags
     margin-bottom: 25px
     li
         margin-right: 15px
-        color: #0056b3
         font-family: 'Open Sans', sans-serif !important
-        font-size: 10px
+        color: #17a2b8
+        font-size: 8px !important
         font-weight: 200 !important
 </style>

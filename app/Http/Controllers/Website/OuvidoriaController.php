@@ -38,7 +38,7 @@ class OuvidoriaController extends Controller
         ];
 
         try {
-            Mail::to(config('app.contact_mail'))->send(new Ouvidoria($this->data));
+            Mail::to(config('app.ombuds_mail'))->send(new Ouvidoria($this->data));
             return ['type' => 'success'];
         } catch (\Exception $e) {
             return ['type' => 'error', 'message' => 'Error - '.$e];return ['type' => 'error', 'message' => 'Error - '.$e];
