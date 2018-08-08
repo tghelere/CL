@@ -208,6 +208,20 @@ class PostController extends Controller
     }
 
     /**
+     * Display the specified resource.
+     *
+     * @param  string  $category
+     * @param  int  $limit
+     * @return \Illuminate\Http\Response
+     */
+    public function categoryLimit($category, $limit)
+    {
+        $category = Category::where('slug', $category)->get()->first();
+        $posts = $category->posts()->latest()->offset(0)->limit($limit)->with('categories')->get();
+        return new PostResource($posts);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id

@@ -13,5 +13,6 @@
             <h1 class="text-center text-uppercase" >{{$data['title']}}</h1>
             <text-content :page="'<?= str_replace('solucoes-', '', Route::currentRouteName()) ?>'"></text-content>
         </div>
+        <categorie-posts :page="'<?= str_replace('solucoes-', '', Route::currentRouteName()) ?>'" ></categorie-posts>
     </div>
 @endsection

@@ -25,6 +25,7 @@ Vue.use(VueAwesomeSwiper)
 
     Vue.component('blog-all-posts', require('./components/website/blog/BlogAllPostsComponent.vue'))
     Vue.component('blog-post', require('./components/website/blog/BlogPostComponent.vue'))
+    Vue.component('categorie-posts', require('./components/website/blog/CategoriePostsComponent.vue'))
     
     Vue.component('menu-mobile', require('./components/website/MenuMobileComponent.vue'))
     Vue.component('ebook', require('./components/website/footer/EbookComponent.vue'))
