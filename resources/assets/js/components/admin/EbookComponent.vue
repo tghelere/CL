@@ -53,7 +53,7 @@
                     </b-row>
                     <b-row>
                         <b-col md="12">
-                            <b-form-group label="Imagem">
+                            <b-form-group label="Imagem" description="(Tamanho da imagem: 480x290px)">
                                 <img class="d-block mx-auto mt-3 mb-3 form-img" v-if="typeof(modalFormEbook.image) == 'string'" :src="'/storage/images/ebooks/' + modalFormEbook.image" fluid alt="Erro ao exibir imagem">
                                 <b-form-file accept="image/jpeg, image/png, image/gif" v-model="modalFormEbook.image" placeholder="Clique para escolher uma imagem"></b-form-file>
                             </b-form-group>

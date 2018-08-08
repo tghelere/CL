@@ -95,10 +95,10 @@
                     @input="changeButton" 
                     enctype="multipart/form-data" 
                      >
-                    <b-form-group label="Título">
+                    <b-form-group label="Título" description="(até 70 bits)">
                         <b-form-input id="title" type="text" v-model="modalForm.title" required placeholder="Título *"></b-form-input>
                     </b-form-group>
-                    <b-form-group label="Descrição">
+                    <b-form-group label="Descrição" description="(até 100 bits)">
                         <b-form-input id="description" type="text" v-model="modalForm.description" required placeholder="Descrição *"></b-form-input>
                     </b-form-group>
                     <b-form-group label="Imagem de capa">

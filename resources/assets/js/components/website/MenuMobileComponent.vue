@@ -4,7 +4,6 @@
         <!-- <a @click="modalShow = !modalShow" v-show="!modalShow" class="link-quote" title="Solicite um orçamento"><span>Solicite um orçamento</span></a> -->
         <b-modal ref="menuMobile" v-model="modalShow" hide-footer hide-header id="modal">
             <div id="menu_mobile">
-                {{celphone}}    
                 <b-link class="close-btn" @click="hideModal"></b-link>
                 <b-row>
                     <b-col md="5"><b-img class="modal_logo mt-1 mb-3" src="/img/logocolor.png" alt="Centrallimp" height="50" /></b-col>

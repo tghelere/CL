@@ -83,7 +83,7 @@
                             </b-form-group>
                         </b-col>
                     </b-row>
-                    <b-form-group label="Imagem">
+                    <b-form-group label="Imagem" description="(Tamanho do banner: 1920x500px)">
                         <img class="d-block mx-auto mt-3 mb-3 form-img" v-if="typeof(modalFormBanners.image) == 'string'" :src="'/storage/images/banners/' + modalFormBanners.image" fluid alt="Erro ao exibir imagem">
                         <b-form-file accept="image/jpeg, image/png, image/gif" v-model="modalFormBanners.image" placeholder="Clique para escolher uma imagem para o banner"></b-form-file>
                     </b-form-group>

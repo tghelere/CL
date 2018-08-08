@@ -35,7 +35,7 @@
                     @input="changeButton" 
                     enctype="multipart/form-data" 
                     >
-                    <b-form-group label="Imagem">
+                    <b-form-group label="Imagem" description="(Tamanho do banner: 1920x400px)">
                         <img class="d-block mx-auto mt-3 mb-3 form-img" v-if="typeof(modalFormBanner.image) == 'string'" :src="'/storage/images/banners/' + modalFormBanner.image" fluid alt="Erro ao exibir imagem">
                         <b-form-file accept="image/jpeg, image/png, image/gif" v-model="modalFormBanner.image" placeholder="Clique para escolher uma imagem para o banner"></b-form-file>
                     </b-form-group>
