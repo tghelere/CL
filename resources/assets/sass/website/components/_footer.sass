@@ -8,6 +8,8 @@ footer
         margin-top: 1rem
     p, a
         color: #707070
+        +breakpoint($celular)
+            font-size: 12px !important
     h5
         color: #0089C0
         margin: 10px 0
@@ -70,6 +72,8 @@ footer
                     background-size: 20px //contain
                     background-position-x: 0
                     padding-left: 30px
+                    +breakpoint($celular)
+                        font-size: 12px
                 a.phone
                     display: block
                     background: url(/img/icons/phone.svg) no-repeat top
@@ -77,6 +81,8 @@ footer
                     background-position-x: 0
                     background-position-y: 3px
                     padding-left: 30px
+                    +breakpoint($celular)
+                        font-size: 12px
     a.mapa
         margin-left: 30px        
     a
