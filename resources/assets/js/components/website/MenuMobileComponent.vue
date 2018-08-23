@@ -76,8 +76,8 @@
             <b-row class="py-4 barra-azul">
                 <ul class="list-unstyled list-inline social">
                     <li class="list-inline-item"><a class="facebook" title="Facebook" href="https://www.facebook.com/centrallimp/" target="_blank"><span>Facebook</span></a></li>
-                    <li class="list-inline-item"><a class="linkedIn" title="LinkedIn" href="https://www.linkedin.com/company/centrallimp" target="_blank"><span>LinkedIn</span></a></li>
-                    <li class="list-inline-item"><a class="youtube" title="Youtube" href="https://www.youtube.com/channel/UC-yNSUpwOWEdIato2PHwZeQ" target="_blank"><span>Youtube</span></a></li>
+                    <li class="list-inline-item"><a class="linkedIn" title="LinkedIn" href="https://www.linkedin.com/company/centrallimpserviços/" target="_blank"><span>LinkedIn</span></a></li>
+                    <li class="list-inline-item"><a class="youtube" title="Youtube" href="https://www.youtube.com/channel/UCEFwTVcy-Zt2pLXr-MNO9_Q" target="_blank"><span>Youtube</span></a></li>
                     <li class="list-inline-item"><a class="whatsapp" title="Whatsapp" href="https://api.whatsapp.com/send?phone=5543991897965" target="_blank"><span>Whatsapp</span></a></li>
                 </ul>
             </b-row>
