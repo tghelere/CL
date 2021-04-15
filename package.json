@@ -23,7 +23,7 @@
         "bootstrap-vue": "^2.21.2",
         "breakpoint-sass": "^2.7.1",
         "laravel-vue-pagination": "^1.2.0",
-        "vue-awesome-swiper": "^4.0.0",
+        "vue-awesome-swiper": "^4.1.1",
         "vue-loading-overlay": "^3.4.2",
         "vue-moment": "^4.1.0",
         "vue-quill-editor": "^3.0.6",
