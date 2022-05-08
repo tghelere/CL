@@ -20,7 +20,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
-        "bootstrap-vue": "^2.21.2",
+        "bootstrap-vue": "^2.22.0",
         "breakpoint-sass": "^2.7.1",
         "laravel-vue-pagination": "^1.2.0",
         "vue-awesome-swiper": "^4.0.0",
